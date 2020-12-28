@@ -51,7 +51,7 @@
         <?php endforeach ?>
     </div>
 
-    <section>
+    <!-- <section>
         <div class="container-xl marginTop">
             <div class="flexRow mt-4">
                 <?php foreach ($product as $row) : ?>
@@ -83,7 +83,7 @@
                 <?= $pagination; ?>
             </nav>
         </div>
-    </section>
+    </section> -->
 
     </div>
 </main>

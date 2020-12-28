@@ -23,7 +23,7 @@
                     <?php foreach ($content as $row) : ?>
                         <div class="flexCol">
                             <div class="card mb-4">
-                                <a href="<?= base_url("shopping/detail/$row->id") ?>">
+                                <a href="<?= base_url("shopping/detail/$row->slug") ?>">
                                     <img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <a href="<?= base_url("/shop/category/$row->category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->category_title; ?></a>

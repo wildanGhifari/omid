@@ -19,15 +19,6 @@
                                 <input type="text" class="form-control rounded-0" name="phone" placeholder="Please input your phone number" value="<?= $input->phone; ?>">
                                 <?= form_error('phone') ?>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">Address</label>
-                                        <?= form_dropdown('id_category', getDropdownList('category', ['id', 'title']), $input->id_category, ['class' => 'form-control']) ?>
-                                        <?= form_error('id_category') ?>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="form-group">
                                 <label for="">Address</label>
                                 <textarea name="address" id="" cols="30" rows="5" class="form-control rounded-0"><?= $input->address; ?></textarea>
@@ -62,8 +53,8 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h6 class="float-left">Total</h6>
-                                        <h6 class="float-right">Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></h6>
+                                        <h6 class="float-left"><strong>Total</strong></h6>
+                                        <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></strong></h6>
                                     </div>
                                 </div>
                             </div>

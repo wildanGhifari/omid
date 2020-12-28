@@ -25,6 +25,11 @@
                             <?= form_error('price') ?>
                         </div>
                         <div class="form-group">
+                            <label for="">Weight</label>
+                            <?= form_input(['type' => 'number', 'name' => 'weight', 'value' => $input->weight, 'class' => 'form-control', 'required' => true]) ?>
+                            <?= form_error('weight') ?>
+                        </div>
+                        <div class="form-group">
                             <label for="">Category</label>
                             <?= form_dropdown('id_category', getDropdownList('category', ['id', 'title']), $input->id_category, ['class' => 'form-control']) ?>
                             <?= form_error('id_category') ?>

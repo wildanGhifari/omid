@@ -15,6 +15,7 @@ class Product_model extends MY_Model
             'title'         => '',
             'description'   => '',
             'price'         => '',
+            'weight'         => '',
             'is_available'  => 1,
             'image'         => ''
         ];
@@ -46,6 +47,11 @@ class Product_model extends MY_Model
             [
                 'field' => 'price',
                 'label' => 'Price',
+                'rules' => 'trim|required|numeric'
+            ],
+            [
+                'field' => 'weight',
+                'label' => 'Weight',
                 'rules' => 'trim|required|numeric'
             ],
             [

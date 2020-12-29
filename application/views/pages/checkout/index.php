@@ -19,23 +19,63 @@
                                 <input type="text" class="form-control rounded-0" name="phone" placeholder="Please input your phone number" value="<?= $input->phone; ?>">
                                 <?= form_error('phone') ?>
                             </div>
-                            <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Province</label>
+                                        <select class="form-control" name="nama-provinsi" id="">
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">District</label>
+                                        <select class="form-control" name="nama-distrik" id="">
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Ekspedisi</label>
+                                        <select class="form-control" name="nama-ekspedisi" id="">
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Total Berat</label>
+                                        <input type="number" class="form-control" name="total-berat" id="" value="<?= $totalWeight; ?>" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Paket Pengiriman</label>
+                                        <select class="form-control" name="nama-paket" id="">
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
                                 <label for="">Address</label>
                                 <textarea name="address" id="" cols="30" rows="5" class="form-control rounded-0"><?= $input->address; ?></textarea>
                                 <?= form_error('address') ?>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-md-4 mt-4">
-                                    <button style="width: 100%;" class="btn btn-success rounded-0" type="submit">Save</button>
-                                </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-3">
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header lead font-weight-bold">
@@ -59,6 +99,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <button style="width: 100%; letter-spacing: 0.1em;" class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Continue</button>
                     </div>
                 </div>
             </div>

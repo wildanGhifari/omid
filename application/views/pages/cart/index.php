@@ -30,7 +30,13 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <p><strong>Size :</strong> 500gr</p>
+                                            <p><strong>Weight :</strong> <?= $row->weight ?></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p><strong>Total Weight :</strong> <?= $row->weight * $row->qty ?></p>
                                         </div>
                                     </div>
 

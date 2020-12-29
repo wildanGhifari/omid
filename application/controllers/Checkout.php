@@ -26,11 +26,14 @@ class Checkout extends MY_Controller
 
         $data['cart']    = $this->checkout->select([
             'cart.id', 'cart.qty', 'cart.subtotal',
-            'product.title', 'product.image', 'product.price'
+            'product.title', 'product.image', 'product.price', 'product.weight'
         ])
             ->join('product')
             ->where('cart.id_user', $this->id)
             ->get();
+
+        $data['totalWeight'] = $this->checkout->getSum();
+
 
         if (!$data['cart']) {
             $this->session->set_flashdata('warning', 'Your cart is empty.');

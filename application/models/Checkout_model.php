@@ -39,6 +39,13 @@ class Checkout_model extends MY_Model
 
         return $validationRules;
     }
+
+    public function getSum()
+    {
+        $totalWeight = "SELECT sum(weight) as weight FROM cart";
+        $result = $this->db->query($totalWeight);
+        return $result->row()->weight;
+    }
 }
 
 /* End of file Checkout_model.php */

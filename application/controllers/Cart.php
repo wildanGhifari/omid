@@ -26,7 +26,7 @@ class Cart extends MY_Controller
         $data['title']        = 'My Cart';
         $data['content']    = $this->cart->select([
             'cart.id', 'cart.qty', 'cart.subtotal',
-            'product.title', 'product.image', 'product.price'
+            'product.title', 'product.image', 'product.price', 'product.weight'
         ])
             ->join('product')
             ->where('cart.id_user', $this->id)
@@ -43,12 +43,13 @@ class Cart extends MY_Controller
             $this->session->set_flashdata('error', 'Product quantity cannot be empty.');
             redirect(base_url());
         } else {
-            $input                = (object) $this->input->post(null, true);
+            $input                  = (object) $this->input->post(null, true);
 
-            $this->cart->table    = 'product';
-            $product            = $this->cart->where('id', $input->id_product)->first();
+            $this->cart->table      = 'product';
+            $product                = $this->cart->where('id', $input->id_product)->first();
 
-            $subtotal            = $product->price * $input->qty;
+            $subtotal               = $product->price * $input->qty;
+            $weight                 = $product->weight * $input->qty;
 
             $this->cart->table    = 'cart';
             $cart                = $this->cart->where('id_user', $this->id)->where('id_product', $input->id_product)->first();
@@ -57,7 +58,8 @@ class Cart extends MY_Controller
             if ($cart) {
                 $data = [
                     'qty'         => $cart->qty + $input->qty,
-                    'subtotal'    => $cart->subtotal + $subtotal
+                    'subtotal'    => $cart->subtotal + $subtotal,
+                    'weight'      => $cart->weight + $weight
                 ];
 
                 if ($this->cart->where('id', $cart->id)->update($data)) {
@@ -73,7 +75,8 @@ class Cart extends MY_Controller
                 'id_user'        => $this->id,
                 'id_product'    => $input->id_product,
                 'qty'             => $input->qty,
-                'subtotal'        => $subtotal
+                'subtotal'        => $subtotal,
+                'weight'          => $weight
             ];
 
             if ($this->cart->create($data)) {
@@ -105,9 +108,11 @@ class Cart extends MY_Controller
         $product            = $this->cart->where('id', $data['content']->id_product)->first();
 
         $subtotal           = $data['input']->qty * $product->price;
+        $weight             = $data['input']->qty * $product->weight;
         $cart               = [
             'qty'       => $data['input']->qty,
-            'subtotal'  => $subtotal
+            'subtotal'  => $subtotal,
+            'weight'    => $weight
         ];
 
         $this->cart->table  = 'cart';

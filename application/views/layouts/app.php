@@ -15,6 +15,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="<?= base_url('/assets/css/app.css') ?>">
 
+    <link rel="icon" href="<?= base_url('/assets/img/OmidLogo.png') ?>" type="image/gif">
     <title><?= isset($title) ? $title : 'Omid Health Style' ?></title>
 </head>
 

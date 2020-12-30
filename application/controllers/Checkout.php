@@ -37,6 +37,9 @@ class Checkout extends MY_Controller
             redirect(base_url('cart'));
         }
 
+        $this->checkout->table = 'courier';
+        $data['courier']    = $this->checkout->select(['courier.id', 'courier.name'])->get();
+
         $data['totalWeight'] = $this->checkout->getSum();
 
         $data['input']  = $input ? $input : (object) $this->checkout->getDefaultValues();
@@ -59,6 +62,8 @@ class Checkout extends MY_Controller
             return $this->index($input);
         }
 
+        $data['provinsi'] = $this->checkout->dataprovinsi();
+
         $total  = $this->db->select_sum('subtotal')
             ->where('id_user', $this->id)
             ->get('cart')
@@ -71,6 +76,9 @@ class Checkout extends MY_Controller
             'total'         => $total,
             'name'          => $input->name,
             'address'       => $input->address,
+            'province'      => $input->province,
+            'district'      => $input->district,
+            'shipping'      => $input->shipping,
             'phone'         => $input->phone,
             'status'        => 'waiting'
         ];
@@ -90,6 +98,7 @@ class Checkout extends MY_Controller
 
             $data['title']        = 'Checkout Success';
             $data['content']    = (object) $data;
+            $data['form_action']    = base_url('checkout/create');
             $data['page']        = 'pages/checkout/success';
 
             $this->view($data);

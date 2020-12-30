@@ -29,7 +29,10 @@
                                     <div class="form-group">
                                         <label for="">Province</label>
                                         <select class="form-control" name="nama-provinsi" id="">
-
+                                            <option value="">Select Province</option>
+                                            <?php foreach ($provinsi as $province) : ?>
+                                                <option value="<?= $province['province_id']; ?>"><?= $province["province"]; ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                     </div>
                                 </div>
@@ -47,9 +50,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Courier</label>
-                                        <select class="form-control" name="nama-ekspedisi" id="">
-
-                                        </select>
+                                        <?= form_dropdown('id_courier', getDropdownList('courier', ['id', 'name']), $input->id_courier, ['class' => 'form-control']) ?>
+                                        <?= form_error('id_courier') ?>
                                     </div>
                                 </div>
 
@@ -90,8 +92,14 @@
                                         </div>
                                     </div>
                                 <?php endforeach ?>
+                                <div class="row px-0">
+                                    <div class="col-md-12">
+                                        <p class="float-left font-weight-bold">Shipping</p>
+                                        <p class="float-right font-weight-bold">Rp. 20.000</p>
+                                    </div>
+                                </div>
                                 <hr>
-                                <div class="row">
+                                <div class="row px-0">
                                     <div class="col-md-12">
                                         <h6 class="float-left"><strong>Total</strong></h6>
                                         <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></strong></h6>

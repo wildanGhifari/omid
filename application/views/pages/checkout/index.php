@@ -19,6 +19,11 @@
                                 <input type="text" class="form-control rounded-0" name="phone" placeholder="Please input your phone number" value="<?= $input->phone; ?>">
                                 <?= form_error('phone') ?>
                             </div>
+                            <div class="form-group">
+                                <label for="">Address</label>
+                                <textarea name="address" id="" cols="30" rows="3" class="form-control rounded-0"><?= $input->address; ?></textarea>
+                                <?= form_error('address') ?>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -41,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Ekspedisi</label>
+                                        <label for="">Courier</label>
                                         <select class="form-control" name="nama-ekspedisi" id="">
 
                                         </select>
@@ -50,25 +55,20 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Total Berat</label>
+                                        <label for="">Total Weight</label>
                                         <input type="number" class="form-control" name="total-berat" id="" value="<?= $totalWeight; ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Paket Pengiriman</label>
+                                        <label for="">Shipping package</label>
                                         <select class="form-control" name="nama-paket" id="">
 
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="">Address</label>
-                                <textarea name="address" id="" cols="30" rows="5" class="form-control rounded-0"><?= $input->address; ?></textarea>
-                                <?= form_error('address') ?>
-                            </div> -->
                         </form>
                     </div>
                 </div>

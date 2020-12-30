@@ -7,62 +7,78 @@
                     <div class="card-header lead font-weight-bold">
                         <strong>My Cart (<?= getCart(); ?>) items</strong>
                     </div>
-                    <?php foreach ($content as $row) : ?>
-                        <div class="card-body">
-                            <div class="row justify-content-between">
-                                <div class="col-md-3">
-                                    <img style="width: 100%;" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url('/images/product/default.jpg') ?>" alt="">
+                    <?php if (!$content) : ?>
+                        <div class="card-body text-center" style="padding: 5% 0;">
+                            <div class="row mb-5">
+                                <div class="col-md-12">
+                                    <h4>Your Cart is empt. <br> Let's go shopping!</h4>
                                 </div>
-
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p class="lead cart-card-title float-left"><strong><?= $row->title; ?></strong></p>
-                                            <p class="lead cart-subtotal"><strong>Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></strong></p>
-                                        </div>
+                            </div>
+                            <img class="mb-5"" src=" <?= base_url('assets/img/undraw_add_to_cart.svg') ?>" style="width: 60%;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="<?= base_url('shopping') ?>" style="width: 60%;" class="btn btn-lg btn-success rounded-0 text-uppercase">Shopping Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <?php foreach ($content as $row) : ?>
+                            <div class="card-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-3">
+                                        <img style="width: 100%;" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url('/images/product/default.jpg') ?>" alt="">
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p><strong>Price :</strong> @Rp. <?= number_format($row->price, 0, ',', '.') ?></p>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p class="lead cart-card-title float-left"><strong><?= $row->title; ?></strong></p>
+                                                <p class="lead cart-subtotal"><strong>Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></strong></p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p><strong>Weight :</strong> <?= $row->weight ?></p>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p><strong>Price :</strong> @Rp. <?= number_format($row->price, 0, ',', '.') ?></p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p><strong>Total Weight :</strong> <?= $row->weight * $row->qty ?></p>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p><strong>Weight :</strong> <?= $row->weight ?></p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12 qty">
-                                            <form class="float-left" action="<?= base_url("cart/update/$row->id") ?>" method="POST">
-                                                <input type="hidden" name="id" value="<?= $row->id ?>">
-                                                <div class="input-group">
-                                                    <input style="border-radius: 25px 0 0 25px;" type="number" name="qty" class="form-control text-center" value="<?= $row->qty ?>">
-                                                    <div class="input-group-append">
-                                                        <button style="border-radius: 0 25px 25px 0;" class="btn btn-success" type="submit"><i class="fas fa-check"></i></button>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p><strong>Total Weight :</strong> <?= $row->weight * $row->qty ?></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12 qty">
+                                                <form class="float-left" action="<?= base_url("cart/update/$row->id") ?>" method="POST">
+                                                    <input type="hidden" name="id" value="<?= $row->id ?>">
+                                                    <div class="input-group">
+                                                        <input style="border-radius: 25px 0 0 25px;" type="number" name="qty" class="form-control text-center" value="<?= $row->qty ?>">
+                                                        <div class="input-group-append">
+                                                            <button style="border-radius: 0 25px 25px 0;" class="btn btn-success" type="submit"><i class="fas fa-check"></i></button>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                </form>
 
-                                            <form class="float-right" action="<?= base_url("cart/delete/$row->id") ?>" method="POST">
-                                                <input type="hidden" name="id" value="<?= $row->id ?>">
-                                                <button style="width: 100%;" class="btn btn-outline-danger rounded-pill" type="submit" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
-                                            </form>
+                                                <form class="float-right" action="<?= base_url("cart/delete/$row->id") ?>" method="POST">
+                                                    <input type="hidden" name="id" value="<?= $row->id ?>">
+                                                    <button style="width: 100%;" class="btn btn-outline-danger rounded-pill" type="submit" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr class="my-0">
-                    <?php endforeach ?>
+                            <hr class="my-0">
+                        <?php endforeach ?>
+                    <?php endif ?>
                 </div>
             </div>
 

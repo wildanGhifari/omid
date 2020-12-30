@@ -6,6 +6,19 @@ class Checkout_model extends MY_Model
 {
 
     public $table = 'orders';
+    private $id;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $is_login   = $this->session->userdata('is_login');
+        $this->id   = $this->session->userdata('id');
+
+        if (!$is_login) {
+            redirect(base_url());
+            return;
+        }
+    }
 
     public function getDefaultValues()
     {
@@ -42,9 +55,11 @@ class Checkout_model extends MY_Model
 
     public function getSum()
     {
-        $totalWeight = "SELECT sum(weight) as weight FROM cart";
-        $result = $this->db->query($totalWeight);
+        $totalWeight = "SELECT `id_user`, sum(weight) as weight FROM cart WHERE id_user = $this->id GROUP BY id_user";
+        $result = $this->db->query($totalWeight, array($this->id));
         return $result->row()->weight;
+
+        print_r($result);
     }
 }
 

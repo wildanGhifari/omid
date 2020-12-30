@@ -32,13 +32,12 @@ class Checkout extends MY_Controller
             ->where('cart.id_user', $this->id)
             ->get();
 
-        $data['totalWeight'] = $this->checkout->getSum();
-
-
         if (!$data['cart']) {
             $this->session->set_flashdata('warning', 'Your cart is empty.');
             redirect(base_url('cart'));
         }
+
+        $data['totalWeight'] = $this->checkout->getSum();
 
         $data['input']  = $input ? $input : (object) $this->checkout->getDefaultValues();
         $data['title']  = 'Checkout';

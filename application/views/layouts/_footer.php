@@ -13,7 +13,7 @@
                         <h5><strong>Company</strong></h5>
                         <ul class="list-group">
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">About Us</a>
+                                <a class="text-white" href="<?= base_url('about') ?>">About Us</a>
                             </li>
                             <li class="list-group-item px-0 py-2 bg-transparent border-0 pr-5">
                                 <address>

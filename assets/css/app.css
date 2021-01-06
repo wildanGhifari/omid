@@ -69,19 +69,19 @@ h6 {
 }
 p {
 	font-family: "Open Sans", sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
 	letter-spacing: 0.5px;
 }
 a {
 	font-family: "Open Sans", sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
 	letter-spacing: 0.5px;
 }
 li {
 	font-family: "Open Sans", sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
 	letter-spacing: 0.5px;
 }
@@ -403,19 +403,19 @@ nav img {
 	}
 	p {
 		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: normal;
 		letter-spacing: 0.5px;
 	}
 	a {
 		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: normal;
 		letter-spacing: 0.5px;
 	}
 	li {
 		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: normal;
 		letter-spacing: 0.5px;
 	}
@@ -790,6 +790,10 @@ nav img {
 	.prodCatFlexCol {
 		flex: 50%;
 		max-width: 50%;
+	}
+
+	#signupAbout a {
+		width: 100%;
 	}
 	/* END OF ABOUT US PAGE */
 

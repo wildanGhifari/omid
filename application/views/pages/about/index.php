@@ -3,7 +3,7 @@
         <div class="container-xl">
             <div id="aboutOmidRow">
                 <div class="aboutOmidCol">
-                    <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/online_store_.svg') ?>" alt="">
+                    <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/online_store_.svg') ?>" alt="online_store">
                 </div>
 
                 <div class="aboutOmidCol">
@@ -24,31 +24,49 @@
                 </div>
 
                 <div class="aboutOmidCol" id="blogIls">
-                    <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/book_lover.svg') ?>" alt="">
+                    <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/book_lover.svg') ?>" alt="book_lover">
                 </div>
             </div>
         </div>
     </section>
 
     <section class="marginTop">
-        <div class="container-xl">
-            <h3>Our Product</h3>
-            <div class="prodCatFlexRow">
-                <?php foreach (getCategories() as $category) : ?>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/$category->slug") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4"><?= $category->title ?></p>
+        <div class="container-fluid bg-white" style="padding: 5% 0;">
+            <div class="container-xl">
+                <h3>Our Product</h3>
+                <div class="prodCatFlexRow">
+                    <?php foreach (getCategories() as $category) : ?>
+                        <div class="prodCatFlexCol">
+                            <a href="<?= base_url("/shop/category/$category->slug") ?>">
+                                <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                    <div class="card-body text-center">
+                                        <img src="" alt="" width="120px" height="120px">
+                                        <p class="card-text mt-4"><?= $category->title ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                <?php endforeach ?>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <div class="row justify-content-center py-4 px-3">
+                    <a style="letter-spacing: 0.1em;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
+                </div>
             </div>
-            <div class="row justify-content-center">
-                <a style="letter-spacing: 0.1em;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-xl" style="padding: 5% 10px;">
+            <div id="aboutOmidRow">
+                <div class="aboutOmidCol">
+                    <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/eating_salad_.svg') ?>" alt="eating_salad">
+                </div>
+
+                <div class="aboutOmidCol" id="signupAbout">
+                    <h3>Sign up now! it's Free!</h3>
+                    <p class="mt-3">Sign up now and <strong>Get a 10% Off</strong> on your first purchase. You will also get promos and other interesting insights about healthy food.</p>
+                    <a style="letter-spacing: 0.1em;" class="btn btn-success rounded-pill text-uppercase mt-4" href="<?= base_url('/register') ?>">Sign up Now!</a>
+                </div>
             </div>
         </div>
     </section>

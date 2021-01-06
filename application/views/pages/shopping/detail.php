@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-sm-4 mb-3">
                                 <p class="text-muted"><strong>SIZE</strong></p>
-                                <h6>500g</h6>
+                                <h6><?= $row->weight ?></h6>
                             </div>
                         </div>
 

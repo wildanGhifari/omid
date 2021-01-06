@@ -317,7 +317,7 @@ nav img {
 	align-items: center;
 }
 
-.aboutOmiCol {
+.aboutOmidCol {
 	flex: 50%;
 	max-width: 50%;
 	padding: 0 30px;
@@ -459,7 +459,7 @@ nav img {
 	}
 
 	/* ABOUT US PAGE */
-	.aboutOmiCol {
+	.aboutOmidCol {
 		flex: 50%;
 		max-width: 50%;
 		padding: 0 30px;
@@ -591,7 +591,13 @@ nav img {
 	}
 
 	/* ABOUT US PAGE */
-	.aboutOmiCol {
+	#blogIls {
+		order: 1;
+	}
+	#blogDesc {
+		order: 2;
+	}
+	.aboutOmidCol {
 		flex: 100%;
 		max-width: 100%;
 		padding: 0 10px;
@@ -755,7 +761,16 @@ nav img {
 	/* END OFCAROUSEL BANNER */
 
 	/* ABOUT US PAGE */
-	.aboutOmiCol {
+	#blogIls {
+		order: 1;
+	}
+	#blogDesc {
+		order: 2;
+	}
+	#blogDesc a {
+		width: 100%;
+	}
+	.aboutOmidCol {
 		flex: 100%;
 		max-width: 100%;
 		padding: 0 10px;

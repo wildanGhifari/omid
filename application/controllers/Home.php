@@ -10,8 +10,8 @@ class Home extends My_Controller
         $data['title']  = 'Home | Omid Health Style';
         $data['content']    = $this->home->select(
             [
-                'product.id', 'product.title AS product_title', 'product.description',
-                'product.image', 'product.price', 'product.is_available',
+                'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
+                'product.image', 'product.price', 'product.is_available', 'product.weight',
                 'category.title AS category_title', 'category.slug AS category_slug'
             ]
         )

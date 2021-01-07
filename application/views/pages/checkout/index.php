@@ -2,6 +2,35 @@
     <div class="container-xl" style="padding: 5% 0;">
         <?php $this->load->view('layouts/_alert') ?>
         <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header lead font-weight-bold">
+                                <strong>My Cart Summary (<?= getCart(); ?>)</strong>
+                            </div>
+                            <div class="card-body">
+                                <?php foreach ($cart as $row) : ?>
+                                    <div class="row px-0">
+                                        <div class="col-md-12">
+                                            <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
+                                            <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach ?>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h6 class="float-left"><strong>Total</strong></h6>
+                                        <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></strong></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-8 mb-3">
                 <div class="card">
                     <div class="card-header lead font-weight-bold">
@@ -69,42 +98,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <button style="width: 100%; letter-spacing: 0.1em;" class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Continue</button>
                         </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header lead font-weight-bold">
-                                <strong>My Cart Summary (<?= getCart(); ?>)</strong>
-                            </div>
-                            <div class="card-body">
-                                <?php foreach ($cart as $row) : ?>
-                                    <div class="row px-0">
-                                        <div class="col-md-12">
-                                            <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
-                                            <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
-                                        </div>
-                                    </div>
-                                <?php endforeach ?>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h6 class="float-left"><strong>Total</strong></h6>
-                                        <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></strong></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <button style="width: 100%; letter-spacing: 0.1em;" class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Continue</button>
                     </div>
                 </div>
             </div>

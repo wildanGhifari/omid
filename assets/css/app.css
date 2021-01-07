@@ -311,10 +311,18 @@ nav img {
 /* END OF HOME PAGE CSS */
 
 /* ABOUT US PAGE */
+.jumbotron {
+	background-image: url(../img/About.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 #aboutOmidRow {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: space-between;
 }
 
 .aboutOmidCol {
@@ -327,6 +335,8 @@ nav img {
 .prodCatFlexRow {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .prodCatFlexCol {

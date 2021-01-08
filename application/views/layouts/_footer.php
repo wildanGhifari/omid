@@ -47,7 +47,7 @@
                         <h5><strong>Discover</strong></h5>
                         <ul class="list-group">
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">Blog</a>
+                                <a class="text-white" href="<?= base_url('blog') ?>">Blog</a>
                             </li>
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
                                 <a class="text-white" href="">Recipes</a>

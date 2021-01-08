@@ -8,7 +8,7 @@ class Blog extends MY_Controller
     public function index($page = null)
     {
         $data['title']      = 'Blog | Omid Health Style';
-        $data['contnet']    = $this->blog->select([
+        $data['content']    = $this->blog->select([
             'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description',
             'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
         ])

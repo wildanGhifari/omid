@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Content</label>
-                            <?= form_textarea(['name' => 'content', 'value' => $input->content, 'row' => 4, 'class' => 'form-control', 'id' => 'blogTextarea']) ?>
+                            <?= form_textarea(['name' => 'content', 'value' => $input->content, 'row' => 4, 'class' => 'form-control', 'id' => 'contentBlogTextarea']) ?>
                             <?= form_error('content') ?>
                         </div>
                         <div class="form-group">

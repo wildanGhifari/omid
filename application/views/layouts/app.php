@@ -42,6 +42,20 @@
             selector: '#myTextarea',
             plugins: 'lists advlist'
         });
+
+        tinymce.init({
+            selector: '#blogTextarea',
+            height: 300,
+            plugins: 'link image code',
+            relative_urls: false,
+        });
+
+        tinymce.init({
+            selector: '#contentBlogTextarea',
+            height: 300,
+            plugins: 'link image code',
+            relative_urls: false,
+        });
     </script>
 </body>
 

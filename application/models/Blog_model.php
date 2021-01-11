@@ -14,6 +14,7 @@ class Blog_model extends MY_Model
             'slug'              => '',
             'title'             => '',
             'description'       => '',
+            'content'           => '',
             'image'             => ''
         ];
     }

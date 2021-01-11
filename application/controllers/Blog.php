@@ -51,6 +51,43 @@ class Blog extends MY_Controller
         $this->view($data);
     }
 
+    public function search($page = null)
+    {
+        if (isset($_POST['keyword'])) {
+            $this->session->set_userdata('keyword', $this->input->post('keyword'));
+        } else {
+            redirect(base_url('blog'));
+        }
+
+        $keyword            = $this->session->userdata('keyword');
+        $data['title']      = 'Blog | Omid Health Style';
+        $data['content']    = $this->blog->select([
+            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content',
+            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
+        ])
+            ->join('blog_category')
+            ->like('blog.title', $keyword)
+            ->orlike('blog.description', $keyword)
+            ->orlike('blog_category.title', $keyword)
+            ->paginate($page)
+            ->get();
+        $data['total_rows'] = $this->blog->like('blog.title', $keyword)->orlike('description', $keyword)->count();
+        $data['pagination'] = $this->blog->makePagination(
+            base_url('blog/search'),
+            3,
+            $data['total_rows']
+        );
+        $data['page']       = 'pages/blog/index';
+
+        $this->view($data);
+    }
+
+    public function reset()
+    {
+        $this->session->unset_userdata('keyword');
+        redirect(base_url('blog'));
+    }
+
     public function create()
     {
         if (!$_POST) {

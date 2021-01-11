@@ -353,7 +353,6 @@ nav img {
 }
 
 .flexCol-blog {
-	padding: 24px 16px;
 	flex: 25%;
 	max-width: 25%;
 }
@@ -364,9 +363,11 @@ nav img {
 	color: rgb(116, 116, 116);
 }
 
-#blog-detail img {
-	margin: 24px 0;
+#blog-detail {
+	padding: 0;
+	width: auto;
 }
+
 #blog-detail span {
 	font-size: 20px;
 	font-weight: 300;
@@ -374,6 +375,10 @@ nav img {
 }
 #blog-detail p {
 	margin-top: 24px;
+}
+#blog-detail .container img {
+	width: 100% !important;
+	height: auto !important;
 }
 /* END OF BLOG PAGE */
 

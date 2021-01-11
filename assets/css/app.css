@@ -362,6 +362,16 @@ nav img {
 	font-size: 14px;
 	color: rgb(116, 116, 116);
 }
+
+#blog-detail img {
+	margin: 24px 0;
+}
+
+#blog-detail span {
+	font-size: 20px;
+	font-weight: 300;
+	font-style: italic;
+}
 /* END OF BLOG PAGE */
 
 /* DETAIL PRODUCT PAGE CSS */

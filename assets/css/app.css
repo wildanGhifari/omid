@@ -307,7 +307,6 @@ nav img {
 	padding: 5% 0;
 }
 /* END OF CTA SIGNUP */
-
 /* END OF HOME PAGE CSS */
 
 /* ABOUT US PAGE */
@@ -343,8 +342,37 @@ nav img {
 	flex: 20%;
 	max-width: 20%;
 }
-
 /* END OF ABOUT US PAGE */
+
+/* BLOG PAGE */
+.flexRow-blog {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.flexCol-blog {
+	flex: 33.3%;
+	max-width: 33.3%;
+}
+
+.card-deck .card .card-body p {
+	margin-top: 24px;
+	font-size: 14px;
+	color: rgb(116, 116, 116);
+}
+
+#blog-detail img {
+	margin: 24px 0;
+}
+
+#blog-detail span {
+	font-size: 20px;
+	font-weight: 300;
+	font-style: italic;
+}
+/* END OF BLOG PAGE */
 
 /* DETAIL PRODUCT PAGE CSS */
 .detailProductCon {
@@ -487,6 +515,20 @@ nav img {
 	}
 	/* END OF ABOUT US PAGE */
 
+	/* BLOG PAGE */
+	.flexRow-blog {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.flexCol-blog {
+		flex: 33.3%;
+		max-width: 33.3%;
+	}
+	/* END OF BLOG PAGE */
+
 	/* DETAIL PRODUCT PAGE CSS */
 	.detailProductCon {
 		padding: 5% 0;
@@ -624,6 +666,20 @@ nav img {
 		padding: 0 10px;
 	}
 	/* END OF ABOUT US PAGE */
+
+	/* BLOG PAGE */
+	.flexRow-blog {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.flexCol-blog {
+		flex: 50%;
+		max-width: 50%;
+	}
+	/* END OF BLOG PAGE */
 
 	/* DETAIL PRODUCT PAGE CSS */
 	.detailProductCon {
@@ -806,6 +862,20 @@ nav img {
 		width: 100%;
 	}
 	/* END OF ABOUT US PAGE */
+
+	/* BLOG PAGE */
+	.flexRow-blog {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.flexCol-blog {
+		flex: 100%;
+		max-width: 100%;
+	}
+	/* END OF BLOG PAGE */
 
 	/* DETAIL PRODUCT PAGE CSS */
 	.detailProductCon {

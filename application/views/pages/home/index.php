@@ -73,11 +73,11 @@
                 <?php endforeach ?>
             </div>
 
-            <nav aria-label="Page navigation example">
+            <!-- <nav aria-label="Page navigation example">
                 <div class="row justify-content-center">
                     <?= $pagination; ?>
                 </div>
-            </nav>
+            </nav> -->
 
             <div class="row justify-content-center">
                 <a style="letter-spacing: 0.1em;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>

@@ -1,5 +1,5 @@
 <main role="main">
-    <div class="container-xl" style="padding: 5% 0;">
+    <div class="container-xl" style="padding: 5%;">
         <div class="row">
             <div id="blog-detail" class="col-md-9">
                 <?php foreach ($blog as $row) : ?>

@@ -22,7 +22,40 @@
                     </div>
                 </div>
             <?php endif ?>
-            <div class="flexRow-blog mt-4">
+            <div class="row mt-3">
+                <?php foreach ($content as $row) : ?>
+                    <div class="col-md-3 mb-4">
+                        <div class="card" style="min-height: 200px !important;">
+                            <a href="<?= base_url("blog/detail/$row->slug") ?>">
+                                <img src="<?= $row->image ? base_url("images/blog/$row->image") : base_url("images/blog/default.jpg") ?>" alt="<?= $row->blog_title; ?>" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $row->blog_title; ?></h5>
+                                <p class="card-text"><?= $row->description ?></p>
+                                <a class="float-left" href="<?= base_url("blog/detail/$row->slug") ?>">Read More</a>
+                                <div class="float-right">
+                                    <?php if ($this->session->userdata('role') == 'admin') : ?>
+                                        <?= form_open(base_url("/blog/delete/$row->id"), ['method' => 'POST']) ?>
+                                        <?= form_hidden('id', $row->id) ?>
+                                        <a href="<?= base_url("/blog/edit/$row->id") ?>"><i class="fas fa-edit text-info"></i></a>
+                                        <button style="border: none; background-color: #fff;" class="ml-3" type="submit" onclick="return confirm('Are you sure?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
+                                        <?= form_close() ?>
+                                    <?php endif ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+
+
+
+
+
+
+            <!-- <div class="flexRow-blog mt-4">
                 <?php foreach ($content as $row) : ?>
                     <div class="flexCol-blog">
                         <div class="card">
@@ -48,7 +81,7 @@
                         </div>
                     </div>
                 <?php endforeach ?>
-            </div>
+            </div> -->
         </div>
     </section>
 

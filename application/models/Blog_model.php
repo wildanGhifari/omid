@@ -14,6 +14,7 @@ class Blog_model extends MY_Model
             'slug'              => '',
             'title'             => '',
             'description'       => '',
+            'content'           => '',
             'image'             => ''
         ];
     }
@@ -39,6 +40,11 @@ class Blog_model extends MY_Model
             [
                 'field' => 'description',
                 'label' => 'Description',
+                'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'content',
+                'label' => 'Content',
                 'rules' => 'trim|required'
             ]
         ];

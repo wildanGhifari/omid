@@ -42,6 +42,22 @@
             selector: '#myTextarea',
             plugins: 'lists advlist'
         });
+
+        tinymce.init({
+            selector: '#blogTextarea',
+            height: 300,
+            plugins: 'link image code',
+            relative_urls: false,
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+        });
+
+        tinymce.init({
+            selector: '#contentBlogTextarea',
+            height: 300,
+            plugins: 'link image code',
+            relative_urls: false,
+            content_style: 'body { font-family: "Open Sans", sans-serif; font-size:16px }'
+        });
     </script>
 </body>
 

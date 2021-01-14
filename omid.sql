@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jan 2021 pada 02.23
+-- Waktu pembuatan: 14 Jan 2021 pada 10.44
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.34
 
@@ -87,8 +87,7 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`id`, `id_user`, `id_product`, `qty`, `weight`, `subtotal`) VALUES
 (58, 1, 2, 1, 500, 70700),
-(59, 1, 4, 1, 500, 41864),
-(60, 4, 4, 1, 500, 41864);
+(59, 1, 4, 1, 500, 41864);
 
 -- --------------------------------------------------------
 
@@ -112,7 +111,7 @@ INSERT INTO `category` (`id`, `slug`, `title`) VALUES
 (3, 'dried-fresh-fruits', 'Dried & Fresh Fruits'),
 (4, 'seeds-kernels', 'Seeds/Kernels'),
 (5, 'rice-grains', 'Rice / Grains'),
-(6, 'diary-product', 'Diary Product'),
+(6, 'dairy-product', 'Dairy Product'),
 (7, 'cooking', 'Cooking'),
 (8, 'breakfast', 'Breakfast'),
 (9, 'home-made', 'Home Made'),
@@ -161,7 +160,8 @@ INSERT INTO `orders` (`id`, `id_user`, `date`, `invoice`, `total`, `name`, `addr
 (13, 1, '2021-01-07', '120210107142506', 354408, 'Wildan Ghifari', 'Jalan Bendungan Hilir Gg. Pancamarga No. 7, RT/RW 007/001\r\nKecamatan Tanah Abang, Kelurahan Bendungan Hilir', '', '', 0, '', '', '088888888888', 'waiting'),
 (14, 1, '2021-01-07', '120210107142632', 354408, 'TEST lagi', 'test lagi', '', '', 0, '', '', '088888888888', 'waiting'),
 (15, 4, '2021-01-07', '420210107143014', 213110, 'omid test', 'omid test', '', '', 0, '', '', '088888888888', 'success'),
-(16, 4, '2021-01-07', '420210107160734', 137360, 'Omid Test lagi', 'omid test lagi', '', '', 0, '', '', '088888888888', 'success');
+(16, 4, '2021-01-07', '420210107160734', 137360, 'Omid Test lagi', 'omid test lagi', '', '', 0, '', '', '088888888888', 'success'),
+(17, 4, '2021-01-14', '420210114145421', 67864, 'test omid', 'jalan jalan', '', '', 0, '', '', '088888888888', 'waiting');
 
 -- --------------------------------------------------------
 
@@ -230,7 +230,8 @@ INSERT INTO `orders_detail` (`id`, `id_orders`, `id_product`, `qty`, `weight`, `
 (20, 15, 2, 1, 500, 70700),
 (21, 15, 3, 1, 500, 75750),
 (22, 16, 1, 1, 500, 66660),
-(23, 16, 2, 1, 500, 70700);
+(23, 16, 2, 1, 500, 70700),
+(24, 17, 4, 1, 500, 41864);
 
 -- --------------------------------------------------------
 
@@ -366,6 +367,36 @@ INSERT INTO `product` (`id`, `id_category`, `slug`, `title`, `description`, `pri
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `reseller`
+--
+
+CREATE TABLE `reseller` (
+  `id` int(11) NOT NULL,
+  `id_reseller_category` int(11) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(5000) NOT NULL,
+  `price` int(11) NOT NULL,
+  `weight` int(6) NOT NULL,
+  `is_available` tinyint(1) NOT NULL DEFAULT 1,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `reseller_category`
+--
+
+CREATE TABLE `reseller_category` (
+  `id` int(11) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -441,6 +472,18 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `reseller`
+--
+ALTER TABLE `reseller`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `reseller_category`
+--
+ALTER TABLE `reseller_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -478,7 +521,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders_confirm`
@@ -490,13 +533,25 @@ ALTER TABLE `orders_confirm`
 -- AUTO_INCREMENT untuk tabel `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+
+--
+-- AUTO_INCREMENT untuk tabel `reseller`
+--
+ALTER TABLE `reseller`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `reseller_category`
+--
+ALTER TABLE `reseller_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

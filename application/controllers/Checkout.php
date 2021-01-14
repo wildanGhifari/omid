@@ -4,7 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Checkout extends MY_Controller
 {
-
     private $id;
 
     public function __construct()
@@ -22,8 +21,15 @@ class Checkout extends MY_Controller
 
     public function index($input = null)
     {
-        $this->checkout->table  = 'cart';
+        $this->load->library('rajaongkir');
+        $data['provinces'] = json_decode($this->rajaongkir->province());
 
+        // Kode kurir: jne, pos, tiki, rpx, pandu, wahana, sicepat, jnt, pahala, sap, jet, indah, dse, slis, first, ncs, star, ninja, lion, idl, rex, ide, sentral.
+        $data['couriers'] = [
+            ['id'=>'jne','name'=>'JNE'],
+            ['id'=>'pos','name'=>'Pos Indonesia']
+        ];
+        $this->checkout->table  = 'cart';
         $data['cart']    = $this->checkout->select([
             'cart.id', 'cart.qty', 'cart.subtotal',
             'product.title', 'product.image', 'product.price', 'product.weight'
@@ -68,7 +74,7 @@ class Checkout extends MY_Controller
             'id_user'       => $this->id,
             'date'          => date('Y-m-d'),
             'invoice'       => $this->id . date('YmdHis'),
-            'total'         => $total,
+            'total'         => str_replace(".", "", $this->input->post('total')),
             'name'          => $input->name,
             'address'       => $input->address,
             'phone'         => $input->phone,

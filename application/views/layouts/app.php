@@ -34,6 +34,7 @@
     <script src="<?= base_url('/assets/libs/jquery/jquery-3.5.1.min.js') ?>"></script>
     <script src="<?= base_url('/assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('/assets/js/app.js') ?>"></script>
+    <script src="<?= base_url('/assets/js/ongkir.js') ?>"></script>
 
     <!-- tinyMCE -->
     <script src="https://cdn.tiny.cloud/1/5iycmpuhldf0ioeamw67q9wxfok36a5hjlozduy32yfbl4d5/tinymce/4.4/tinymce.min.js" referrerpolicy="origin"></script>

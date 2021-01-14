@@ -22,7 +22,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h6 class="float-left"><strong>Total</strong></h6>
-                                        <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.') ?></strong></h6>
+                                        <h6 class="float-right"><strong>Rp. <span class="total"></span></strong></h6>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -54,21 +55,29 @@
                                 <?= form_error('address') ?>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Province</label>
-                                        <select class="form-control" name="nama-provinsi" id="">
-
+                                        <select class="form-control" name="nama-provinsi" id="province" onChange="load_city()">
+                                        <?php
+                                        foreach ($provinces->rajaongkir->results as $province) {
+                                            echo "<option value='".$province->province_id."'>".$province->province."</option>";
+                                        }
+                                        ?>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">District</label>
-                                        <select class="form-control" name="nama-distrik" id="">
-
-                                        </select>
+                                        <span class="district"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Sub District</label>
+                                        <span class="sub-district"></span>
                                     </div>
                                 </div>
                             </div>
@@ -76,8 +85,12 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Courier</label>
-                                        <select class="form-control" name="nama-ekspedisi" id="">
-
+                                        <select class="form-control" name="nama-ekspedisi" id="courier" onChange='count_cost()'>
+                                            <?php
+                                            foreach ($couriers as $courier) {
+                                                echo "<option value=".$courier['id'].">".$courier['name']."</option>";
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -85,16 +98,15 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Total Weight</label>
-                                        <input type="number" class="form-control" name="total-berat" id="" value="<?= $totalWeight; ?>" readonly>
+                                        <input type="number" class="form-control" name="total-berat" id="weight" value="<?= $totalWeight; ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Shipping package</label>
-                                        <select class="form-control" name="nama-paket" id="">
-
-                                        </select>
+                                        <span class="cost"></span>
+                                        <input type="hidden" name="total" id="total">
                                     </div>
                                 </div>
                             </div>
@@ -107,3 +119,8 @@
         </div>
     </div>
 </main>
+
+<div class="modal"><!-- Place at bottom of page --></div>
+
+
+

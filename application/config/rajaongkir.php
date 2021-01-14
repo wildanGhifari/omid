@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * Silakan daftar akun di RajaOngkir.com untuk mendapatkan API Key
  * http://rajaongkir.com/akun/daftar
  */
-$config['rajaongkir_api_key'] = "";
+$config['rajaongkir_api_key'] = "cee127c76f3c96e79af0061cd32a3b5a";
 
 /**
  * RajaOngkir account type: starter / basic / pro

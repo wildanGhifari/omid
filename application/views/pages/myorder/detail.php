@@ -29,39 +29,10 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h6 class="float-left">Total</h6>
-                                    <h6 class="float-right">Rp. <?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.') ?></h6>
+                                    <h6 class="float-right">Rp. <?= number_format($order->total, 0, ',', '.') ?></h6>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div style="overflow: auto;">
-                            <table class=" table">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th class="text-center">Price</th>
-                                        <th class="text-center">Quantity</th>
-                                        <th class="text-center">Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($order_detail as $row) : ?>
-                                        <tr>
-                                            <td>
-                                                <p><img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url('/images/product/default.jpg') ?>" alt="" height="50"><strong><?= $row->title; ?></strong>
-                                                </p>
-                                            </td>
-                                            <td class="text-center">Rp.<?= number_format($row->price, 0, ',', '.') ?>,-</td>
-                                            <td class="text-center"><?= $row->qty; ?></td>
-                                            <td class="text-center">Rp.<?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                    <tr>
-                                        <td colspan="3"><strong>Total :</strong></td>
-                                        <td class="text-center"><strong>Rp.<?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> -->
                     </div>
                     <?php if ($order->status == 'waiting') : ?>
                         <div class="card-footer">

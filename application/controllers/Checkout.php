@@ -26,8 +26,12 @@ class Checkout extends MY_Controller
 
         // Kode kurir: jne, pos, tiki, rpx, pandu, wahana, sicepat, jnt, pahala, sap, jet, indah, dse, slis, first, ncs, star, ninja, lion, idl, rex, ide, sentral.
         $data['couriers'] = [
-            ['id'=>'jne','name'=>'JNE'],
-            ['id'=>'pos','name'=>'Pos Indonesia']
+            ['id' => 'jne', 'name' => 'JNE'],
+            ['id' => 'jnt', 'name' => 'JNT'],
+            ['id' => 'pos', 'name' => 'Pos Indonesia'],
+            ['id' => 'tiki', 'name' => 'TIKI'],
+            // ['id' => 'sicepat', 'name' => 'SICEPAT'],
+            ['id' => 'ninja', 'name' => 'NINJA EXPRESS']
         ];
         $this->checkout->table  = 'cart';
         $data['cart']    = $this->checkout->select([

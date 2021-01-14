@@ -17,7 +17,7 @@
             <div class="col-md-9 mb-3">
                 <div class="card">
                     <div class="card-header lead font-weight-bold">
-                        <strong>My Last Order</strong>
+                        <strong>My Order History</strong>
                     </div>
                     <div class="card-body" style="overflow: auto;">
                         <table class="table table-striped table-hover">

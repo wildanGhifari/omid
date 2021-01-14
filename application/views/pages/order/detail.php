@@ -22,7 +22,7 @@
                                     <div class="row px-0">
                                         <div class="col-md-12">
                                             <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
-                                            <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                            <p class="float-right">Rp.<?= number_format($row->subtotal, 0, ',', '.'); ?></p>
                                         </div>
                                     </div>
                                 <?php endforeach ?>
@@ -30,7 +30,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h6 class="float-left">Total</h6>
-                                        <h6 class="float-right">Rp. <?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.') ?></h6>
+                                        <h6 class="float-right">Rp. <?= number_format($order->total, 0, ',', '.') ?></h6>
+                                        <!-- <h6 class="float-right">Rp. <?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.') ?></h6> -->
                                     </div>
                                 </div>
                             </div>

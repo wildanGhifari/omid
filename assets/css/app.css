@@ -28,6 +28,11 @@ body {
 }
 
 /* UTILITY */
+
+#terms ul li {
+	margin-left: 32px;
+}
+
 h1,
 h2,
 h3,

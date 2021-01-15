@@ -84,8 +84,8 @@
                 <p>Copyright <span>&copy;</span>2020 - PT. Omid Health Style. All rights reserved.</p>
             </div>
             <div class="col-md-6 text-right">
-                <a class="mr-3 text-dark" href="">Privacy Policy</a>
-                <a class="mr-3 text-dark" href="">Term of Use</a>
+                <a class="mr-3 text-dark" href="<?= base_url('privacy') ?>">Privacy Policy</a>
+                <a class="mr-3 text-dark" href="<?= base_url('terms') ?>">Term of Use</a>
             </div>
         </div>
     </div>

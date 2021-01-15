@@ -2,19 +2,25 @@
     <?php $this->load->view('layouts/_alert') ?>
 
     <div class="container-xl marginTop">
-        <div class="row justify-content-between">
-            <div class="col-md-12 mb-3">
-                <h5 class="float-left"><?= isset($category) ? $category : 'All Category' ?></h5>
-                <div class="dropdown float-right">
-                    <a class="btn btn-secondary dropdown-toggle rounded-0" id="dropdown-1" data-bs-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort Price By:
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdown-1">
-                        <a href="<?= base_url("/shop/sortby/asc") ?>" class="dropdown-item">Lowest</a>
-                        <a href="<?= base_url("/shop/sortby/desc") ?>" class="dropdown-item">Highest</a>
-                    </div>
+        <?php if ($this->session->userdata('role') == 'admin') : ?>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a style="width: 100%;" href="<?= base_url('reseller/create') ?>" class="btn btn-success rounded-0">Add New B2B Product</a>
+                </div>
+                <div class="col-md-9 mb-3">
+                    <form action="<?= base_url("reseller/search") ?>" method="POST">
+                        <div class="input-group border">
+                            <input type="text" name="keyword" class="form-control form-control rounded-0 border-0" placeholder="search" value="<?= $this->session->userdata('keyword') ?>">
+                            <div class="input-group-append">
+                                <button class="btn bg-white rounded-0 border-0" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <a href="<?= base_url("reseller/reset") ?>" class="btn bg-white rounded-0 border-0"><i class="fas fa-eraser"></i></a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
+        <?php endif ?>
     </div>
 </main>

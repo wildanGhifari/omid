@@ -97,29 +97,29 @@
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
                             <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Lorem Ipsum</h6>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, earum.</p>
+                            <h6>Fast Delivery</h6>
+                            <p>We will process every purchase on the same day, just #StayAtHome, choose the time of delivery and We bring healthy foods to your lifestyle!</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
                             <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Lorem Ipsum</h6>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, earum.</p>
+                            <h6>100% Original</h6>
+                            <p>The products we sell have high quality certificates and there are halal certificates!</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
                             <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Lorem Ipsum</h6>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, earum.</p>
+                            <h6>Premium Service</h6>
+                            <p>There are attractive promos every week, special gifts, and guaranteed free delivery (read our Terms and Conditions)</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
                             <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Lorem Ipsum</h6>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, earum.</p>
+                            <h6>Fresh Goods Guarantee</h6>
+                            <p>All products are purchased by our personal shopper who has been in the F&B field for years.</p>
                         </div>
                     </div>
                 </div>

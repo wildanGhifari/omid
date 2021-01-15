@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid" style="padding: 10% 0;">
     <div class="container text-center text-white" style="margin-top:auto;" style="background-color: #fff;">
         <h1>About Us</h1>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, accusamus mollitia! In illum accusamus ex?</p>
+        <p class="lead">We Bring Healthy Foods To Your Lifestyle</p>
     </div>
     <!-- <span style="margin-left:20px; margin-top:30px">Photo by <a href="https://unsplash.com/@maddibazzocco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maddi Bazzocco</a> on <a href="https://unsplash.com/s/photos/nuts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
 </div>
@@ -15,8 +15,12 @@
                 </div>
 
                 <div class="aboutOmidCol">
-                    <h3>Who we are?</h3>
-                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit officia sed aperiam obcaecati quisquam, alias at adipisci dolores eius cupiditate pariatur ipsa suscipit totam fugit ea corporis quos consequuntur. Voluptatum, numquam. Officiis laudantium magnam est ipsa fugiat consectetur amet, ullam, dignissimos error aperiam minus recusandae? Molestiae cum eius neque odit autem molestias corporis aliquid minima totam esse nihil vero dolorem quo, optio veniam consequuntur illum, labore quaerat quibusdam. Nesciunt reprehenderit delectus ipsum quaerat quisquam quos?</p>
+                    <h3>Our Story</h3>
+                    <p class="mt-3">Daniel started Omid Health Style because healthy food which is currently being sold in the market is not completely natural, he has a different perspective. Healthy food is like the love of a mother who often takes care of her child, just like healthy food with natural ingredients which also plays a role in maintaining the health of our bodies.</p>
+                    <p class=" mb-3">That is why we need to keep our bodies healthy like mothers take care of us when we are sick. He built the Omid Health Style with natural natural ingredients from nature.</p>
+                    <p class=" mb-3">Along the way, we will continue to generate the latest product innovations with the basic concept of natural from nature.</p>
+                    <p class=" mb-3">We want to be a mother for you in maintaining the health of your body.</p>
+                    <p class=" mb-3">Warm Regards, Omid Health Style</p>
                 </div>
             </div>
         </div>
@@ -28,7 +32,7 @@
                 <div class="aboutOmidCol" id="blogDesc">
                     <h3>Read our blogs</h3>
                     <p class="mt-3">Fill your days by reading our blog and get insights about healthy food, the benefits of eating healthy food, why you should start paying attention to your diet and much more</p>
-                    <a class="btn btn-success rounded-pill mt-4" href="">Read Here</a>
+                    <a class="btn btn-success rounded-pill mt-4" href="<?= base_url('blog') ?>">Read Here</a>
                 </div>
 
                 <div class="aboutOmidCol" id="blogIls">

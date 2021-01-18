@@ -59,11 +59,11 @@
                                     <div class="form-group">
                                         <label for="">Province</label>
                                         <select class="form-control" name="nama-provinsi" id="province" onChange="load_city()">
-                                            <?php
-                                            foreach ($provinces->rajaongkir->results as $province) {
-                                                echo "<option value='" . $province->province_id . "'>" . $province->province . "</option>";
-                                            }
-                                            ?>
+                                        <?php
+                                        foreach ($provinces->rajaongkir->results as $province) {
+                                            echo "<option value='".$province->province_id.'-'.$province->province."'>".$province->province."</option>";
+                                        }
+                                        ?>
                                         </select>
                                     </div>
                                 </div>

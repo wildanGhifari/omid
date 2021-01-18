@@ -74,6 +74,16 @@ class Checkout extends MY_Controller
             ->get('cart')
             ->row()
             ->subtotal;
+
+
+        // parameter untuk membaca inputan ====================
+        $province       = explode('-', $this->input->post('nama-provinsi'))[1];
+        $city           = explode('-', $this->input->post('city'))[1];
+        $subdistrict    = explode('-', $this->input->post('subdistrict'))[1];
+        $service        = explode('-', $this->input->post('service'))[1];
+        $ongkir         = explode('-', $this->input->post('service'))[0];
+
+        
         $data = [
             'id_user'       => $this->id,
             'date'          => date('Y-m-d'),

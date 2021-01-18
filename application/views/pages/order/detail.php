@@ -16,7 +16,9 @@
                                 <p>Tanggal : <?= str_replace('-', '/', date("d-m-Y", strtotime($order->date))) ?></p>
                                 <p>Nama : <?= $order->name; ?></p>
                                 <p>Phone : <?= $order->phone; ?></p>
-                                <p>Alamat : <?= $order->address; ?></p>
+                                <p>Alamat : <?= $order->address; ?>, <?= $order->province; ?>,
+                                    <?= $order->district; ?>, <?= $order->subdistrict; ?>
+                                </p>
                                 <hr>
                                 <?php foreach ($order_detail as $row) : ?>
                                     <div class="row px-0">
@@ -26,6 +28,12 @@
                                         </div>
                                     </div>
                                 <?php endforeach ?>
+                                <div class="row px-0">
+                                    <div class="col-md-12">
+                                        <p class="float-left">Paket Pengiriman</p>
+                                        <p class="float-right"><?= $order->courier ?>, <?= $order->package ?></p>
+                                    </div>
+                                </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-12">

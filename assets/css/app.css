@@ -364,7 +364,7 @@ nav img {
 }
 
 .card .card-body p {
-	margin-top: 24px;
+	/* margin-top: 24px; */
 	font-size: 14px;
 	color: rgb(116, 116, 116);
 }

@@ -83,7 +83,7 @@ class Checkout extends MY_Controller
         $service        = explode('-', $this->input->post('service'))[1];
         $ongkir         = explode('-', $this->input->post('service'))[0];
 
-        
+
         $data = [
             'id_user'       => $this->id,
             'date'          => date('Y-m-d'),
@@ -91,6 +91,11 @@ class Checkout extends MY_Controller
             'total'         => str_replace(".", "", $this->input->post('total')),
             'name'          => $input->name,
             'address'       => $input->address,
+            'province'      => $province,
+            'district'      => $city,
+            'subdistrict'   => $subdistrict,
+            'courier'       => $this->input->post('nama-ekspedisi'),
+            'package'       => $service . '-' . $ongkir,
             'phone'         => $input->phone,
             'status'        => 'waiting'
         ];

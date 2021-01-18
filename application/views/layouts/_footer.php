@@ -50,10 +50,10 @@
                                 <a class="text-white" href="<?= base_url('blog') ?>">Blog</a>
                             </li>
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">Recipes</a>
+                                <a class="text-white" href="<?= base_url('recipes') ?>">Recipes</a>
                             </li>
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">Customer Testimonials</a>
+                                <a class="text-white" href="<?= base_url('testimonial') ?>">Customer Testimonials</a>
                             </li>
                         </ul>
                     </div>
@@ -64,10 +64,10 @@
                         <h5><strong>Have Question?</strong></h5>
                         <ul class="list-group">
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">Contact Us</a>
+                                <a class="text-white" href="<?= base_url('contact') ?>">Contact Us</a>
                             </li>
                             <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                                <a class="text-white" href="">FAQs</a>
+                                <a class="text-white" href="<?= base_url('faq') ?>">FAQs</a>
                             </li>
                         </ul>
                     </div>

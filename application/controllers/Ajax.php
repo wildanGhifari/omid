@@ -63,10 +63,10 @@ class Ajax extends MY_Controller
     {
         $ongkir = (int) $this->input->post('ongkir');
         $sql = "select sum(c.qty*p.price) as subtotal from cart as c
-        left JOIN product as p on p.id=c.id_product where c.id_user=".$this->id;
+        left JOIN product as p on p.id=c.id_product where c.id_user=" . $this->id;
         $cart = $this->db->query($sql)->result_array();
-        $subtotal = $cart[0]['subtotal']??0;
-        echo number_format($subtotal+$ongkir, 0, ',', '.');
+        $subtotal = $cart[0]['subtotal'] ?? 0;
+        echo number_format($subtotal + $ongkir, 0, ',', '.');
     }
 }
 

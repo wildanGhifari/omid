@@ -23,7 +23,7 @@
                                     <div class="col-md-12">
                                         <h6 class="float-left"><strong>Total</strong></h6>
                                         <h6 class="float-right"><strong>Rp. <span class="total"></span></strong></h6>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                         <select class="form-control" name="nama-ekspedisi" id="courier" onChange='count_cost()'>
                                             <?php
                                             foreach ($couriers as $courier) {
-                                                echo "<option value=".$courier['id'].">".$courier['name']."</option>";
+                                                echo "<option value=" . $courier['id'] . ">" . $courier['name'] . "</option>";
                                             }
                                             ?>
                                         </select>
@@ -120,7 +120,6 @@
     </div>
 </main>
 
-<div class="modal"><!-- Place at bottom of page --></div>
-
-
-
+<div class="modal">
+    <!-- Place at bottom of page -->
+</div>

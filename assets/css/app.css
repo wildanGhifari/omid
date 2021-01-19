@@ -256,6 +256,9 @@ nav img {
 .proDesc ul > li {
 	margin-left: 20px;
 }
+.proDesc ol > li {
+	margin-left: 20px;
+}
 
 /* END OF UTILITY */
 

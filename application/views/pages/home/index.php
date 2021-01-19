@@ -196,57 +196,31 @@
             <h3>Get Insights</h3>
             <p class="lead">Read our blog, get insights on healthy food and much more.</p>
             <div class="flexRow mt-4">
-                <div class="flexCol">
-                    <div class="card">
-                        <a href="#"><img src="<?= base_url("/images/blog/1.jpg") ?>" class="card-img-top blog"></a>
-                        <div class="card-body">
-                            <p class="date">November 18, 2020</p>
-                            <a href="">
-                                <h6 class="card-title text-dark">Lorem Ipsum is simply Dummy Text</h6>
+                <?php foreach ($blogs as $blog) : ?>
+                    <div class="flexCol">
+                        <div class="card">
+                            <a href="<?= base_url("blog/detail/$blog->slug") ?>">
+                                <img src="<?= $blog->image ? base_url("images/blog/$blog->image") : base_url("images/blog/default.jpg") ?>" alt="<?= $blog->blog_title; ?>" class="card-img-top" alt="...">
                             </a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis iure itaque quam sunt provident illum!</p>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $blog->blog_title; ?></h5>
+                                <p class="card-text"><?= $blog->description ?></p>
+                                <a class="float-left" href="<?= base_url("blog/detail/$blog->slug") ?>">Read More</a>
+                                <div class="float-right">
+                                    <?php if ($this->session->userdata('role') == 'admin') : ?>
+                                        <?= form_open(base_url("/blog/delete/$blog->id"), ['method' => 'POST']) ?>
+                                        <?= form_hidden('id', $blog->id) ?>
+                                        <a href="<?= base_url("/blog/edit/$blog->id") ?>"><i class="fas fa-edit text-info"></i></a>
+                                        <button style="border: none; background-color: #fff;" class="ml-3" type="submit" onclick="return confirm('Are you sure?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
+                                        <?= form_close() ?>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="flexCol">
-                    <div class="card">
-                        <a href="#"><img src="<?= base_url("/images/blog/3.jpg") ?>" class="card-img-top blog"></a>
-                        <div class="card-body">
-                            <p class="date">November 18, 2020</p>
-                            <a href="">
-                                <h6 class="card-title text-dark">Lorem Ipsum is simply Dummy Text</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis iure itaque quam sunt provident illum!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flexCol">
-                    <div class="card">
-                        <a href="#"><img src="<?= base_url("/images/blog/gal1.jpg") ?>" class="card-img-top blog"></a>
-                        <div class="card-body">
-                            <p class="date">November 18, 2020</p>
-                            <a href="">
-                                <h6 class="card-title text-dark">Lorem Ipsum is simply Dummy Text</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis iure itaque quam sunt provident illum!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flexCol">
-                    <div class="card">
-                        <a href="#"><img src="<?= base_url("/images/blog/gal2.jpg") ?>" class="card-img-top blog"></a>
-                        <div class="card-body">
-                            <p class="date">November 18, 2020</p>
-                            <a href="">
-                                <h6 class="card-title text-dark">Lorem Ipsum is simply Dummy Text</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis iure itaque quam sunt provident illum!</p>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </section>

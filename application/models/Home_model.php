@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Home_model extends MY_Model
 {
 
-    protected $table    = 'product';
+    public $table    = 'product';
     protected $perPage  = 8;
 }
 

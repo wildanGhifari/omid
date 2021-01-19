@@ -20,11 +20,19 @@ class Home extends My_Controller
             ->paginate($page)
             ->get();
         $data['total_rows'] = $this->home->where('product.is_available', 1)->count();
-        $data['pagination'] = $this->home->makePagination(
-            base_url('home'),
-            2,
-            $data['total_rows']
-        );
+
+        $this->home->table = 'blog';
+        $data['blogs'] = $this->home->select(
+            [
+                'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content',
+                'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
+            ]
+        )
+            ->join('blog_category')
+            ->paginate($page)
+            ->get();
+        $data['total_rows'] = $this->home->count();
+
         $data['page']   = 'pages/home/index';
 
         $this->view($data);

@@ -47,6 +47,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="card-footer">
+                        <a class="btn btn-success rounded-pill" href="<?= base_url('myorder') ?>">My Order List</a>
+                    </div>
                 </div>
             </div>
         </div>

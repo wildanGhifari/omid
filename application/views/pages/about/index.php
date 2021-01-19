@@ -1,9 +1,8 @@
-<div class="jumbotron jumbotron-fluid" style="padding: 10% 0;">
+<div class="jumbotron jumboAbout jumbotron-fluid" style="padding: 10% 0;">
     <div class="container text-center text-white" style="margin-top:auto;" style="background-color: #fff;">
         <h1>About Us</h1>
         <p class="lead">We Bring Healthy Foods To Your Lifestyle</p>
     </div>
-    <!-- <span style="margin-left:20px; margin-top:30px">Photo by <a href="https://unsplash.com/@maddibazzocco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maddi Bazzocco</a> on <a href="https://unsplash.com/s/photos/nuts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
 </div>
 
 <main role="main">

@@ -315,7 +315,7 @@ nav img {
 /* END OF HOME PAGE CSS */
 
 /* ABOUT US PAGE */
-.jumbotron {
+.jumbotron .jumboAbout {
 	background-image: url(../img/About.png);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -402,6 +402,26 @@ nav img {
 	float: right;
 }
 /* END OF CART PAGE */
+
+/* CONTACT US */
+.jumbotron .jumboContact {
+	background-image: url(../img/About.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#contact {
+	margin-top: -100px;
+	margin-bottom: 72px;
+}
+
+#contact textarea {
+	min-height: 120px;
+	width: 100%;
+	resize: vertical;
+}
+/* END OFCONTACT US */
 
 #chatBox {
 	border-radius: 100%;
@@ -915,4 +935,15 @@ nav img {
 		clear: both;
 	}
 	/* END OF CART PAGE */
+
+	/* CONTACT */
+	#contact {
+		margin-top: -60px;
+		margin-bottom: 36px;
+	}
+
+	#contact iframe {
+		height: 450px;
+	}
+	/* END OF CONTACT */
 }

@@ -83,7 +83,7 @@
             <div class="col-md-6">
                 <p>Copyright <span>&copy;</span>2020 - PT. Omid Health Style. All rights reserved.</p>
             </div>
-            <div class="col-md-6 text-right">
+            <div class="col-md-6 privacyTerms">
                 <a class="mr-3 text-dark" href="<?= base_url('privacy') ?>">Privacy Policy</a>
                 <a class="mr-3 text-dark" href="<?= base_url('terms') ?>">Term of Use</a>
             </div>

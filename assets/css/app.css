@@ -423,6 +423,12 @@ nav img {
 }
 /* END OFCONTACT US */
 
+/* FOOTER */
+.privacyTerms {
+	text-align: end;
+}
+/* END OF FOOTER */
+
 #chatBox {
 	border-radius: 100%;
 	background-color: #fff;
@@ -578,6 +584,12 @@ nav img {
 		float: right;
 	}
 	/* END OF CART PAGE */
+
+	/* FOOTER */
+	.privacyTerms {
+		text-align: end;
+	}
+	/* END OF FOOTER */
 }
 
 @media (max-width: 768px) {
@@ -735,6 +747,12 @@ nav img {
 		float: none;
 	}
 	/* END OF CART PAGE */
+
+	/* FOOTER */
+	.privacyTerms {
+		text-align: end;
+	}
+	/* END OF FOOTER */
 }
 
 @media (max-width: 576px) {
@@ -946,4 +964,10 @@ nav img {
 		height: 450px;
 	}
 	/* END OF CONTACT */
+
+	/* FOOTER */
+	.privacyTerms {
+		text-align: start;
+	}
+	/* END OF FOOTER */
 }

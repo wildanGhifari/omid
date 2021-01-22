@@ -96,28 +96,28 @@
                 <div class="row mt-5">
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
+                            <img src="<?= base_url('assets/img/fast delivery.png') ?>" height="30" class="card-img-top my-3 benefit-img">
                             <h6>Fast Delivery</h6>
                             <p>We will process every purchase on the same day, just #StayAtHome, choose the time of delivery and We bring healthy foods to your lifestyle!</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
+                            <img src="<?= base_url('assets/img/100Original.png') ?>" height="30" class="card-img-top my-3 benefit-img">
                             <h6>100% Original</h6>
                             <p>The products we sell have high quality certificates and there are halal certificates!</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
+                            <img src="<?= base_url('assets/img/premiumQuality.png') ?>" height="30" class="card-img-top my-3 benefit-img">
                             <h6>Premium Service</h6>
                             <p>There are attractive promos every week, special gifts, and guaranteed free delivery (read our Terms and Conditions)</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/organic.png') ?>" height="30" class="card-img-top my-3 benefit-img">
+                            <img src="<?= base_url('assets/img/fresh.png') ?>" height="30" class="card-img-top my-3 benefit-img">
                             <h6>Fresh Goods Guarantee</h6>
                             <p>All products are purchased by our personal shopper who has been in the F&B field for years.</p>
                         </div>

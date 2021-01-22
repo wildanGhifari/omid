@@ -24,7 +24,7 @@ class Ajax extends MY_Controller
         $cities     = json_decode($this->rajaongkir->city($provinceId));
         $select = "<select name='city' class='form-control' id='city' onChange='load_subdistrict()'>";
         foreach ($cities->rajaongkir->results as $city) {
-            $select .="<option value='".$city->city_id.'-'.$city->city_name."'>".$city->city_name."</option>";
+            $select .= "<option value='" . $city->city_id . '-' . $city->city_name . "'>" . $city->city_name . "</option>";
         }
         $select .= "</select>";
         echo $select;
@@ -37,7 +37,7 @@ class Ajax extends MY_Controller
         $subdistricts   = json_decode($this->rajaongkir->subdistrict($cityId));
         $select = "<select name='subdistrict' class='form-control' id='subdistrict' onChange='count_cost()'>";
         foreach ($subdistricts->rajaongkir->results as $subdistrict) {
-            $select .="<option value='".$subdistrict->subdistrict_id.'-'.$subdistrict->subdistrict_name."'>".$subdistrict->subdistrict_name."</option>";
+            $select .= "<option value='" . $subdistrict->subdistrict_id . '-' . $subdistrict->subdistrict_name . "'>" . $subdistrict->subdistrict_name . "</option>";
         }
         $select .= "</select>";
         echo $select;
@@ -53,7 +53,7 @@ class Ajax extends MY_Controller
         $cost           = json_decode($this->rajaongkir->cost($origin, $subdistrict, $weight, $courier));
         $select         = "<select name='service' class='form-control' id='service' onChange='getTotal()'>";
         foreach ($cost->rajaongkir->results[0]->costs as $service) {
-            $select .="<option value='".$service->cost[0]->value.'-'.$service->service."'>".$service->service.'-'.$service->cost[0]->value."</option>";
+            $select .= "<option value='" . $service->cost[0]->value . '-' . $service->service . "'>" . $service->service . ' - ' . number_format($service->cost[0]->value, 0, ',', '.') . ' (' . $service->cost[0]->etd . ')' . "</option>";
         }
         $select .= "</select>";
         echo $select;

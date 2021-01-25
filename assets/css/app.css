@@ -377,10 +377,13 @@ nav img {
 	height: auto;
 	margin: 24px 0;
 }
-
+#blog-detail ul li,
+ol li {
+	margin-left: 16px !important;
+}
 #blog-detail .container-xl a {
 	margin-top: 24px;
-	padding: 16px 24px;
+	padding: 8px 12px;
 	color: #fff;
 	background-color: var(--primary);
 }

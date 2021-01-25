@@ -198,7 +198,7 @@
             <div class="flexRow mt-4">
                 <?php foreach ($blogs as $blog) : ?>
                     <div class="flexCol">
-                        <div class="card">
+                        <div class="card mb-4">
                             <a href="<?= base_url("blog/detail/$blog->slug") ?>">
                                 <img src="<?= $blog->image ? base_url("images/blog/$blog->image") : base_url("images/blog/default.jpg") ?>" alt="<?= $blog->blog_title; ?>" class="card-img-top" alt="...">
                             </a>

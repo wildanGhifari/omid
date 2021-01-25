@@ -1,7 +1,40 @@
 <main role="main" class="container">
     <div class="container-xl" style="padding: 5% 0;">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="lead font-weight-bold">Detail Order <?= $order->invoice; ?></strong>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <?php foreach ($order_detail as $row) : ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
+                                        <p class="float-right font-weight-bold">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                            <div class="row px-0">
+                                <div class="col-md-12">
+                                    <p class="float-left">Paket Pengiriman</p>
+                                    <p class="float-right font-weight-bold"><?= $order->courier ?>, <?= $order->package ?></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="float-left">Total</h6>
+                                    <h6 class="float-right">Rp. <?= number_format($order->total, 0, ',', '.') ?></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
                 <div class="card">
                     <div class="card-header">
                         <strong class="lead font-weight-bold">Order Confirmation <?= $order->invoice; ?></strong>

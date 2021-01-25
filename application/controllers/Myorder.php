@@ -67,6 +67,13 @@ class Myorder extends My_Controller
             redirect(base_url('/myorder'));
         }
 
+        $this->myorder->table   = 'orders_detail';
+        $data['order_detail']   = $this->myorder->select([
+            'orders_detail.id_orders', 'orders_detail.id_product', 'orders_detail.qty',
+            'orders_detail.subtotal', 'product.title', 'product.image', 'product.price', 'product.weight'
+        ])
+            ->join('product')->where('orders_detail.id_orders', $data['order']->id)->get();
+
         if ($data['order']->status !== 'waiting') {
             $this->session->set_flashdata('warning', 'Proof of transfer has been sent.');
             redirect(base_url("myorder/detail/$invoice"));

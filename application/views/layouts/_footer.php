@@ -1,5 +1,5 @@
 <!-- WHATSAPP LINK -->
-<a id="chatBox" href=""><img style="width: 40px;" src="<?= base_url('assets/img/Wa.png') ?>"></a>
+<a id="chatBox" href="https://wa.link/cy8heu"><img style="width: 40px;" src="<?= base_url('assets/img/Wa.png') ?>"></a>
 
 
 <!-- FOOTER -->

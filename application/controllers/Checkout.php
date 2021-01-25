@@ -30,8 +30,10 @@ class Checkout extends MY_Controller
             ['id' => 'jnt', 'name' => 'JNT'],
             ['id' => 'pos', 'name' => 'Pos Indonesia'],
             ['id' => 'tiki', 'name' => 'TIKI'],
-            // ['id' => 'sicepat', 'name' => 'SICEPAT'],
-            ['id' => 'ninja', 'name' => 'NINJA EXPRESS']
+            ['id' => 'rpx', 'name' => 'RPX'],
+            ['id' => 'sicepat', 'name' => 'SICEPAT'],
+            ['id' => 'ninja', 'name' => 'NINJA EXPRESS'],
+            ['id' => 'wahana', 'name' => 'WAHANA'],
         ];
         $this->checkout->table  = 'cart';
         $data['cart']    = $this->checkout->select([

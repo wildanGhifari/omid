@@ -51,6 +51,20 @@ function count_cost(){
         success: function (data) {
             $('.cost').html(data);
             getTotal();
+            getOngkir();
+        }
+    });
+}
+
+function getOngkir() {
+    var ongkir = $("#service").val();
+    $.ajax({
+        url: '/omid/ajax/ongkir',
+        type: 'POST',
+        data:{ongkir:ongkir},
+        success: function (data) {
+            $('.ongkir').html(data);
+            $('#ongkir').val(data);
         }
     });
 }

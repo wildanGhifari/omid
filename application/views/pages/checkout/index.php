@@ -59,11 +59,11 @@
                                     <div class="form-group">
                                         <label for="">Province</label>
                                         <select class="form-control" name="nama-provinsi" id="province" onChange="load_city()">
-                                        <?php
-                                        foreach ($provinces->rajaongkir->results as $province) {
-                                            echo "<option value='".$province->province_id.'-'.$province->province."'>".$province->province."</option>";
-                                        }
-                                        ?>
+                                            <?php
+                                            foreach ($provinces->rajaongkir->results as $province) {
+                                                echo "<option value='" . $province->province_id . '-' . $province->province . "'>" . $province->province . "</option>";
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -107,6 +107,41 @@
                                         <label for="">Shipping package</label>
                                         <span class="cost"></span>
                                         <input type="hidden" name="total" id="total">
+                                        <input type="hidden" name="ongkir" id="ongkir">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header lead font-weight-bold">
+                                            <strong>My Cart Summary (<?= getCart(); ?>)</strong>
+                                        </div>
+                                        <div class="card-body">
+                                            <?php foreach ($cart as $row) : ?>
+                                                <div class="row px-0">
+                                                    <div class="col-md-12">
+                                                        <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
+                                                        <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach ?>
+                                            <div class="row px-0">
+                                                <div class="col-md-12">
+                                                    <p class="float-left">Shipping Cost</p>
+                                                    <p class="float-right">Rp. <span class="ongkir"></span></p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6 class="float-left"><strong>Total</strong></h6>
+                                                    <h6 class="float-right"><strong>Rp. <span class="total"></span></strong></h6>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

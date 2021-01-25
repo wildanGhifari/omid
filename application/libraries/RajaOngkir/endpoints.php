@@ -76,8 +76,8 @@ class Endpoints
             'origin' => $origin,
             'destination' => $destination,
             'weight' => $weight,
-            'destinationType'=>'subdistrict',
-            'originType'=>'subdistrict',
+            'destinationType' => 'subdistrict',
+            'originType' => 'subdistrict',
             'courier' => $courier
         );
         $rest_client = new RESTClient($this->api_key, 'cost', $this->account_type);

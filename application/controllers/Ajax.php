@@ -46,17 +46,27 @@ class Ajax extends MY_Controller
     public function cost()
     {
         $this->load->library('rajaongkir');
-        $origin         = "501";
+        $origin         = "2107";
         $subdistrict    = $this->input->post('subdistrict_id');
         $courier        = $this->input->post('courier');
         $weight         = $this->input->post('weight');
         $cost           = json_decode($this->rajaongkir->cost($origin, $subdistrict, $weight, $courier));
-        $select         = "<select name='service' class='form-control' id='service' onChange='getTotal()'>";
+        $select         = "<select name='service' class='form-control' id='service' onChange='getOngkir(), getTotal()'>";
         foreach ($cost->rajaongkir->results[0]->costs as $service) {
             $select .= "<option value='" . $service->cost[0]->value . '-' . $service->service . "'>" . $service->service . ' - ' . number_format($service->cost[0]->value, 0, ',', '.') . ' (' . $service->cost[0]->etd . ')' . "</option>";
         }
         $select .= "</select>";
         echo $select;
+    }
+
+    public function ongkir()
+    {
+        $ongkir = (int) $this->input->post('ongkir');
+        $sql = "select sum(c.qty*p.price) as subtotal from cart as c
+        left JOIN product as p on p.id=c.id_product where c.id_user=" . $this->id;
+        $cart = $this->db->query($sql)->result_array();
+        $subtotal = $cart[0]['subtotal'] ?? 0;
+        echo number_format($ongkir, 0, ',', '.');
     }
 
     public function total()

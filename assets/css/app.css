@@ -266,9 +266,9 @@ nav img {
 /* CAROUSEL BANNER */
 .crsFirst {
 	background-repeat: no-repeat;
-	background-image: url(../img/carousel/crs_1.jpg);
+	background-image: url(../img/hero-banner.jpg);
 	background-size: cover;
-	background-size: 100% 100%;
+	/* background-size: 100%; */
 	background-position: center center;
 	padding: 15% 0;
 }

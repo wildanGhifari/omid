@@ -62,18 +62,106 @@
             <div class="container-xl">
                 <h3>Our Product</h3>
                 <div class="prodCatFlexRow">
-                    <?php foreach (getCategories() as $category) : ?>
-                        <div class="prodCatFlexCol">
-                            <a href="<?= base_url("/shop/category/$category->slug") ?>">
-                                <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                    <div class="card-body text-center">
-                                        <img src="" alt="" width="120px" height="120px">
-                                        <p class="card-text mt-4"><?= $category->title ?></p>
-                                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/nuts") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Nuts.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Nuts</p>
                                 </div>
-                            </a>
-                        </div>
-                    <?php endforeach ?>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/spices") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Spices.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Spices</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/dried-fresh-fruits") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Dried & Fresh Fruits.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Dried & Fresh Fruits</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/seeds-kernels") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Kernels.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Seeds / Kernels</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/rice-grains") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Grains.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Rice / Grains</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/dairy-product") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Dairy Product.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Dairy Product</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/cooking") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Cooking.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Cooking</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/breakfast") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Breakfast.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Breakfast</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/home-made") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Home Made.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Home Made</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="prodCatFlexCol">
+                        <a href="<?= base_url("/shop/category/others") ?>">
+                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
+                                <div class="card-body text-center">
+                                    <img src="<?= base_url('assets/img/icon/Others.png') ?>" alt="" width="120px" height="120px">
+                                    <p class="card-text mt-4">Others</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="row justify-content-center py-4 px-3">
                     <a style="letter-spacing: 0.1em;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>

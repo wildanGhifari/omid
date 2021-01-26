@@ -1,6 +1,6 @@
-<div class="jumbotron jumboAbout jumbotron-fluid" style="padding: 10% 0;">
+<div id="jumboAbout" class="jumbotron jumbotron-fluid" style="padding: 10% 0;">
     <div class="container text-center text-white" style="margin-top:auto;" style="background-color: #fff;">
-        <h1>About Us</h1>
+        <h1 class="font-weight-bold">About Us</h1>
         <p class="lead">We Bring Healthy Foods To Your Lifestyle</p>
     </div>
 </div>

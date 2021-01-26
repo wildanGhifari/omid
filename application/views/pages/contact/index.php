@@ -1,6 +1,6 @@
-<div class="jumbotron jumboContact jumbotron-fluid" style="padding: 10% 0;">
+<div id="jumboContact" class="jumbotron jumbotron-fluid" style="padding: 10% 0;">
     <div class="container text-center text-white" style="margin-top:auto;" style="background-color: #fff;">
-        <h1>Contact Us</h1>
+        <h1 class="font-weight-bold">Contact Us</h1>
     </div>
 </div>
 

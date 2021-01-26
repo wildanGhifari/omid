@@ -318,8 +318,8 @@ nav img {
 /* END OF HOME PAGE CSS */
 
 /* ABOUT US PAGE */
-.jumbotron .jumboAbout {
-	background-image: url(../img/About.png);
+#jumboAbout {
+	background-image: url(../img/maddi-bazzocco-unsplash-bw.jpg) !important;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -410,8 +410,8 @@ ol li {
 /* END OF CART PAGE */
 
 /* CONTACT US */
-.jumbotron .jumboContact {
-	background-image: url(../img/About.png);
+#jumboContact {
+	background-image: url(../img/maddi-bazzocco-unsplash-bw.jpg) !important;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;

@@ -84,7 +84,7 @@
                     <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
                 </div>
                 <div class="col-md-4">
-                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-outline-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('reseller') ?>">See Our B2B Product</a>
+                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-outline-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shop/category/reseller') ?>">See Our B2B Product</a>
                 </div>
             </div>
         </div>

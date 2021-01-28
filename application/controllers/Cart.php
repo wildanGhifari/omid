@@ -26,9 +26,11 @@ class Cart extends MY_Controller
         $data['title']        = 'My Cart';
         $data['content']    = $this->cart->select([
             'cart.id', 'cart.qty', 'cart.subtotal',
-            'product.title', 'product.image', 'product.price', 'product.weight'
+            'product.title', 'product.image', 'product.price', 'product.weight',
+            'reseller.title', 'reseller.image', 'reseller.price', 'reseller.weight'
         ])
             ->join('product')
+            ->join('reseller')
             ->where('cart.id_user', $this->id)
             ->get();
         $data['page']        = 'pages/cart/index';

@@ -1,15 +1,15 @@
 <main role="main">
     <div class="container-fluid px-0 bg-white detailProductCon">
-        <?php foreach ($product as $row) : ?>
+        <?php foreach ($reseller as $row) : ?>
             <div class="container-xl">
                 <div class="row">
                     <div class="col-md-5 px-0 mb-4">
-                        <img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" style="width: 100%;" alt="">
+                        <img src="<?= $row->image ? base_url("/images/reseller/$row->image") : base_url("/images/reseller/default.jpg") ?>" style="width: 100%;" alt="">
                     </div>
 
                     <div class="col-md-6 detailProduct">
-                        <h5><?= $row->product_title ?></h5>
-                        <a href="<?= base_url("/shop/category/$row->category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->category_title; ?></a>
+                        <h5><?= $row->reseller_title ?></h5>
+                        <a href="<?= base_url("/shop/category/$row->reseller_category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->reseller_category_title; ?></a>
                         <div class="row">
                             <div class="col-sm-4 mb-3">
                                 <p class="text-muted"><strong>PRICE</strong></p>

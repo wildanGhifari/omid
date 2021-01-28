@@ -8,7 +8,7 @@ class Reseller extends MY_Controller
     public function index($page = null)
     {
         $data['title']      = 'Reseller | Omid Health Style';
-        $data['contnet']    = $this->reseller->select([
+        $data['content']    = $this->reseller->select([
             'reseller.id', 'reseller.slug', 'reseller.title AS reseller_title', 'reseller.description',
             'reseller.price', 'reseller.weight', 'reseller.is_available', 'reseller.image',
             'reseller_category.slug AS reseller_category_slug', 'reseller_category.title AS reseller_category_title'
@@ -44,7 +44,7 @@ class Reseller extends MY_Controller
             ->where('reseller.slug', $slug)
             ->where('reseller.is_available', 1)
             ->get();
-        $data['total_rows'] = $this->reseller->where('product.is_available', 1)->count();
+        $data['total_rows'] = $this->reseller->where('reseller.is_available', 1)->count();
         $data['pagination'] = $this->reseller->makePagination(
             base_url('reseller'),
             2,

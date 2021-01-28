@@ -84,7 +84,7 @@
                     <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
                 </div>
                 <div class="col-md-4">
-                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-outline-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shop/category/reseller') ?>">See Our B2B Product</a>
+                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-outline-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shop/category/b2b-products') ?>">See Our B2B Product</a>
                 </div>
             </div>
         </div>
@@ -146,8 +146,8 @@
                             <div class="carousel-item active">
                                 <div style="box-shadow: none !important;" class="card bg-transparent">
                                     <div class="card-body px-5 text-center">
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis beatae corporis eos voluptas a id aperiam rerum asperiores aut ad, ratione placeat sunt. Provident neque et nobis totam ea quae facilis id. Rem atque libero quos dolores numquam excepturi blanditiis ipsa, enim corporis pariatur ut quo omnis maxime, velit reiciendis.</p>
-                                        <h5 class="card-title">Hanna Rhodes</h5>
+                                        <p class="card-text">Since the start of the pandemic, I have tried a lot of online grocery delivery palforms and nothing compares to Omid in terms of produce quality & freshness, as well as promptness of service. From local and imported fruits to home made nut butters and yoghurt, there is a huge variety of food to suit my every need. Thank you for helping me to feed my family and always being a delight to order from!.</p>
+                                        <h5 class="card-title">Lynnette Chan</h5>
                                     </div>
                                 </div>
                             </div>
@@ -155,8 +155,8 @@
                             <div class="carousel-item">
                                 <div style="box-shadow: none !important;" class="card bg-transparent">
                                     <div class="card-body px-5 text-center">
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero doloribus deleniti non optio. Voluptas obcaecati excepturi eius nostrum veniam fugit, optio, ratione a quaerat maxime in libero dolorum autem assumenda, cumque dignissimos ex. Modi aliquam fugit cumque exercitationem expedita nihil! Sequi perferendis praesentium repellat, quo officiis ex nobis, facilis deleniti molestias, quisquam error sit quia unde eius accusamus aperiam ea doloremque? Necessitatibus ab cum pariatur? Facilis, atque praesentium adipisci cupiditate, tempora deleniti omnis deserunt amet incidunt, pariatur magni accusamus ut?</p>
-                                        <h5 class="card-title">Lawson Bryant</h5>
+                                        <p class="card-text">I like all the products that we have ordered till now because of genuineness and quality also, the customer service is amazing.</p>
+                                        <h5 class="card-title">Ankita Bansal</h5>
                                     </div>
                                 </div>
                             </div>
@@ -164,8 +164,8 @@
                             <div class="carousel-item">
                                 <div style="box-shadow: none !important;" class="card bg-transparent">
                                     <div class="card-body px-5 text-center">
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis beatae corporis eos voluptas a id aperiam rerum asperiores aut ad, ratione placeat sunt. Provident neque et nobis totam ea quae facilis id. Rem atque libero quos dolores numquam excepturi blanditiis ipsa, enim corporis pariatur ut quo omnis maxime, velit reiciendis.</p>
-                                        <h5 class="card-title">Johanna Ward</h5>
+                                        <p class="card-text">Just wanted to say that I was very happy with the quality of the products delivered yesterday. Will be ordering again in the future, thank you for the great service.</p>
+                                        <h5 class="card-title">Anastasia Yurkevich</h5>
                                     </div>
                                 </div>
                             </div>

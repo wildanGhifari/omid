@@ -44,10 +44,10 @@ class Shop extends MY_Controller
         )
             ->join('category')
             ->where('product.is_available', 1)
-            ->where('category.slug', $category)
+            ->where('category.title', $category)
             ->paginate($page)
             ->get();
-        $data['total_rows'] = $this->shop->where('product.is_available', 1)->where('category.slug', $category)->join('category')->count();
+        $data['total_rows'] = $this->shop->where('product.is_available', 1)->where('category.title', $category)->join('category')->count();
         $data['pagination'] = $this->shop->makePagination(
             base_url("shop/category/$category"),
             4,

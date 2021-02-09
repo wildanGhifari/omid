@@ -1,7 +1,14 @@
 :root {
 	--primary: #06a954;
+	--omidDarkGreen: #037c3e;
 	--secondary: #e6f2ec;
 	--accent: #ffc747;
+	--red: #e73820;
+	--black: #212429;
+	--gray4: #495057;
+	--gray3: #acb5bd;
+	--gray2: #dde2e5;
+	--gray1: #f8f9fa;
 }
 
 .green-bg {
@@ -23,79 +30,66 @@
 	padding: 0;
 }
 
-body {
-	background-color: #f5f5f5;
-}
-
 /* UTILITY */
 
 #terms ul li {
 	margin-left: 32px;
+}
+html {
+	font-size: 100%;
+} /*16px*/
+
+body {
+	background: #ffffff;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #000000;
+}
+
+p {
+	margin-bottom: 1rem;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
+	margin: 0;
 	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	line-height: 1.3;
 }
 
 h1 {
-	font-size: 93px;
-	font-weight: 300;
-	letter-spacing: -1.5px;
+	margin-top: 0;
+	font-size: 4.209rem;
 }
+
 h2 {
-	font-size: 52px;
-	font-weight: 300;
-	letter-spacing: -0.5px;
+	font-size: 3.157rem;
 }
+
 h3 {
-	font-size: 42px;
-	font-weight: 300;
-	letter-spacing: 0;
+	font-size: 2.369rem;
 }
+
 h4 {
-	font-size: 32px;
-	font-weight: normal;
-	letter-spacing: 0.25px;
+	font-size: 1.777rem;
 }
+
 h5 {
-	font-size: 22px;
-	font-weight: normal;
-	letter-spacing: 0;
+	font-size: 1.333rem;
 }
+
 h6 {
-	font-size: 18px;
-	font-weight: medium;
-	letter-spacing: 0.15px;
+	font-size: 1.25rem;
 }
-p {
-	font-family: "Open Sans", sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	letter-spacing: 0.5px;
-}
-a {
-	font-family: "Open Sans", sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	letter-spacing: 0.5px;
-}
-li {
-	font-family: "Open Sans", sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	letter-spacing: 0.5px;
-}
-caption {
-	font-family: "Open Sans", sans-serif;
-	color: var(--primary);
-	font-size: 12px;
-	font-weight: normal;
-	letter-spacing: 0.5px;
+
+small,
+.text_small {
+	font-size: 0.75rem;
 }
 
 .marginTop {
@@ -111,15 +105,6 @@ caption {
 	flex: 25%;
 	max-width: 25%;
 	padding: 0 10px;
-}
-
-.card {
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-	border: 0;
-	border-radius: 0px !important;
-}
-.card img {
-	border-radius: 0px 0px 0 0 !important;
 }
 
 .dropdown-menu {
@@ -490,62 +475,6 @@ ol li {
 }
 
 @media (max-width: 1200px) {
-	h1 {
-		font-size: 93px;
-		font-weight: 300;
-		letter-spacing: -1.5px;
-	}
-	h2 {
-		font-size: 52px;
-		font-weight: 300;
-		letter-spacing: -0.5px;
-	}
-	h3 {
-		font-size: 42px;
-		font-weight: 300;
-		letter-spacing: 0;
-	}
-	h4 {
-		font-size: 32px;
-		font-weight: normal;
-		letter-spacing: 0.25px;
-	}
-	h5 {
-		font-size: 22px;
-		font-weight: normal;
-		letter-spacing: 0;
-	}
-	h6 {
-		font-size: 18px;
-		font-weight: medium;
-		letter-spacing: 0.15px;
-	}
-	p {
-		font-family: "Open Sans", sans-serif;
-		font-size: 16px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	a {
-		font-family: "Open Sans", sans-serif;
-		font-size: 16px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	li {
-		font-family: "Open Sans", sans-serif;
-		font-size: 16px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	caption {
-		font-family: "Open Sans", sans-serif;
-		color: var(--primary);
-		font-size: 12px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-
 	.marginTop {
 		margin-top: 80px;
 	}
@@ -639,62 +568,6 @@ ol li {
 }
 
 @media (max-width: 768px) {
-	h1 {
-		font-size: 73px;
-		font-weight: 300;
-		letter-spacing: -1.5px;
-	}
-	h2 {
-		font-size: 42px;
-		font-weight: 300;
-		letter-spacing: -0.5px;
-	}
-	h3 {
-		font-size: 36px;
-		font-weight: 300;
-		letter-spacing: 0;
-	}
-	h4 {
-		font-size: 28px;
-		font-weight: normal;
-		letter-spacing: 0.25px;
-	}
-	h5 {
-		font-size: 20px;
-		font-weight: normal;
-		letter-spacing: 0;
-	}
-	h6 {
-		font-size: 16px;
-		font-weight: medium;
-		letter-spacing: 0.15px;
-	}
-	p {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	a {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	li {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	caption {
-		font-family: "Open Sans", sans-serif;
-		color: var(--primary);
-		font-size: 10px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-
 	.marginTop {
 		margin-top: 40px;
 	}
@@ -809,62 +682,6 @@ ol li {
 }
 
 @media (max-width: 576px) {
-	h1 {
-		font-size: 63px;
-		font-weight: 300;
-		letter-spacing: -1.5px;
-	}
-	h2 {
-		font-size: 42px;
-		font-weight: 300;
-		letter-spacing: -0.5px;
-	}
-	h3 {
-		font-size: 32px;
-		font-weight: 300;
-		letter-spacing: 0;
-	}
-	h4 {
-		font-size: 24px;
-		font-weight: normal;
-		letter-spacing: 0.25px;
-	}
-	h5 {
-		font-size: 20px;
-		font-weight: normal;
-		letter-spacing: 0;
-	}
-	h6 {
-		font-size: 16px;
-		font-weight: medium;
-		letter-spacing: 0.15px;
-	}
-	p {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	a {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	li {
-		font-family: "Open Sans", sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-	caption {
-		font-family: "Open Sans", sans-serif;
-		color: var(--primary);
-		font-size: 10px;
-		font-weight: normal;
-		letter-spacing: 0.5px;
-	}
-
 	.marginTop {
 		margin-top: 20px;
 	}

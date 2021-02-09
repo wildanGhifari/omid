@@ -42,52 +42,10 @@
 <main role="main">
     <?php $this->load->view('layouts/_alert') ?>
 
-    <!-- PRODUCT TEASER -->
-    <!-- <section class="marginTop">
-        <div class="container-xl">
-            <div class="flexRow mt-4">
-                <?php foreach ($content as $row) : ?>
-                    <div class="flexCol">
-                        <div class="card mb-4">
-                            <a href="<?= base_url("shopping/detail/$row->slug") ?>">
-                                <img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <a href="<?= base_url("/shop/category/$row->category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->category_title; ?></a>
-                                    <p class="card-title"><?= $row->product_title; ?></p>
-                                    <h6 class="card-text"><strong>Rp.<?= number_format($row->price, 0, ',', '.') ?></strong></h6>
-                                    <hr class="my-3">
-                                    <form action="<?= base_url("/cart/add") ?>" method="POST">
-                                        <input type="hidden" name="id_product" value="<?= $row->id ?>">
-                                        <div class="input-group">
-                                            <input style="border-radius: 25px 0 0 25px;" type="number" class="form-control" name="qty" value="1">
-                                            <div class="input-group-append">
-                                                <button style="border-radius: 0 25px 25px 0;" class="btn btn-success">Add To Cart</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
-                </div>
-                <div class="col-md-4">
-                    <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-outline-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shop/category/b2b-products') ?>">See Our B2B Product</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- END OF PRODUCT TEASER -->
-
     <!-- NEW PRODUCT TEASER -->
     <section class="marginTop">
         <div id="teaserProduct" class="container-xl">
-            <div class="row">
+            <div class="row py-0">
                 <div class="col-md-12">
                     <h4 class="float-left">All Products</h4>
                     <a href="<?= base_url('shopping') ?>" class="float-right">
@@ -104,10 +62,8 @@
                                 <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                             </a>
                             <div class="card-body">
-                                <div class="card-title">
-                                    <h6><?= $row->product_title; ?></h6>
-                                    <small"><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
-                                </div>
+                                <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                <p class="card-title"><?= $row->product_title; ?></p>
                                 <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
                                 <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
                                     <input type="hidden" name="id_product" value="<?= $row->id ?>">

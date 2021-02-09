@@ -290,6 +290,46 @@ nav img {
 }
 /* END OFCAROUSEL BANNER */
 
+/* FLICKITY */
+#teaserProduct a {
+	color: var(--primary);
+}
+#teaserProduct .card {
+	cursor: pointer;
+}
+#teaserProduct .card:hover {
+	border: none;
+	transform: scale(1.01, 1.01) !important;
+	transition: 0.3s;
+	box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+}
+#teaserProduct .card-img-top {
+	background-color: var(--omidlightgreen);
+}
+#teaserProduct .card .badge {
+	position: absolute;
+	top: 16px;
+	right: 8px;
+	width: auto;
+	padding: 4px 8px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.flickity-prev-next-button {
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+.flickity-viewport {
+	transition: height 0.2s;
+}
+
+.gallery-cell {
+	padding-top: 32px;
+	padding-bottom: 32px !important;
+	width: 25%;
+	margin-right: 20px;
+}
+/* END OF FLICKITY */
+
 /* WHY CHOOSE OUR PRODUCT & TESTIMONI */
 .benefit-img {
 	width: 120px;
@@ -701,6 +741,13 @@ ol li {
 		visibility: hidden;
 	}
 
+	/* FLICKITY */
+	.gallery-cell {
+		width: 33.3%;
+		margin-right: 15px;
+	}
+	/* END OF FLICKITY */
+
 	/* ABOUT US PAGE */
 	#blogIls {
 		order: 1;
@@ -891,6 +938,13 @@ ol li {
 		padding: 15% 0;
 	}
 	/* END OFCAROUSEL BANNER */
+
+	/* FLICKITY */
+	.gallery-cell {
+		width: 50%;
+		margin-right: 15px;
+	}
+	/* END OF FLICKITY */
 
 	/* ABOUT US PAGE */
 	#blogIls {

@@ -43,9 +43,8 @@
     <?php $this->load->view('layouts/_alert') ?>
 
     <!-- PRODUCT TEASER -->
-    <section class="marginTop">
+    <!-- <section class="marginTop">
         <div class="container-xl">
-            <!-- <h3>Our Product</h3> -->
             <div class="flexRow mt-4">
                 <?php foreach ($content as $row) : ?>
                     <div class="flexCol">
@@ -73,12 +72,6 @@
                 <?php endforeach ?>
             </div>
 
-            <!-- <nav aria-label="Page navigation example">
-                <div class="row justify-content-center">
-                    <?= $pagination; ?>
-                </div>
-            </nav> -->
-
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <a style="letter-spacing: 0.1em; width:100%;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
@@ -88,8 +81,49 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- END OF PRODUCT TEASER -->
+
+    <!-- NEW PRODUCT TEASER -->
+    <section class="marginTop">
+        <div id="teaserProduct" class="container-xl">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="float-left">All Products</h4>
+                    <a href="<?= base_url('shopping') ?>" class="float-right">
+                        <h4>See All <i class="fas fa-chevron-right"></i></h4>
+                    </a>
+                </div>
+            </div>
+            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                <?php foreach ($content as $row) : ?>
+                    <div class="gallery-cell">
+                        <div class="card">
+                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <a href="<?= base_url("shopping/detail/$row->slug") ?>">
+                                <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
+                            </a>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h6><?= $row->product_title; ?></h6>
+                                    <small"><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                </div>
+                                <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
+                                <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
+                                    <input type="hidden" name="id_product" value="<?= $row->id ?>">
+                                    <div class="input-group">
+                                        <input class="form-control" type="hidden" name="" value="1">
+                                        <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+    <!-- END OF NEW PRODUCT TEASER -->
 
 
 

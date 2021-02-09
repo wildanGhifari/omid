@@ -21,6 +21,18 @@ class Home extends My_Controller
             ->get();
         $data['total_rows'] = $this->home->where('product.is_available', 1)->count();
 
+        $this->home->table = 'product';
+        $data['products'] = $this->home->select([
+            'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
+            'product.image', 'product.price', 'product.is_available', 'product.weight',
+            'category.title AS category_title', 'category.slug AS category_slug'
+        ])
+            ->join('category')
+            ->where('category.title', 'B2B Products')
+            ->paginate($page)
+            ->get();
+        $data['total_rows'] = $this->home->where('product.is_available', 1)->count();
+
         $this->home->table = 'blog';
         $data['blogs'] = $this->home->select(
             [

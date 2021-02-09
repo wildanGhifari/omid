@@ -82,6 +82,46 @@
     <!-- END OF NEW PRODUCT TEASER -->
 
 
+    <!-- B2B PRODUCTS TEASER -->
+    <section class="marginTop">
+        <div id="teaserProduct" class="container-xl">
+            <div class="row py-0">
+                <div class="col-md-12">
+                    <h4 class="float-left">B2b Products</h4>
+                    <a href="<?= base_url('shopping') ?>" class="float-right">
+                        <h4>See All <i class="fas fa-chevron-right"></i></h4>
+                    </a>
+                </div>
+            </div>
+            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                <?php foreach ($products as $row) : ?>
+                    <div class="gallery-cell">
+                        <div class="card">
+                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <a href="<?= base_url("shopping/detail/$row->slug") ?>">
+                                <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
+                            </a>
+                            <div class="card-body">
+                                <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                <p class="card-title"><?= $row->product_title; ?></p>
+                                <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
+                                <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
+                                    <input type="hidden" name="id_product" value="<?= $row->id ?>">
+                                    <div class="input-group">
+                                        <input class="form-control" type="hidden" name="" value="1">
+                                        <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+    <!-- END OF B2B PRODUCTS TEASER -->
+
+
 
     <!-- WHY CHOOSE OUR PRODUCT -->
     <section class="marginTop">

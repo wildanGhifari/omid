@@ -234,8 +234,8 @@
     <!-- RECENT BLOG -->
     <section class="marginTop">
         <div class="container-xl">
-            <h3>Get Insights</h3>
-            <p class="lead">Read our blog, get insights on healthy food and much more.</p>
+            <h4>Read our latest blog, and Get insights</h4>
+            <p class="mt-2 text-muted">Fill your days by reading our blog and get insights about a healthy lifestyle, healthy / organic food, tips and tricks for processing organic food and much more.</p>
             <div class="flexRow mt-4">
                 <?php foreach ($blogs as $blog) : ?>
                     <div class="flexCol">
@@ -244,7 +244,7 @@
                                 <img src="<?= $blog->image ? base_url("images/blog/$blog->image") : base_url("images/blog/default.jpg") ?>" alt="<?= $blog->blog_title; ?>" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
-                                <h5 class="card-title"><?= $blog->blog_title; ?></h5>
+                                <h6 class="card-title"><?= $blog->blog_title; ?></h6>
                                 <p class="card-text"><?= $blog->description ?></p>
                                 <a class="float-left" href="<?= base_url("blog/detail/$blog->slug") ?>">Read More</a>
                                 <div class="float-right">

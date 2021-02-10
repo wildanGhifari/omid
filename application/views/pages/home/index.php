@@ -44,7 +44,7 @@
 
     <!-- NEW PRODUCT TEASER -->
     <section class="marginTop">
-        <div id="teaserProduct" class="container-xl">
+        <div class="teaserProduct container-xl">
             <div class="row py-0">
                 <div class="col-md-12">
                     <h4 class="float-left">Our Products</h4>
@@ -84,7 +84,7 @@
 
     <!-- B2B PRODUCTS TEASER -->
     <section class="marginTop">
-        <div id="teaserProduct" class="container-xl">
+        <div class="teaserProduct container-xl">
             <div class="row py-0">
                 <div class="col-md-12">
                     <h4 class="float-left">B2b Products</h4>

@@ -171,28 +171,25 @@ nav img {
 	display: flex;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 
-	/* scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    
-    
-    scroll-snap-points-x: repeat(300px);
-    scroll-snap-type: mandatory; */
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+
+	/* scroll-snap-points-x: repeat(300px);
+	scroll-snap-type: mandatory; */
 }
 
 .slides::-webkit-scrollbar {
-	width: 5px;
-	height: 3px;
+	width: 10px;
+	height: 5px;
 }
-
 .slides::-webkit-scrollbar-thumb {
-	background: var(--primary);
+	background: var(--accent);
 	border-radius: 10px;
 }
-
 .slides::-webkit-scrollbar-track {
-	background: transparent;
+	background: var(--gray2);
 }
 
 .slides > div {
@@ -204,19 +201,19 @@ nav img {
 	transform: scale(1);
 	transition: transform 0.5s;
 	position: relative;
-
+	padding: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-/* .slides div:hover {
-    background-color: rgb(65, 65, 65);
-} */
-
 .slides a {
-	padding: 10px 15px;
+	margin: 8px 24px;
+	margin-left: 0 !important;
+	padding: 4px 24px;
 	color: #fff;
+	border: solid 1px #fff;
+	border-radius: 50px;
 }
 .slides a:hover {
 	color: var(--primary);
@@ -276,22 +273,22 @@ nav img {
 /* END OFCAROUSEL BANNER */
 
 /* FLICKITY */
-#teaserProduct a {
+.teaserProduct a {
 	color: var(--primary);
 }
-#teaserProduct .card {
+.teaserProduct .card {
 	cursor: pointer;
 }
-#teaserProduct .card:hover {
+.teaserProduct .card:hover {
 	border: none;
 	transform: scale(1.01, 1.01) !important;
 	transition: 0.3s;
 	box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
 }
-#teaserProduct .card-img-top {
+.teaserProduct .card-img-top {
 	background-color: var(--secondary);
 }
-#teaserProduct .card .badge {
+.teaserProduct .card .badge {
 	position: absolute;
 	top: 16px;
 	right: 8px;

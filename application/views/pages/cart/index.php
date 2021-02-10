@@ -73,48 +73,36 @@
                 <?php endif ?>
             </div>
 
-            <div class="col-md-4 mb-3">
-                <h4>Summary</h4>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
-                <div class="row">
-                    <div class="col-md-12 mb-4">
-                        <div class="card">
-                            <div class="card-header lead font-weight-bold">
-                                <strong>Summary</strong>
+            <div class="col-md-4 mb-3 summary">
+                <h4 class="mb-3">Summary</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <?php foreach ($content as $row) : ?>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
+                                    <p class="float-right">Rp.<?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <?php foreach ($content as $row) : ?>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
-                                            <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
-                                        </div>
-                                    </div>
-                                <?php endforeach ?>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h6 class="float-left"><strong>Total</strong></h6>
-                                        <h6 class="float-right"><strong>Rp. <?= number_format(array_sum(array_column($content, 'subtotal')), 0, ',', '.') ?></strong></h6>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <a style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('/checkout') ?>" class="btn btn-lg btn-success rounded-0 text-uppercase mb-3">Checkout Now</a>
-                                        <a style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('shopping') ?>" class="btn btn-lg btn-light rounded-0 text-uppercase">Continue Shoping</a>
-                                    </div>
-                                </div>
+                        <?php endforeach ?>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="float-left text-dark"><strong>Total</strong></p>
+                                <p class="float-right text-dark"><strong>Rp. <?= number_format(array_sum(array_column($content, 'subtotal')), 0, ',', '.') ?></strong></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('/checkout') ?>" class="btn btn-success text-uppercase mb-3">Checkout Now</a>
+                                <a style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('shopping') ?>" class="btn btn-outline-success text-uppercase">Continue Shoping</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </main>

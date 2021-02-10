@@ -47,7 +47,7 @@
         <div id="teaserProduct" class="container-xl">
             <div class="row py-0">
                 <div class="col-md-12">
-                    <h4 class="float-left">All Products</h4>
+                    <h4 class="float-left">Our Products</h4>
                     <a href="<?= base_url('shopping') ?>" class="float-right">
                         <h4>See All <i class="fas fa-chevron-right"></i></h4>
                     </a>
@@ -125,40 +125,47 @@
 
     <!-- WHY CHOOSE OUR PRODUCT -->
     <section class="marginTop">
-        <div class="container-fluid green-bg">
-            <div class="container-xl px-0 py-5">
-                <h3 class="text-center">Why Should Choose Our Product?</h3>
-                <div class="row mt-5">
-                    <div class="col-md-3">
-                        <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/icon/Fast Delivery.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Fast Delivery</h6>
-                            <p>We will process every purchase on the same day, just #StayAtHome, choose the time of delivery and We bring healthy foods to your lifestyle!</p>
+        <div id="WCOP" class="container-xl">
+            <h4>Why Should Choose Our Product?</h4>
+            <div class="row mt-5">
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center" style="min-height: 350px;">
+                        <img class="card-img-top benefit-img mx-auto mt-4" src="<?= base_url('assets/img/icon/Fast Delivery.png') ?>" alt="Fast Delivery">
+                        <div class="card-body">
+                            <h6 class="card-title">Fast Delivery</h6>
+                            <p class="card-text">We will process every purchase on the same day, just #StayAtHome, choose the time of delivery and We bring healthy foods to your lifestyle!</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/icon/Original.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>100% Original</h6>
-                            <p>The products we sell have high quality certificates and there are halal certificates!</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center" style="min-height: 350px;">
+                        <img class="card-img-top benefit-img mx-auto mt-4" src=" <?= base_url('assets/img/icon/Original.png') ?>" alt="100% Original">
+                        <div class="card-body">
+                            <h6 class="card-title">100% Original</h6>
+                            <p class="card-text">The products we sell have high quality certificates and there are halal certificates!</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/icon/Premium.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Premium Service</h6>
-                            <p>There are attractive promos every week, special gifts, and guaranteed free delivery (read our Terms and Conditions)</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center" style="min-height: 350px;">
+                        <img class="card-img-top benefit-img mx-auto mt-4" src="<?= base_url('assets/img/icon/Premium.png') ?>" alt="Premium Service">
+                        <div class="card-body">
+                            <h6 class="card-title">Premium Service</h6>
+                            <p class="card-text">There are attractive promos every week, special gifts, and guaranteed free delivery (read our Terms and Conditions)</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="text-center px-3" style="width: 100%;">
-                            <img src="<?= base_url('assets/img/icon/Guarantee.png') ?>" height="30" class="card-img-top my-3 benefit-img">
-                            <h6>Fresh Goods Guarantee</h6>
-                            <p>All products are purchased by our personal shopper who has been in the F&B field for years.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center" style="min-height: 350px;">
+                        <img class="card-img-top benefit-img mx-auto mt-4" src="<?= base_url('assets/img/icon/Guarantee.png') ?>" alt="Fresh Goods Guarantee">
+                        <div class="card-body">
+                            <h6 class="card-title">Fresh Goods Guarantee</h6>
+                            <p class="card-text">All products are purchased by our personal shopper who has been in the F&B field for years.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- END OF WHY CHOOSE OUR PRODUCT -->

@@ -263,6 +263,11 @@
                     </div>
                 <?php endforeach ?>
             </div>
+            <div class="div row justify-content-center mt-5">
+                <div class="col-md-3">
+                    <a style="width: 100%; letter-spacing: 0.1em;" class="btn btn-success rounded-pill text-uppercase" href="<?= base_url('/blog') ?>">Discover Now</a>
+                </div>
+            </div>
         </div>
     </section>
     <!-- END OF RECENT BLOG -->
@@ -274,12 +279,12 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3>Sign Up now, it’s Free! </h3>
+                    <h3 class="text-white">Sign up & Become a member now, it’s free!</h3>
                 </div>
             </div>
-            <div class="div row justify-content-center mt-3">
+            <div class="div row justify-content-center mt-5">
                 <div class="col-md-3">
-                    <a style="width: 100%; letter-spacing: 0.1em;" class="btn btn-success rounded-pill text-uppercase" href="<?= base_url('/register') ?>">Sign Up Now!</a>
+                    <a style="width: 100%; letter-spacing: 0.1em;" class="btn btn-warning rounded-pill text-uppercase" href="<?= base_url('/register') ?>">Sign Up Now</a>
                 </div>
             </div>
         </div>

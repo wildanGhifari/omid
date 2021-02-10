@@ -322,7 +322,9 @@ nav img {
 }
 
 #testimonials {
+	background-repeat: no-repeat;
 	background-image: url(../img/bg-doodle-image.png);
+	background-size: cover;
 }
 
 #testimonials .card {
@@ -346,9 +348,9 @@ nav img {
 /* CTA SIGNUP */
 #ctaSignup {
 	background-repeat: no-repeat;
-	background-image: url(../img/signupbanner.png);
+	background-image: url(../img/bg-doodle-image.png);
 	background-size: cover;
-	padding: 5% 0;
+	padding: 8% 0;
 }
 /* END OF CTA SIGNUP */
 /* END OF HOME PAGE CSS */

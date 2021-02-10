@@ -10,7 +10,7 @@ class Shopping extends MY_Controller
         $data['title']  = 'Shopping | Omid Health Style';
         $data['content']    = $this->shopping->select([
             'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
-            'product.image', 'product.price', 'product.is_available',
+            'product.image', 'product.price', 'product.is_available', 'product.weight',
             'category.title AS category_title', 'category.slug AS category_slug'
         ])
             ->join('category')

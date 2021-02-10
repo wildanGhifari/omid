@@ -18,29 +18,27 @@
         </div>
 
         <section>
-            <div class="container-xl">
+            <div id="shoppingProduct" class="container-xl">
                 <div class="flexRow mt-4">
                     <?php foreach ($content as $row) : ?>
                         <div class="flexCol">
                             <div class="card mb-4">
+                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
                                 <a href="<?= base_url("shopping/detail/$row->slug") ?>">
-                                    <img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <a href="<?= base_url("/shop/category/$row->category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->category_title; ?></a>
-                                        <p class="card-title"><?= $row->product_title; ?></p>
-                                        <h6 class="card-text"><strong>Rp.<?= number_format($row->price, 0, ',', '.') ?></strong></h6>
-                                        <hr class="my-3">
-                                        <form action="<?= base_url("/cart/add") ?>" method="POST">
-                                            <input type="hidden" name="id_product" value="<?= $row->id ?>">
-                                            <div class="input-group">
-                                                <input style="border-radius: 25px 0 0 25px;" type="number" class="form-control" name="qty" value="1" min="1">
-                                                <div class="input-group-append">
-                                                    <button style="border-radius: 0 25px 25px 0;" class="btn btn-success">Add To Cart</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                                 </a>
+                                <div class="card-body">
+                                    <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                    <p class="card-title"><?= $row->product_title; ?></p>
+                                    <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
+                                    <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
+                                        <input type="hidden" name="id_product" value="<?= $row->id ?>">
+                                        <div class="input-group">
+                                            <input class="form-control" type="hidden" name="qty" value="1">
+                                            <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach ?>

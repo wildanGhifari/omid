@@ -34,7 +34,7 @@
                                     <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
                                         <input type="hidden" name="id_product" value="<?= $row->id ?>">
                                         <div class="input-group">
-                                            <input class="form-control" type="hidden" name="qty" value="1">
+                                            <input class="form-control" type="hidden" name="qty" value="1" min="1">
                                             <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
                                         </div>
                                     </form>

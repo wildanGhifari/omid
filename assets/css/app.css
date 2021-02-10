@@ -457,6 +457,7 @@ ol li {
 }
 
 .detailProductCon .card {
+	border: none;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -473,6 +474,10 @@ ol li {
 
 .cart-subtotal {
 	float: right;
+}
+
+.rmv button {
+	text-align: right !important;
 }
 /* END OF CART PAGE */
 
@@ -720,6 +725,10 @@ ol li {
 		margin-bottom: 20px;
 	}
 
+	.rmv button {
+		text-align: center !important;
+	}
+
 	.cart-subtotal {
 		float: none;
 	}
@@ -884,6 +893,10 @@ ol li {
 
 	.qty {
 		margin-bottom: 20px;
+	}
+
+	.rmv button {
+		text-align: center !important;
 	}
 
 	.cart-subtotal {

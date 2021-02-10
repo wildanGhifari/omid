@@ -173,36 +173,36 @@
 
 
     <!-- TESTIMONIALS -->
-    <section class="container-fluid secondary-bg">
-        <div class="container-xl px-0 py-5">
-            <h3 class="text-center">What They Say About Our Products</h3>
+    <section id="testimonials" class="container-fluid marginTop">
+        <div class="container-xl py-5">
+            <h3 class="text-center text-white">What they say about our products?</h3>
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div id="carouselExampleControls" class="carousel slide mt-3 bg-transparent border-0" style="width: 100%;" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div style="box-shadow: none !important;" class="card bg-transparent">
-                                    <div class="card-body px-5 text-center">
-                                        <p class="card-text">Since the start of the pandemic, I have tried a lot of online grocery delivery palforms and nothing compares to Omid in terms of produce quality & freshness, as well as promptness of service. From local and imported fruits to home made nut butters and yoghurt, there is a huge variety of food to suit my every need. Thank you for helping me to feed my family and always being a delight to order from!.</p>
+                                <div class="card text-center text-white bg-transparent">
+                                    <div class="card-body">
                                         <h5 class="card-title">Lynnette Chan</h5>
+                                        <p class="card-text text-light">Since the start of the pandemic, I have tried a lot of online grocery delivery palforms and nothing compares to Omid in terms of produce quality & freshness, as well as promptness of service. From local and imported fruits to home made nut butters and yoghurt, there is a huge variety of food to suit my every need. Thank you for helping me to feed my family and always being a delight to order from!</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="carousel-item">
-                                <div style="box-shadow: none !important;" class="card bg-transparent">
-                                    <div class="card-body px-5 text-center">
-                                        <p class="card-text">I like all the products that we have ordered till now because of genuineness and quality also, the customer service is amazing.</p>
+                                <div class="card text-center text-white bg-transparent">
+                                    <div class="card-body">
                                         <h5 class="card-title">Ankita Bansal</h5>
+                                        <p class="card-text text-light">I like all the products that we have ordered till now because of genuineness and quality also, the customer service is amazing.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="carousel-item">
-                                <div style="box-shadow: none !important;" class="card bg-transparent">
-                                    <div class="card-body px-5 text-center">
-                                        <p class="card-text">Just wanted to say that I was very happy with the quality of the products delivered yesterday. Will be ordering again in the future, thank you for the great service.</p>
+                                <div class="card text-center text-white bg-transparent">
+                                    <div class="card-body">
                                         <h5 class="card-title">Anastasia Yurkevich</h5>
+                                        <p class="card-text text-light">Just wanted to say that I was very happy with the quality of the products delivered yesterday. Will be ordering again in the future, thank you for the great service.</p>
                                     </div>
                                 </div>
                             </div>
@@ -222,8 +222,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
-                    <a class="text-uppercase" style="width: 100%; letter-spacing: 0.1em; color: #06a954;" href="#">See More</a>
-                    <a class="btn btn-success rounded-pill text-uppercase my-3" style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('shopping') ?>">OK, Shop Now</a>
+                    <a class="btn btn-warning rounded-pill text-uppercase my-3" style="width: 100%; letter-spacing: 0.1em;" href="<?= base_url('shopping') ?>">OK, Shop Now</a>
                 </div>
             </div>
         </div>

@@ -320,6 +320,17 @@ nav img {
 	width: 120px;
 	height: 120px;
 }
+
+#testimonials {
+	background-image: url(../img/bg-doodle-image.png);
+}
+
+#testimonials .card {
+	border: none;
+}
+#testimonials .card-body {
+	padding: 24px;
+}
 /* END OF WHY CHOOSE OUR PRODUCT & TESTIMONI */
 
 /* RENCENT BLOG */

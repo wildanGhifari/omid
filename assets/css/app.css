@@ -506,6 +506,28 @@ ol li {
 }
 /* END OFCONTACT US */
 
+/* PROFILE */
+#dashboardNav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	overflow: auto;
+}
+
+#dashboardNav a {
+	padding: 0 24px;
+	color: var(--gray4);
+}
+.dashboardCard {
+	cursor: pointer;
+}
+.dashboardCard:hover {
+	box-shadow: 0px 15px 25px -5px rgba(0, 0, 0, 0.15);
+	transition: 0.3s;
+	margin-top: -4px;
+}
+/* END OF PROFILE */
+
 /* FOOTER */
 .privacyTerms {
 	text-align: end;
@@ -915,6 +937,16 @@ ol li {
 		height: 450px;
 	}
 	/* END OF CONTACT */
+
+	/* PROFILE */
+	#dashboardNav {
+		overflow: scroll;
+	}
+
+	#dashboardNav a {
+		padding: 16px 24px;
+	}
+	/* END OF PROFILE */
 
 	/* FOOTER */
 	.privacyTerms {

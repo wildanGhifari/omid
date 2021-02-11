@@ -28,7 +28,7 @@ class Home extends My_Controller
             'category.title AS category_title', 'category.slug AS category_slug'
         ])
             ->join('category')
-            ->where('category.title', 'B2B Products')
+            ->where('category.title', 'B2B')
             ->paginate($page)
             ->get();
         $data['total_rows'] = $this->home->where('product.is_available', 1)->count();

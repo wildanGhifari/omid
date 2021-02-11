@@ -6,19 +6,19 @@ $warning    = $this->session->flashdata('warning');
 
 if ($success) {
     $alert_status   = 'alert-success';
-    $status         = 'Success';
+    $status         = '<i class="fas fa-check-circle"></i>';
     $message        = $success;
 }
 
 if ($error) {
     $alert_status   = 'alert-danger';
-    $status         = 'Error';
+    $status         = '<i class="fas fa-exclamation-circle"></i>';
     $message        = $error;
 }
 
 if ($warning) {
     $alert_status   = 'alert-warning';
-    $status         = 'Warning';
+    $status         = '<i class="fas fa-exclamation-triangle"></i>';
     $message        = $warning;
 }
 ?>

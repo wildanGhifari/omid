@@ -67,7 +67,7 @@
             <hr>
             <div class="row justify-content-between mt-5">
                 <div class="col-md-6">
-                    <p class="text-muted">Copyright <span>&copy;</span>2020 - PT. Omid Health Style. All rights reserved.</p>
+                    <p class="text-muted">Copyright <span>&copy;</span>2021 - PT. Omid Health Style. All rights reserved.</p>
                 </div>
             </div>
         </div>

@@ -256,7 +256,7 @@ nav img {
 }
 .crsSecond {
 	background-repeat: no-repeat;
-	background-image: url(../img/carousel/crs_2.jpg);
+	background-image: url(../img/hero-banner1.jpg);
 	background-size: cover;
 	background-size: 100% 100%;
 	background-position: center center;
@@ -264,7 +264,7 @@ nav img {
 }
 .crsThird {
 	background-repeat: no-repeat;
-	background-image: url(../img/carousel/crs_3.jpg);
+	background-image: url(../img/hero-banner2.jpg);
 	background-size: cover;
 	background-size: 100% 100%;
 	background-position: center center;
@@ -793,7 +793,7 @@ ol li {
 	/* CAROUSEL BANNER */
 	.crsFirst {
 		background-repeat: no-repeat;
-		background-image: url(../img/carousel/crs_1.jpg);
+		background-image: url(../img/hero-banner.jpg);
 		background-size: cover;
 		background-size: 100% 100%;
 		background-position: center center;
@@ -801,7 +801,7 @@ ol li {
 	}
 	.crsSecond {
 		background-repeat: no-repeat;
-		background-image: url(../img/carousel/crs_2.jpg);
+		background-image: url(../img/hero-banner1.jpg);
 		background-size: cover;
 		background-size: 100% 100%;
 		background-position: center center;
@@ -809,7 +809,7 @@ ol li {
 	}
 	.crsThird {
 		background-repeat: no-repeat;
-		background-image: url(../img/carousel/crs_3.jpg);
+		background-image: url(../img/hero-banner2.jpg);
 		background-size: cover;
 		background-size: 100% 100%;
 		background-position: center center;

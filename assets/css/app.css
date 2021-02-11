@@ -460,7 +460,7 @@ ol li {
 
 .detailProduct-img {
 	width: 350px;
-	height: 350px;
+	height: 100%;
 }
 /* END OF SHOPPING PRODUCT PAGE CSS */
 
@@ -596,10 +596,6 @@ ol li {
 	.detailProductCon {
 		padding: 5% 0;
 	}
-
-	.detailProduct {
-		margin-left: 30px;
-	}
 	/* END OF DETAIL PRODUCT PAGE CSS */
 
 	/* CART PAGE */
@@ -712,7 +708,7 @@ ol li {
 		border: none;
 	}
 	.detailProductCon .card-body {
-		padding: 0;
+		padding: 24px 0;
 	}
 
 	.detailProduct-img {
@@ -880,7 +876,7 @@ ol li {
 		border: none;
 	}
 	.detailProductCon .card-body {
-		padding: 0;
+		padding: 24px 0;
 	}
 
 	.detailProduct-img {

@@ -11,7 +11,7 @@ class Shop extends MY_Controller
         $data['content']    = $this->shop->select(
             [
                 'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
-                'product.image', 'product.price', 'product.is_available',
+                'product.image', 'product.price', 'product.is_available', 'product.weight',
                 'category.title AS category_title', 'category.slug AS category_slug'
             ]
         )
@@ -38,7 +38,7 @@ class Shop extends MY_Controller
         $data['content']    = $this->shop->select(
             [
                 'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
-                'product.image', 'product.price', 'product.is_available',
+                'product.image', 'product.price', 'product.is_available', 'product.weight',
                 'category.title AS category_title', 'category.slug AS category_slug'
             ]
         )
@@ -72,7 +72,7 @@ class Shop extends MY_Controller
         $data['content']    = $this->shop->select(
             [
                 'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
-                'product.image', 'product.price', 'product.is_available',
+                'product.image', 'product.price', 'product.is_available', 'product.weight',
                 'category.title AS category_title', 'category.slug AS category_slug'
             ]
         )

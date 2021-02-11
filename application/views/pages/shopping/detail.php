@@ -3,7 +3,7 @@
         <?php foreach ($product as $row) : ?>
             <div class="container-xl">
                 <div class="row justify-content-between mb-3">
-                    <div class="col-md-7 px-3 rounded mb-4 secondary-bg text-center">
+                    <div class="col-md-7 px-3 rounded secondary-bg text-center">
                         <img class="detailProduct-img mx-auto" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                     </div>
 

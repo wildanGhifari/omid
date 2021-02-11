@@ -29,7 +29,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-9">
-                            <div class="card dashboardCard">
+                            <div id="orderCard" class="card dashboardCard">
                                 <div class="card-header bg-white">
                                     <div class="d-flex justify-content-between">
                                         <h6>Order List</h6>
@@ -40,7 +40,34 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-
+                                    <table class="table table-sm table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Invoice Number</th>
+                                                <th>Date</th>
+                                                <th>Total</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($order as $row) : ?>
+                                                <tr>
+                                                    <td>
+                                                        <small><a href="<?= base_url("/myorder/detail/$row->invoice") ?>"><?= $row->invoice; ?></a></small>
+                                                    </td>
+                                                    <td>
+                                                        <small><?= str_replace('-', '/', date("d-m-Y", strtotime($row->date))) ?></small>
+                                                    </td>
+                                                    <td>
+                                                        <small>Rp.<?= number_format($row->total, 0, ',', '.'); ?></small>
+                                                    </td>
+                                                    <td>
+                                                        <small><?php $this->load->view('layouts/_status', ['status' => $row->status]); ?></small>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

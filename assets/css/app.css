@@ -526,6 +526,15 @@ ol li {
 	transition: 0.3s;
 	margin-top: -4px;
 }
+
+#orderCard {
+	max-height: 350px;
+}
+
+#orderCard .card-body {
+	padding: 0;
+	overflow: scroll;
+}
 /* END OF PROFILE */
 
 /* FOOTER */

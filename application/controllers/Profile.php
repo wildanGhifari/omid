@@ -30,7 +30,7 @@ class Profile extends MY_Controller
             'orders.id_user', 'orders.invoice',
             'orders.date', 'orders.total', 'orders.status'
         ])
-            ->where('orders.id_user', $data['content']->id)->orderby('date', 'DESC')->get();
+            ->orderby('date', 'DESC')->get();
         $data['page']      = 'pages/profile/index';
 
         return $this->view($data);

@@ -36,7 +36,7 @@
 	margin-left: 32px;
 }
 html {
-	font-size: 100%;
+	font-size: 16px;
 } /*16px*/
 
 body {
@@ -657,6 +657,36 @@ ol li {
 }
 
 @media (max-width: 768px) {
+	html {
+		font-size: 87.5%;
+	} /*14px*/
+
+	h1 {
+		margin-top: 0;
+		font-size: 4.209rem;
+	}
+
+	h2 {
+		font-size: 3.157rem;
+	}
+
+	h3 {
+		font-size: 2.369rem;
+	}
+
+	h4 {
+		font-size: 1.777rem;
+	}
+
+	h5 {
+		font-size: 1.333rem;
+	}
+
+	small,
+	.text_small {
+		font-size: 0.75rem;
+	}
+
 	.marginTop {
 		margin-top: 40px;
 	}
@@ -784,6 +814,36 @@ ol li {
 }
 
 @media (max-width: 576px) {
+	html {
+		font-size: 81.3%;
+	} /*13px*/
+
+	h1 {
+		margin-top: 0;
+		font-size: 4.209rem;
+	}
+
+	h2 {
+		font-size: 3.157rem;
+	}
+
+	h3 {
+		font-size: 2.369rem;
+	}
+
+	h4 {
+		font-size: 1.777rem;
+	}
+
+	h5 {
+		font-size: 1.333rem;
+	}
+
+	small,
+	.text_small {
+		font-size: 0.75rem;
+	}
+
 	.marginTop {
 		margin-top: 20px;
 	}

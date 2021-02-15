@@ -20,11 +20,11 @@
 
                 <div class="col-md-9">
                     <div id="dashboardNav">
-                        <a href="">Overview</a>
-                        <a href="">Order</a>
-                        <a href="">User</a>
-                        <a href="">Product</a>
-                        <a href="">Category</a>
+                        <a href="<?= base_url("/profile") ?>">Overview</a>
+                        <a href="<?= base_url("order") ?>">Order</a>
+                        <a href="<?= base_url("user") ?>">User</a>
+                        <a href="<?= base_url("product") ?>">Product</a>
+                        <a href="<?= base_url("category") ?>">Category</a>
                     </div>
                     <hr>
                     <div class="row">

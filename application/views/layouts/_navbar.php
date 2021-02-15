@@ -33,17 +33,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('shopping') ?>">Shop<span class="sr-only">(current)</span></a>
                 </li>
-                <?php if ($this->session->userdata('role') == 'admin') : ?>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-1">
-                            <a href="<?= base_url('category') ?>" class="dropdown-item">Category</a>
-                            <a href="<?= base_url('product') ?>" class="dropdown-item">Product</a>
-                            <a href="<?= base_url('order') ?>" class="dropdown-item">Order</a>
-                            <a href="<?= base_url('user') ?>" class="dropdown-item">User</a>
-                        </div>
-                    </li>
-                <?php endif ?>
             </ul>
             <ul class="navbar-nav mx-auto">
                 <form action="<?= base_url('shop/search') ?>" method="POST">

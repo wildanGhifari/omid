@@ -32,6 +32,13 @@ class Profile extends MY_Controller
         ])
             ->orderby('date', 'DESC')->get();
 
+        $this->profile->table   = 'orders';
+        $data['myOrders'] = $this->profile->select([
+            'orders.id_user', 'orders.invoice',
+            'orders.date', 'orders.total', 'orders.status'
+        ])
+            ->where('orders.id_user', $data['content']->id)->orderby('date', 'DESC')->get();
+
         $this->profile->table   = 'user';
         $data['users']  = $this->profile->select([
             'user.id', 'user.name', 'user.role', 'user.is_active'

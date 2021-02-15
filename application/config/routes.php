@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['category/(:num)']   = 'category/index/$1';
 $route['shopping/(:num)']   = 'shopping/index/$1';
 $route['product/(:num)']   = 'product/index/$1';
+$route['profile/(:num)']   = 'profile/index/$1';
 $route['order/(:num)']   = 'order/index/$1';
 $route['user/(:num)']   = 'user/index/$1';
 $route['blog/(:num)']   = 'blog/index/$1';

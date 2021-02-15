@@ -28,7 +28,7 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-7 mb-3">
                             <div id="orderCard" class="card dashboardCard">
                                 <div class="card-header bg-white">
                                     <div class="d-flex justify-content-between">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-5 mb-3">
                             <div id="userCard" class="card dashboardCard">
                                 <div class="card-header bg-white">
                                     <div class="d-flex justify-content-between">
@@ -94,14 +94,108 @@
                                             <?php $no = 0;
                                             foreach ($users as $user) : $no++; ?>
                                                 <tr>
-                                                    <td><?= $no ?></td>
-                                                    <td><?= $user->name; ?></td>
-                                                    <td></td>
+                                                    <td class="text-center"><small><?= $no ?></small></td>
+                                                    <td><small><?= $user->name; ?></small></td>
+                                                    <td>
+                                                        <small>
+                                                            <?= form_open(base_url("user/delete/$user->id"), ['method' => 'POST']) ?>
+                                                            <?= form_hidden('id', $user->id) ?>
+                                                            <a href="<?= base_url("user/edit/$user->id") ?>" class="btn btn-sm">
+                                                                <i class="fas fa-edit text-info"></i>
+                                                            </a>
+                                                            <button class="btn btn-sm" type="submit" onclick="return confirm('Are you sure?')">
+                                                                <i class="fas fa-trash text-danger"></i>
+                                                            </button>
+                                                            <?= form_close() ?>
+                                                        </small>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="productCard" class="card dashboardCard">
+                                <div class="card-header bg-white">
+                                    <div class="d-flex justify-content-between">
+                                        <h6>Product</h6>
+                                        <div>
+                                            <form action="<?= base_url("product/search") ?>" method="POST">
+                                                <div class="input-group border">
+                                                    <input type="text" name="keyword" class="form-control form-control rounded-0 border-0" placeholder="search" value="<?= $this->session->userdata('keyword') ?>">
+                                                    <div class="input-group-append">
+                                                        <button class="btn bg-white rounded-0 border-0" type="submit">
+                                                            <i class="fas fa-search"></i>
+                                                        </button>
+                                                        <a href="<?= base_url("product/reset") ?>" class="btn bg-white rounded-0 border-0"><i class="fas fa-eraser"></i></a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-sm table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Product</th>
+                                                <th>Category</th>
+                                                <th>Harga</th>
+                                                <th>Stock</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no = 0;
+                                            foreach ($products as $row) : $no++; ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <small>
+                                                            <?= $no; ?>
+                                                        </small>
+                                                    </td>
+                                                    <td>
+                                                        <p>
+                                                            <small><?= $row->product_title; ?></small>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <small><span class="badge badge-warning"><?= $row->category_title; ?></span></small>
+                                                    </td>
+                                                    <td>
+                                                        <small>Rp.<?= number_format($row->price, 0, ',', '.') ?></small>
+                                                    </td>
+                                                    <td>
+                                                        <small><?= $row->is_available ? 'Available' : 'Empty'; ?></small>
+                                                    </td>
+                                                    <td>
+                                                        <small>
+                                                            <?= form_open(base_url("/product/delete/$row->id"), ['method' => 'POST']) ?>
+                                                            <?= form_hidden('id', $row->id) ?>
+                                                            <a href="<?= base_url("/product/edit/$row->id") ?>" class="btn btn-sm">
+                                                                <i class="fas fa-edit text-info"></i>
+                                                            </a>
+                                                            <button class="btn btn-sm" type="submit" onclick="return confirm('Are you sure?')">
+                                                                <i class="fas fa-trash text-danger"></i>
+                                                            </button>
+                                                            <?= form_close() ?>
+                                                        </small>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
+                                    </table>
+                                    <nav aria-label="Page navigation example" class="mt-3">
+                                        <?= $pagination; ?>
+                                    </nav>
+                                </div>
+
                             </div>
                         </div>
                     </div>

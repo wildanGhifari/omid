@@ -20,7 +20,7 @@ class Profile extends MY_Controller
     }
 
 
-    public function index()
+    public function index($page = null)
     {
         $data['title']      = 'Profile';
         $data['content']    = $this->profile->where('id', $this->id)->first();
@@ -36,6 +36,22 @@ class Profile extends MY_Controller
         $data['users']  = $this->profile->select([
             'user.id', 'user.name', 'user.role', 'user.is_active'
         ])->get();
+
+        $this->profile->table  = 'product';
+        $data['products'] = $this->profile->select([
+            'product.id', 'product.title AS product_title', 'product.image', 'product.price', 'product.is_available',
+            'category.title AS category_title'
+        ])
+            ->join('category')
+            ->paginate($page)
+            ->get();
+        $data['total_rows'] = $this->profile->count();
+        $data['pagination'] = $this->profile->makePagination(
+            base_url('profile'),
+            2,
+            $data['total_rows']
+        );
+
         $data['page']      = 'pages/profile/index';
 
         return $this->view($data);

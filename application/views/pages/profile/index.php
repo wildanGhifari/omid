@@ -28,14 +28,13 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-7">
                             <div id="orderCard" class="card dashboardCard">
                                 <div class="card-header bg-white">
                                     <div class="d-flex justify-content-between">
                                         <h6>Order List</h6>
                                         <div>
-                                            <a href="" class="mr-3 text-success">View All</a>
-                                            <a href="" class="btn btn-success">Add New</a>
+                                            <a href="" class="btn btn-success">Manage</a>
                                         </div>
                                     </div>
                                 </div>
@@ -64,6 +63,40 @@
                                                     <td>
                                                         <small><?php $this->load->view('layouts/_status', ['status' => $row->status]); ?></small>
                                                     </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div id="userCard" class="card dashboardCard">
+                                <div class="card-header bg-white">
+                                    <div class="d-flex justify-content-between">
+                                        <h6>User</h6>
+                                        <div>
+                                            <a href="" class="btn btn-success">Manage</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-sm table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>User</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no = 0;
+                                            foreach ($users as $user) : $no++; ?>
+                                                <tr>
+                                                    <td><?= $no ?></td>
+                                                    <td><?= $user->name; ?></td>
+                                                    <td></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

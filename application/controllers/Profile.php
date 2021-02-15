@@ -31,6 +31,11 @@ class Profile extends MY_Controller
             'orders.date', 'orders.total', 'orders.status'
         ])
             ->orderby('date', 'DESC')->get();
+
+        $this->profile->table   = 'user';
+        $data['users']  = $this->profile->select([
+            'user.id', 'user.name', 'user.role', 'user.is_active'
+        ])->get();
         $data['page']      = 'pages/profile/index';
 
         return $this->view($data);

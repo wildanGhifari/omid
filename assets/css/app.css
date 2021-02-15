@@ -523,6 +523,7 @@ ol li {
 }
 .dashboardCard:hover {
 	box-shadow: 0px 15px 25px -5px rgba(0, 0, 0, 0.15);
+	border: none;
 	transition: 0.3s;
 	margin-top: -4px;
 }
@@ -532,6 +533,15 @@ ol li {
 }
 
 #orderCard .card-body {
+	padding: 0;
+	overflow: scroll;
+}
+
+#usercard {
+	max-height: 350px;
+}
+
+#usercard .card-body {
 	padding: 0;
 	overflow: scroll;
 }

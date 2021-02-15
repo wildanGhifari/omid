@@ -536,11 +536,11 @@ ol li {
 	overflow: scroll;
 }
 
-#usercard {
+#userCard {
 	max-height: 350px;
 }
 
-#usercard .card-body {
+#userCard .card-body {
 	padding: 0;
 	overflow: scroll;
 }

@@ -34,7 +34,7 @@
                                     <div class="d-flex justify-content-between">
                                         <h6>Order List</h6>
                                         <div>
-                                            <a href="" class="btn btn-success">Manage</a>
+                                            <a href="<?= base_url('order') ?>" class="btn btn-success">Manage</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                             <?php foreach ($order as $row) : ?>
                                                 <tr>
                                                     <td>
-                                                        <small><a href="<?= base_url("/myorder/detail/$row->invoice") ?>"><?= $row->invoice; ?></a></small>
+                                                        <small><a href="<?= base_url("/order/detail/$row->id") ?>"><?= $row->invoice; ?></a></small>
                                                     </td>
                                                     <td>
                                                         <small><?= str_replace('-', '/', date("d-m-Y", strtotime($row->date))) ?></small>
@@ -77,7 +77,7 @@
                                     <div class="d-flex justify-content-between">
                                         <h6>User</h6>
                                         <div>
-                                            <a href="" class="btn btn-success">Manage</a>
+                                            <a href="<?= base_url('user') ?>" class="btn btn-success">Manage</a>
                                         </div>
                                     </div>
                                 </div>

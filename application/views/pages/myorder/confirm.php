@@ -1,7 +1,7 @@
 <main role="main" class="container">
     <div class="container-xl" style="padding: 5% 0;">
         <div class="row justify-content-center">
-            <div class="col-md-5">
+            <div class="col-md-5 mb-3">
                 <div class="card confirmOrder">
                     <div class="card-header bg-white">
                         <h6>Detail Order <?= $order->invoice; ?></h6>

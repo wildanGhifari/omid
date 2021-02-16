@@ -9,10 +9,10 @@
                         <?php $this->load->view('layouts/_status', ['status' => $order->status]); ?>
                     </div>
                     <div class="card-body">
-                        <p>Tanggal : <?= str_replace('-', '/', date("d-m-Y", strtotime($order->date))) ?></p>
-                        <p>Nama : <?= $order->name; ?></p>
-                        <p>Phone : <?= $order->phone; ?></p>
-                        <p>Alamat : <?= $order->address; ?></p>
+                        <p><strong>Tanggal : </strong><?= str_replace('-', '/', date("d-m-Y", strtotime($order->date))) ?></p>
+                        <p><strong>Nama : </strong><?= $order->name; ?></p>
+                        <p><strong>No. Telp : </strong><?= $order->phone; ?></p>
+                        <p><strong>Alamat : </strong><?= $order->address; ?>, <?= $order->district ?>, Kecamatan <?= $order->subdistrict ?></p>
                         <hr>
                         <div>
                             <?php foreach ($order_detail as $row) : ?>

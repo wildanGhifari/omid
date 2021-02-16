@@ -27,7 +27,7 @@ class Profile extends MY_Controller
 
         $this->profile->table   = 'orders';
         $data['order']  = $this->profile->select([
-            'orders.id_user', 'orders.invoice',
+            'orders.id', 'orders.id_user', 'orders.invoice',
             'orders.date', 'orders.total', 'orders.status'
         ])
             ->orderby('date', 'DESC')->get();

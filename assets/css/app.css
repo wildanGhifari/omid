@@ -555,6 +555,21 @@ ol li {
 }
 /* END OF PROFILE */
 
+/* MYORDER PAGE */
+.detailOrder .card-body p {
+	margin-bottom: 4px;
+}
+
+.confirmOrder {
+	box-shadow: 0px 15px 25px -5px rgba(0, 0, 0, 0.15);
+	border: none;
+}
+
+.confirmOrder .card-body p {
+	margin-bottom: 4px;
+}
+/* END OF MYORDER PAGE */
+
 /* FOOTER */
 .privacyTerms {
 	text-align: end;

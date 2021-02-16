@@ -1,25 +1,25 @@
 <?php
 if ($status == 'waiting') {
-    $badge_status   = 'badge-primary py-2';
+    $badge_status   = 'badge-primary';
     $status         = 'Waiting for payments';
 }
 
 if ($status == 'paid') {
-    $badge_status   = 'badge-secondary py-2';
+    $badge_status   = 'badge-secondary';
     $status         = 'Paid';
 }
 
 if ($status == 'delivered') {
-    $badge_status   = 'badge-info py-2';
+    $badge_status   = 'badge-info';
     $status         = 'Delivered';
 }
 if ($status == 'success') {
-    $badge_status   = 'badge-success py-2';
+    $badge_status   = 'badge-success';
     $status         = 'Success';
 }
 
 if ($status == 'cancel') {
-    $badge_status   = 'badge-danger py-2';
+    $badge_status   = 'badge-danger';
     $status         = 'Cancel';
 }
 ?>

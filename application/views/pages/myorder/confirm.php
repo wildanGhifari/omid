@@ -2,9 +2,9 @@
     <div class="container-xl" style="padding: 5% 0;">
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="lead font-weight-bold">Detail Order <?= $order->invoice; ?></strong>
+                <div class="card confirmOrder">
+                    <div class="card-header bg-white">
+                        <h6>Detail Order <?= $order->invoice; ?></h6>
                     </div>
                     <div class="card-body">
                         <div>
@@ -12,21 +12,23 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
-                                        <p class="float-right font-weight-bold">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                        <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
                                     </div>
                                 </div>
                             <?php endforeach ?>
                             <div class="row px-0">
                                 <div class="col-md-12">
                                     <p class="float-left">Paket Pengiriman</p>
-                                    <p class="float-right font-weight-bold"><?= $order->courier ?>, <?= $order->package ?></p>
+                                    <p class="float-right"><?= $order->courier ?>, <?= $order->package ?></p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h6 class="float-left">Total</h6>
-                                    <h6 class="float-right">Rp. <?= number_format($order->total, 0, ',', '.') ?></h6>
+                                    <strong>
+                                        <p class="float-left">Total</p>
+                                        <p class="float-right">Rp. <?= number_format($order->total, 0, ',', '.') ?></p>
+                                    </strong>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +38,8 @@
 
             <div class="col-md-7">
                 <div class="card">
-                    <div class="card-header">
-                        <strong class="lead font-weight-bold">Order Confirmation <?= $order->invoice; ?></strong>
+                    <div class="card-header bg-white">
+                        <h6>Order Confirmation <?= $order->invoice; ?></h6>
                         <div class="">
                             <?php $this->load->view('layouts/_status', ['status' => $order->status]); ?>
                         </div>
@@ -76,7 +78,7 @@
                             <?php endif ?>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer bg-white">
                         <button style="width: 100%;" type="submit" class="btn btn-lg btn-success rounded-0">Confirm</button>
                     </div>
                 </div>

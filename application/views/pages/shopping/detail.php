@@ -35,7 +35,15 @@
                         </div>
                     </div>
                 </div>
-
+                <?php if ($row->category_title == 'Breakfast') : ?>
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <span class="btn btn-warning mb-3">All Product is Negotiable</span>
+                            <span class="btn btn-warning mb-3">Cutom Packaging Available</span>
+                            <a href="https://wa.link/cy8heu"><span class="btn btn-success mb-3"><i class="fab fa-whatsapp"></i> Click here for contact us</span></a>
+                        </div>
+                    </div>
+                <?php endif ?>
                 <div class="row">
                     <div class="col-md-7 mb-3 proDesc">
                         <small class="text-muted"><strong>DESCRIPTION</strong></small>

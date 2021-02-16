@@ -14,10 +14,11 @@
                             <li>Lakukan pembayaran ke Nomer Rekening <strong>BCA 1234567890 a/n PT. Omid Health Style.</strong></li>
                             <li>Sertakan keterangan dengan Nomer Invoice : <strong><?= $content->invoice; ?></strong></li>
                             <li>Total pembayaran : <strong>Rp. <?= number_format($content->total, 0, ',', '.'); ?></strong></li>
+                            <li>Lakukan konfirmasi melalui halaman konfirmasi atau bisa <a href="<?= base_url("/myorder/detail/$content->invoice") ?>">Klik disini.</a></li>
                         </ol>
                         <hr>
-                        <p>Jika sudah melakukan transfer, segera lakukan konfirmasi melalui halaman konfirmasi atau bisa <a href="<?= base_url("/myorder/detail/$content->invoice") ?>">Klik disini.</a></p>
-                        <a href="<?= base_url('/') ?>" class="btn btn-success"><i class="fas fa-angle-left"></i> Back to Home</a>
+                        <a href="<?= base_url('/') ?>" class="btn btn-outline-success float-left"><i class="fas fa-angle-left"></i> Back to Home</a>
+                        <a href="<?= base_url("/myorder/detail/$content->invoice") ?>" class="btn btn-success float-right">Konfirmasi <i class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

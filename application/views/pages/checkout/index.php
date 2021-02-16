@@ -4,8 +4,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8 mb-3">
                 <div class="card">
-                    <div class="card-header lead font-weight-bold">
-                        <strong>Checkout Billing</strong>
+                    <div class="card-header bg-white">
+                        <h6 class="mb-0">Checkout Billing</h6>
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url("checkout/create") ?>" method="POST">
@@ -85,29 +85,29 @@
                             <div class="row my-4">
                                 <div class="col-md-12">
                                     <div style="box-shadow: none !important;" class="card border border-mute">
-                                        <div class="card-header lead font-weight-bold">
-                                            <strong>My Cart Summary (<?= getCart(); ?>)</strong>
+                                        <div class="card-header bg-success">
+                                            <h6 class="text-white mb-0">My Cart Summary (<?= getCart(); ?>)</h6>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body secondary-bg">
                                             <?php foreach ($cart as $row) : ?>
                                                 <div class="row px-0">
                                                     <div class="col-md-12">
-                                                        <p class="float-left"><?= $row->qty; ?>x <?= $row->title; ?></p>
-                                                        <p class="float-right">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
+                                                        <p class="float-left mb-0"><?= $row->qty; ?>x <?= $row->title; ?></p>
+                                                        <p class="float-right mb-0">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?></p>
                                                     </div>
                                                 </div>
                                             <?php endforeach ?>
                                             <div class="row px-0">
                                                 <div class="col-md-12">
-                                                    <p class="float-left">Shipping Cost</p>
-                                                    <p class="float-right">Rp. <span class="ongkir"></span></p>
+                                                    <p class="float-left mb-0">Shipping Cost</p>
+                                                    <p class="float-right mb-0">Rp. <span class="ongkir"></span></p>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h6 class="float-left"><strong>Total</strong></h6>
-                                                    <h6 class="float-right"><strong>Rp. <span class="total"></span></strong></h6>
+                                                    <p class="float-left mb-0"><strong>Total</strong></p>
+                                                    <p class="float-right mb-0"><strong>Rp. <span class="total"></span></strong></p>
 
                                                 </div>
                                             </div>

@@ -453,7 +453,7 @@ ol li {
 	padding: 5% 0;
 }
 
-.detailProductCon .card {
+#detailProduct {
 	border: none;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
@@ -797,11 +797,11 @@ ol li {
 		padding: 0;
 	}
 
-	.detailProductCon .card {
+	#detailProduct {
 		box-shadow: none;
 		border: none;
 	}
-	.detailProductCon .card-body {
+	#detailProduct .card-body {
 		padding: 24px 0;
 	}
 
@@ -995,11 +995,11 @@ ol li {
 		padding: 0;
 	}
 
-	.detailProductCon .card {
+	#detailProduct {
 		box-shadow: none;
 		border: none;
 	}
-	.detailProductCon .card-body {
+	#detailProduct .card-body {
 		padding: 24px 0;
 	}
 

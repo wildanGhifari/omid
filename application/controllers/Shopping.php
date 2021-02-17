@@ -51,8 +51,6 @@ class Shopping extends MY_Controller
             $data['total_rows']
         );
 
-        $title = $data['products']->title;
-
         $this->shopping->table  = 'b2b';
         $data['relB2b']     = $this->shopping->select([
             'b2b.id', 'b2b.slug', 'b2b.title AS b2b_title', 'b2b.description',

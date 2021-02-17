@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <?php if ($row->category_title == 'Breakfast') : ?>
+                <?php if ($row->category_title == 'B2B') : ?>
                     <div class="row mb-4">
                         <div class="col-md-12">
                             <span class="btn btn-warning mb-3">All Product is Negotiable</span>

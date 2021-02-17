@@ -1,6 +1,6 @@
 <main role="main">
     <div class="container-fluid px-0 bg-white detailProductCon">
-        <?php foreach ($product as $row) : ?>
+        <?php foreach ($products as $row) : ?>
             <div class="container-xl">
                 <div class="row justify-content-between mb-3">
                     <div class="col-md-7 px-3 rounded secondary-bg text-center">

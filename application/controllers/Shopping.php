@@ -38,7 +38,7 @@ class Shopping extends MY_Controller
         }
 
         $this->shopping->table   = 'product';
-        $data['product']   = $this->shopping->select([
+        $data['products']   = $this->shopping->select([
             'product.id', 'product.slug', 'product.title AS product_title', 'product.description',
             'product.image', 'product.price', 'product.is_available', 'product.weight',
             'category.title AS category_title', 'category.slug AS category_slug'

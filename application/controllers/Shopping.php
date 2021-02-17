@@ -51,6 +51,16 @@ class Shopping extends MY_Controller
             $data['total_rows']
         );
 
+        $title = $data['products']->title;
+
+        $this->shopping->table  = 'b2b';
+        $data['relB2b']     = $this->shopping->select([
+            'b2b.id', 'b2b.slug', 'b2b.title AS b2b_title', 'b2b.description',
+            'b2b.image', 'b2b.price', 'b2b.is_available', 'b2b.weight',
+            'category.title AS category_title', 'category.slug AS category_slug'
+        ])
+            ->join('category')->where('b2b.is_available', 1)->get();
+
         $data['page']           = 'pages/shopping/detail';
 
         $this->view($data);

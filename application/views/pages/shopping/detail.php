@@ -43,6 +43,24 @@
                             <a href="https://wa.link/cy8heu"><span class="btn btn-success mb-3"><i class="fab fa-whatsapp"></i> Click here for contact us</span></a>
                         </div>
                     </div>
+
+                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                        <?php foreach ($relB2b as $row) : ?>
+                            <div class="gallery-cell">
+                                <div class="card">
+                                    <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                    <a href="<?= base_url("shopping/detail/$row->slug") ?>">
+                                        <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
+                                    </a>
+                                    <div class="card-body">
+                                        <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                        <p class="card-title"><?= $row->b2b_title; ?></p>
+                                        <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
                 <?php endif ?>
                 <div class="row">
                     <div class="col-md-7 mb-3 proDesc">

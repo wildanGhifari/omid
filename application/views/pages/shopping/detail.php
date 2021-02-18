@@ -10,11 +10,11 @@
                     <div class="col-md-5 px-3">
                         <div id="detailProduct" class="card">
                             <div class="card-body">
-                                <h4 id="namaProduk" class="mb-3"><span lang="id"><?= $product->product_title ?></span> <span lang="in"><?= $product->judul ?></span></h4>
+                                <h4 id="namaProduk" class="mb-2"><span lang="id"><?= $product->product_title ?></span> <span lang="in"><?= $product->judul ?></span></h4>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <a href="<?= base_url("/shop/category/$product->category_slug") ?>" class="badge badge-warning rounded-pill mb-4 text-uppercase mr-2"><?= $product->category_title; ?></a>
-                                        <button class="badge badge-secondary border-0 font-weight-normal" id="switch-lang"><i class="fas fa-language fa-lg"></i> Switch Language</button>
+                                        <a href="<?= base_url("/shop/category/$product->category_slug") ?>" class="badge badge-warning mb-3 text-uppercase mr-2 py-2"><?= $product->category_title; ?></a>
+                                        <button class="badge badge-secondary border-0 font-weight-normal py-2 px-2" id="switch-lang"><i class="fas fa-language fa-lg"></i> <span lang="id">Ganti Bahasa</span> <span lang="in">Switch Language</span></button>
                                     </div>
                                 </div>
                                 <div class="mb-3">

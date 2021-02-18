@@ -310,6 +310,13 @@ nav img {
 	width: 25%;
 	margin-right: 20px;
 }
+
+.galCelCol {
+	padding-top: 32px;
+	padding-bottom: 32px !important;
+	width: 16.6% !important;
+	margin-right: 20px;
+}
 /* END OF FLICKITY */
 
 /* WHY CHOOSE OUR PRODUCT & TESTIMONI */
@@ -760,6 +767,13 @@ ol li {
 	.gallery-cell {
 		width: 33.3%;
 		margin-right: 15px;
+	}
+
+	.galCelCol {
+		padding-top: 32px;
+		padding-bottom: 32px !important;
+		width: 50% !important;
+		margin-right: 20px;
 	}
 	/* END OF FLICKITY */
 

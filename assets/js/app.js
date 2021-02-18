@@ -21,3 +21,7 @@ function string_to_slug(str) {
 
     return str;
 }
+
+// function translate() {
+//     document.getElementById("namaProduk").innerHTML 
+// }

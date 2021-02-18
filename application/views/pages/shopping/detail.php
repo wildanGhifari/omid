@@ -10,7 +10,7 @@
                     <div class="col-md-5 px-3">
                         <div id="detailProduct" class="card">
                             <div class="card-body">
-                                <h4 class="mb-3"><?= $product->product_title ?></h4>
+                                <h4 id="namaProduk" class="mb-3"><?= $product->product_title ?></h4>
                                 <a href="<?= base_url("/shop/category/$product->category_slug") ?>" class="badge badge-warning rounded-pill mb-4 text-uppercase"><?= $product->category_title; ?></a>
                                 <div class="mb-3">
                                     <small class="text-muted"><strong>PRICE</strong></small>
@@ -23,7 +23,7 @@
                                     </div>
                                     <?php if ($product->category_title == 'B2B') : ?>
                                         <?php foreach ($relB2b as $b2b) : ?>
-                                            <?php if (substr($b2b->b2b_title, 0, 20) === substr($product->product_title, 0, 20) && $b2b->weight !== $product->weight) : ?>
+                                            <?php if (substr($b2b->b2b_title, 0, 15) === substr($product->product_title, 0, 15) && $b2b->weight !== $product->weight) : ?>
                                                 <div class="col-md-4">
                                                     <small class="text-muted"><strong>OTHER SIZE</strong></small>
                                                     <h6><a href="<?= base_url("shopping/detail/$b2b->slug") ?>"><?= $b2b->weight ?>gr</a></h6>
@@ -57,26 +57,26 @@
                         </div>
                     </div>
 
-                    <!-- <h4>Related Product</h4>
+                    <h4>Others B2b Products</h4>
                     <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
                         <?php foreach ($relB2b as $b2b) : ?>
-                            <?php if (substr($b2b->b2b_title, 0, 20) === substr($product->product_title, 0, 20) && $b2b->weight !== $product->weight) : ?>
-                                <div class="gallery-cell teaserProduct">
-                                    <div class="card">
-                                        <span class="badge badge-warning badge-pill mr-2"><?= $b2b->weight; ?>gr</span>
-                                        <a href="<?= base_url("shopping/detail/$b2b->slug") ?>">
+                            <?php if ($b2b->b2b_title !== $product->product_title) : ?>
+                                <div class="gallery-cell galCelCol teaserProduct">
+                                    <a href="<?= base_url("shopping/detail/$b2b->slug") ?>">
+                                        <div class="card">
+                                            <span class="badge badge-warning badge-pill mr-2"><?= $b2b->weight; ?>gr</span>
                                             <img class="card-img-top" src="<?= $b2b->image ? base_url("/images/product/$b2b->image") : base_url("/images/product/default.jpg") ?>" alt="">
-                                        </a>
-                                        <div class="card-body px-3">
-                                            <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$b2b->category_slug") ?>"><?= $b2b->category_title; ?></a></small>
-                                            <p class="card-title"><?= $b2b->b2b_title; ?></p>
-                                            <h5>Rp.<?= number_format($b2b->price, 0, ',', '.') ?></h5>
+                                            <div class="card-body px-3">
+                                                <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$b2b->category_slug") ?>"><?= $b2b->category_title; ?></a></small>
+                                                <p class="card-title"><?= $b2b->b2b_title; ?></p>
+                                                <h5>Rp.<?= number_format($b2b->price, 0, ',', '.') ?></h5>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             <?php endif ?>
                         <?php endforeach ?>
-                    </div> -->
+                    </div>
                 <?php endif ?>
 
                 <div class="row">

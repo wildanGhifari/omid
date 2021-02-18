@@ -31,7 +31,13 @@
                                             <?php if (substr($b2b->b2b_title, 0, 15) === substr($product->product_title, 0, 15) && $b2b->weight !== $product->weight) : ?>
                                                 <div class="col-md-4">
                                                     <small class="text-muted"><strong>OTHER SIZE</strong></small>
-                                                    <h6><a href="<?= base_url("shopping/detail/$b2b->slug") ?>"><?= $b2b->weight ?>gr</a></h6>
+                                                    <?php if ($b2b->weight > 1000) : ?>
+                                                        <?php $b2b->weight = $b2b->weight / 1000 ?>
+                                                        <h6><a href="<?= base_url("shopping/detail/$b2b->slug") ?>"><?= $b2b->weight ?> Kg</a></h6>
+                                                    <?php else : ?>
+                                                        <h6><a href="<?= base_url("shopping/detail/$b2b->slug") ?>"><?= $b2b->weight ?> gr</a></h6>
+                                                    <?php endif ?>
+                                                    <p>Rp. <?= number_format($b2b->price, 0, ',', '.') ?></p>
                                                 </div>
                                             <?php endif ?>
                                         <?php endforeach ?>

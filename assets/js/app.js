@@ -22,6 +22,9 @@ function string_to_slug(str) {
     return str;
 }
 
-// function translate() {
-//     document.getElementById("namaProduk").innerHTML 
-// }
+$('[lang="in"]').hide();
+
+$('#switch-lang').click(function() {
+  $('[lang="in"]').toggle();
+  $('[lang="id"]').toggle();
+});

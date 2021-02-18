@@ -10,7 +10,7 @@
                     <div class="col-md-5 px-3">
                         <div id="detailProduct" class="card">
                             <div class="card-body">
-                                <h4 id="namaProduk" class="mb-3"><span lang="id"><?= $product->product_title ?></span> <span lang="in">Almond Mentah Blue Diamond</span></h4>
+                                <h4 id="namaProduk" class="mb-3"><span lang="id"><?= $product->product_title ?></span> <span lang="in"><?= $product->judul ?></span></h4>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a href="<?= base_url("/shop/category/$product->category_slug") ?>" class="badge badge-warning rounded-pill mb-4 text-uppercase mr-2"><?= $product->category_title; ?></a>

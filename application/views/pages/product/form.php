@@ -15,6 +15,11 @@
                             <?= form_error('title') ?>
                         </div>
                         <div class="form-group">
+                            <label for="productName">Produk</label>
+                            <?= form_input('judul', $input->judul, ['class' => 'form-control', 'id' => 'judul', 'required' => true]) ?>
+                            <?= form_error('judul') ?>
+                        </div>
+                        <div class="form-group">
                             <label for="">Description</label>
                             <?= form_textarea(['name' => 'description', 'value' => $input->description, 'row' => 4, 'class' => 'form-control', 'id' => 'myTextarea']) ?>
                             <?= form_error('description') ?>

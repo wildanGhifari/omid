@@ -13,6 +13,7 @@ class Product_model extends MY_Model
             'id_category'   => '',
             'slug'          => '',
             'title'         => '',
+            'judul'         => '',
             'description'   => '',
             'price'         => '',
             'weight'         => '',
@@ -37,6 +38,11 @@ class Product_model extends MY_Model
             [
                 'field' => 'title',
                 'label' => 'Product Name',
+                'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'judul',
+                'label' => 'Nama Produk',
                 'rules' => 'trim|required'
             ],
             [

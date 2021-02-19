@@ -69,13 +69,18 @@
                     </div>
 
                     <h4>Other B2b Products</h4>
-                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": false }'>
                         <?php foreach ($relB2b as $b2b) : ?>
                             <?php if ($b2b->b2b_title !== $product->product_title) : ?>
                                 <div class="gallery-cell galCelCol teaserProduct">
                                     <a href="<?= base_url("shopping/detail/$b2b->slug") ?>">
                                         <div class="card">
-                                            <span class="badge badge-warning badge-pill mr-2"><?= $b2b->weight; ?>gr</span>
+                                            <?php if ($b2b->weight >= 1000) : ?>
+                                                <?php $b2b->weight = $b2b->weight / 1000 ?>
+                                                <span class="badge badge-warning badge-pill mr-2"><?= $b2b->weight; ?> Kg</span>
+                                            <?php else : ?>
+                                                <span class="badge badge-warning badge-pill mr-2"><?= $b2b->weight; ?>gr</span>
+                                            <?php endif ?>
                                             <img class="card-img-top" src="<?= $b2b->image ? base_url("/images/product/$b2b->image") : base_url("/images/product/default.jpg") ?>" alt="">
                                             <div class="card-body px-3">
                                                 <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$b2b->category_slug") ?>"><?= $b2b->category_title; ?></a></small>
@@ -90,12 +95,17 @@
                     </div>
                 <?php else : ?>
                     <h4>Other Products</h4>
-                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": false }'>
                         <?php foreach ($relProducts as $row) : ?>
                             <div class="gallery-cell galCelCol teaserProduct">
                                 <a href="<?= base_url("shopping/detail/$row->slug") ?>">
                                     <div class="card">
-                                        <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                        <?php if ($row->weight >= 1000) : ?>
+                                            <?php $row->weight = $row->weight / 1000 ?>
+                                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>
+                                        <?php else : ?>
+                                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                        <?php endif ?>
                                         <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                                         <div class="card-body px-3">
                                             <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>

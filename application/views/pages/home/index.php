@@ -53,11 +53,16 @@
                     </a>
                 </div>
             </div>
-            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": false }'>
                 <?php foreach ($content as $row) : ?>
                     <div class="gallery-cell">
                         <div class="card">
-                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <?php if ($row->weight >= 1000) : ?>
+                                <?php $row->weight = $row->weight / 1000 ?>
+                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>
+                            <?php else : ?>
+                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <?php endif ?>
                             <a href="<?= base_url("shopping/detail/$row->slug") ?>">
                                 <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                             </a>
@@ -93,11 +98,16 @@
                     </a>
                 </div>
             </div>
-            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+            <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": false }'>
                 <?php foreach ($products as $row) : ?>
                     <div class="gallery-cell">
                         <div class="card">
-                            <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <?php if ($row->weight >= 1000) : ?>
+                                <?php $row->weight = $row->weight / 1000 ?>
+                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>
+                            <?php else : ?>
+                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                            <?php endif ?>
                             <a href="<?= base_url("shopping/detail/$row->slug") ?>">
                                 <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                             </a>

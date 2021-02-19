@@ -23,7 +23,12 @@
                     <?php foreach ($content as $row) : ?>
                         <div class="flexCol">
                             <div class="card mb-4">
-                                <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                <?php if ($row->weight >= 1000) : ?>
+                                    <?php $row->weight = $row->weight / 1000 ?>
+                                    <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>
+                                <?php else : ?>
+                                    <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                <?php endif ?>
                                 <a href="<?= base_url("shopping/detail/$row->slug") ?>">
                                     <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
                                 </a>

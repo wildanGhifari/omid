@@ -15,6 +15,11 @@
                             <?= form_error('title') ?>
                         </div>
                         <div class="form-group">
+                            <label for="keywords">Keywords</label>
+                            <?= form_input('keywords', $input->keywords, ['class' => 'form-control', 'id' => 'keywords', 'required' => true]) ?>
+                            <?= form_error('keywords') ?>
+                        </div>
+                        <div class="form-group">
                             <label for="">Category</label>
                             <?= form_dropdown('id_blog_category', getDropdownList('blog_category', ['id', 'title']), $input->id_blog_category, ['class' => 'form-control']) ?>
                             <?= form_error('id_blog_category') ?>

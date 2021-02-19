@@ -35,7 +35,7 @@ class Blog extends MY_Controller
         }
 
         $data['blog']       = $this->blog->select([
-            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content',
+            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content', 'blog.keywords',
             'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
         ])
             ->join('blog_category')->where('blog.slug', $slug)->get();
@@ -45,6 +45,16 @@ class Blog extends MY_Controller
             2,
             $data['total_rows']
         );
+
+        $keyword = $data['blog']->keywords;
+
+        $this->blog->table  = 'product';
+        $data['products']   = $this->blog->select([
+            'product.id', 'product.id_category', 'product.slug AS product_slug', 'product.title AS product_title',
+            'product.judul', 'product.description', 'product.price', 'product.weight', 'product.is_available',
+            'product.image', 'category.id', 'category.slug AS category_slug', 'category.title AS category_title'
+        ])
+            ->join('category')->like($keyword, 'product.title')->orlike($keyword, 'product.slug')->where('product.is_available', 1)->limit(5, 0)->get();
 
         $data['page']       = 'pages/blog/detail';
 
@@ -108,6 +118,7 @@ class Blog extends MY_Controller
 
         if (!$this->blog->validate()) {
             $data['title']          = 'Add new Blog Post';
+            $data['keywords']          = 'Add new Blog Post';
             $data['input']          = $input;
             $data['form_action']    = base_url('blog/create');
             $data['page']           = 'pages/blog/form';

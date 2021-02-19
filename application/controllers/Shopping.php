@@ -51,6 +51,15 @@ class Shopping extends MY_Controller
             $data['total_rows']
         );
 
+        $this->shopping->table  = 'product';
+        $data['relProducts']    = $this->shopping->select([
+            'product.id', 'product.slug', 'product.title AS product_title', 'product.judul', 'product.description',
+            'product.image', 'product.price', 'product.is_available', 'product.weight',
+            'category.title AS category_title', 'category.slug AS category_slug'
+        ])
+            ->join('category')->where('product.is_available', 1)->random('product.id', 'random')->limit(20, 0)->get();
+
+
         $this->shopping->table  = 'b2b';
         $data['relB2b']     = $this->shopping->select([
             'b2b.id', 'b2b.slug', 'b2b.title AS b2b_title', 'b2b.description',

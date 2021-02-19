@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <h4>Others B2b Products</h4>
+                    <h4>Other B2b Products</h4>
                     <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
                         <?php foreach ($relB2b as $b2b) : ?>
                             <?php if ($b2b->b2b_title !== $product->product_title) : ?>
@@ -88,6 +88,27 @@
                             <?php endif ?>
                         <?php endforeach ?>
                     </div>
+                <?php else : ?>
+                    <h4>Other Products</h4>
+                    <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": true }'>
+                        <?php foreach ($relProducts as $row) : ?>
+                            <div class="gallery-cell galCelCol teaserProduct">
+                                <a href="<?= base_url("shopping/detail/$row->slug") ?>">
+                                    <div class="card">
+                                        <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?>gr</span>
+                                        <img class="card-img-top" src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" alt="">
+                                        <div class="card-body px-3">
+                                            <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
+                                            <p class="card-title"><?= $row->product_title; ?></p>
+                                            <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- <?php if ($row->product_title !== $product->product_title) : ?>
+                            <?php endif ?> -->
+                        <?php endforeach ?>
+                    </div>
                 <?php endif ?>
 
                 <div class="row">
@@ -99,40 +120,6 @@
             </div>
         <?php endforeach ?>
     </div>
-
-    <!-- <section>
-        <div class="container-xl marginTop">
-            <div class="flexRow mt-4">
-                <?php foreach ($product as $row) : ?>
-                    <div class="flexCol">
-                        <div class="card mb-4">
-                            <a href="<?= base_url("shopping/detail/$row->slug") ?>">
-                                <img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.jpg") ?>" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <a href="<?= base_url("/shop/category/$row->category_slug") ?>" class="badge badge-warning rounded-pill mb-3"><?= $row->category_title; ?></a>
-                                    <p class="card-title"><?= $row->product_title; ?></p>
-                                    <h6 class="card-text"><strong>Rp.<?= number_format($row->price, 0, ',', '.') ?>,-</strong></h6>
-                                    <hr class="my-3">
-                                    <form action="<?= base_url("/cart/add") ?>" method="POST">
-                                        <input type="hidden" name="id_product" value="<?= $row->id ?>">
-                                        <div class="input-group">
-                                            <input style="border-radius: 25px 0 0 25px;" type="number" class="form-control" name="qty" value="1" min="1">
-                                            <div class="input-group-append">
-                                                <button style="border-radius: 0 25px 25px 0;" class="btn btn-success">Add To Cart</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-            </div>
-            <nav class="mt-4" aria-label="Page navigation example">
-                <?= $pagination; ?>
-            </nav>
-        </div>
-    </section> -->
 
     </div>
 </main>

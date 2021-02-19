@@ -87,6 +87,21 @@ class MY_Model extends CI_Model
     }
 
 
+    public function limit($record, $value)
+    {
+        $this->db->limit($record, $value);
+        return $this;
+    }
+
+
+    public function random($column, $random)
+    {
+        $random = 'random';
+        $this->db->order_by($column, $random);
+        return $this;
+    }
+
+
     public function first()
     {
         return $this->db->get($this->table)->row();

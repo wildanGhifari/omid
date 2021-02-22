@@ -15,9 +15,19 @@
                             <?= form_error('title') ?>
                         </div>
                         <div class="form-group">
-                            <label for="keywords">Keywords</label>
-                            <?= form_input('keywords', $input->keywords, ['class' => 'form-control', 'id' => 'keywords', 'required' => true]) ?>
-                            <?= form_error('keywords') ?>
+                            <label for="key1">Keywords 1</label>
+                            <?= form_input('key1', $input->key1, ['class' => 'form-control', 'id' => 'key1', 'required' => true]) ?>
+                            <?= form_error('key1') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="key2">Keywords 2</label>
+                            <?= form_input('key2', $input->key2, ['class' => 'form-control', 'id' => 'key2', 'required' => true]) ?>
+                            <?= form_error('key2') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="key3">Keywords 3</label>
+                            <?= form_input('key3', $input->key3, ['class' => 'form-control', 'id' => 'key3', 'required' => true]) ?>
+                            <?= form_error('key3') ?>
                         </div>
                         <div class="form-group">
                             <label for="">Category</label>

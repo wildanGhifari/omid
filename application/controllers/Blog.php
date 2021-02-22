@@ -35,7 +35,7 @@ class Blog extends MY_Controller
         }
 
         $data['blog']       = $this->blog->select([
-            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content', 'blog.keywords',
+            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content', 'blog.key1', 'blog.key2', 'blog.key3',
             'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
         ])
             ->join('blog_category')->where('blog.slug', $slug)->get();
@@ -46,15 +46,30 @@ class Blog extends MY_Controller
             $data['total_rows']
         );
 
-        $keyword = $data['blog']->keywords;
+        $key1 = $data['blog'][0]->key1;
+        $key2 = $data['blog'][0]->key2;
+        $key3 = $data['blog'][0]->key3;
 
         $this->blog->table  = 'product';
         $data['products']   = $this->blog->select([
-            'product.id', 'product.id_category', 'product.slug AS product_slug', 'product.title AS product_title',
+            'product.id', 'product.id_category', 'product.slug', 'product.title AS product_title',
             'product.judul', 'product.description', 'product.price', 'product.weight', 'product.is_available',
             'product.image', 'category.id', 'category.slug AS category_slug', 'category.title AS category_title'
         ])
-            ->join('category')->like($keyword, 'product.title')->orlike($keyword, 'product.slug')->where('product.is_available', 1)->limit(5, 0)->get();
+            // ->join('category')->where('product.is_available', 1)->random('product.id', 'random')->limit(4, 0)->get();
+            ->join('category')->where('product.is_available', 1)
+            ->like('product.title', $key1)->orlike('product.title', $key1)
+            ->orlike('product.title', $key2)->orlike('product.title', $key3)
+            ->random('product.id', 'random')->limit(10, 0)->get();
+
+        $this->blog->table      = 'product';
+        $data['otherProdutcs']  = $this->blog->select([
+            'product.id', 'product.id_category', 'product.slug', 'product.title AS product_title',
+            'product.judul', 'product.description', 'product.price', 'product.weight', 'product.is_available',
+            'product.image', 'category.id', 'category.slug AS category_slug', 'category.title AS category_title'
+        ])
+            ->join('category')->where('product.is_available', 1)
+            ->random('product.id', 'random')->limit(20, 0)->get();
 
         $data['page']       = 'pages/blog/detail';
 

@@ -13,7 +13,9 @@ class Blog_model extends MY_Model
             'id_blog_category'  => '',
             'slug'              => '',
             'title'             => '',
-            'keywords'          => '',
+            'key1'              => '',
+            'key2'              => '',
+            'key3'              => '',
             'description'       => '',
             'content'           => '',
             'image'             => ''
@@ -39,9 +41,19 @@ class Blog_model extends MY_Model
                 'rules' => 'trim|required'
             ],
             [
-                'field' => 'keywords',
-                'label' => 'Keywords',
-                'rules' => 'trim|required'
+                'field' => 'key1',
+                'label' => 'Keywords 1',
+                'rules' => 'trim'
+            ],
+            [
+                'field' => 'key2',
+                'label' => 'Keywords 2',
+                'rules' => 'trim'
+            ],
+            [
+                'field' => 'key3',
+                'label' => 'Keywords 3',
+                'rules' => 'trim'
             ],
             [
                 'field' => 'description',

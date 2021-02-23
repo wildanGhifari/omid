@@ -36,13 +36,26 @@
                                     <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$row->category_slug") ?>"><?= $row->category_title; ?></a></small>
                                     <p class="card-title"><?= $row->product_title; ?></p>
                                     <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
-                                    <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
-                                        <input type="hidden" name="id_product" value="<?= $row->id ?>">
-                                        <div class="input-group">
-                                            <input class="form-control" type="hidden" name="qty" value="1" min="1">
-                                            <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                    <div class="row mt-4">
+                                        <div class="col-md-8">
+                                            <form action="<?= base_url("/cart/add") ?>" method="POST">
+                                                <input type="hidden" name="id_product" value="<?= $row->id ?>">
+                                                <div class="input-group">
+                                                    <input class="form-control" type="hidden" name="qty" value="1" min="1">
+                                                    <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                        <div class="col-md-4">
+                                            <form action="<?= base_url("/wishlist/add") ?>" method="POST">
+                                                <input type="hidden" name="id_product" value="<?= $row->id ?>">
+                                                <div class="input-group">
+                                                    <input class="form-control" type="hidden" name="qty" value="1" min="1">
+                                                    <button type="submit" class="btn btn-outline-danger" style="width: 100%;"><i class="far fa-heart fa-lg"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

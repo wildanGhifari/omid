@@ -12,7 +12,7 @@
                     <h3>Get in touch</h3>
                     <p>Please feel free to contact us if you have any question about our products.</p>
                     <hr>
-                    <form action="">
+                    <form action="mailto:wildghifari@gmail.com" method="POST">
                         <div class="form-group">
                             <label for="fullname">Fullname</label>
                             <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter your fullname">

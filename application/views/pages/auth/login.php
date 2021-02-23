@@ -25,7 +25,10 @@
                                         <?= form_error('password') ?>
                                     </div>
                                     <button type="submit" style="width: 100%;" class="btn btn-success rounded-pill mt-4">Login</button>
-                                    <div class="text-center mt-4">
+                                    <div class="text-center mt-3">
+                                        <a href="<?= base_url('forgot_password') ?>" class="small text-dark">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center mt-3">
                                         <a href="<?= base_url('register') ?>" class="small text-dark">Not a member? Sign up here</a>
                                     </div>
                                     <?= form_close() ?>

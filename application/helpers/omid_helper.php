@@ -38,6 +38,19 @@ function getCart()
     return false;
 }
 
+function getWishlist()
+{
+    $CI     = &get_instance();
+    $userId = $CI->session->userdata('id');
+
+    if ($userId) {
+        $query  = $CI->db->where('id_user', $userId)->count_all_results('wishlist');
+        return $query;
+    }
+
+    return false;
+}
+
 
 function hashEncrypt($input)
 {

@@ -24,11 +24,11 @@ class Wishlist extends MY_Controller
     {
         $data['title']      = 'My Wishlist | Omid Health Style';
         $data['content']    = $this->wishlist->select([
-            'wishlist.id', 'wishlist.qty', 'product.id', 'product.title',
+            'wishlist.id', 'wishlist.qty', 'product.id', 'product.title AS product_title',
             'product.image', 'product.slug', 'product.id_category',
-            'product.price', 'product.weight'
+            'product.price', 'product.weight', 'category.title AS category_title', 'category.slug AS category_slug'
         ])
-            ->join('product')->where('wishlist.id_user', $this->id)->get();
+            ->join('product')->join('category')->where('wishlist.id_user', $this->id)->get();
 
         $data['page']   = 'pages/wishlist/index';
 
@@ -69,6 +69,7 @@ class Wishlist extends MY_Controller
             $data = [
                 'id_user'       => $this->id,
                 'id_product'    => $input->id_product,
+                'id_category'    => $input->id_category,
                 'qty'           => $input->qty,
                 'subtotal'      => $subtotal
             ];
@@ -79,8 +80,43 @@ class Wishlist extends MY_Controller
                 $this->session->set_flashdata('error', 'Oops! Something went wrong.');
             }
 
-            redirect(base_url(''));
+            redirect(base_url('shopping'));
         }
+    }
+
+    public function update($id)
+    {
+        if (!$_POST || $this->input->post('qty') < 1) {
+            $this->session->set_flashdata('error', 'Product quantity cannot be empty.');
+            redirect(base_url('wishlist/index'));
+        }
+
+        $data['content']    = $this->wishlist->where('id', $id)->first();
+
+        if (!$data['content']) {
+            $this->session->set_flashdata('warning', 'Data cannnot be found!');
+            redirect(base_url('wishlist/index'));
+        }
+
+        $data['input']      = (object) $this->input->post(null, true);
+        $this->wishlist->table    = 'product';
+        $product            = $this->wishlist->where('id', $data['content']->id_product)->first();
+
+        $subtotal           = $data['input']->qty * $product->price;
+
+        $wishlist               = [
+            'qty'       => $data['input']->qty,
+            'subtotal'  => $subtotal
+        ];
+
+        $this->wishlist->table  = 'wishlist';
+        if ($this->wishlist->where('id', $id)->update($wishlist)) {
+            $this->session->set_flashdata('success', 'Product successfully updated!');
+        } else {
+            $this->session->set_flashdata('error', 'Oops! Something went wrong.');
+        }
+
+        redirect(base_url('/wishlist/index'));
     }
 
     public function delete($id)

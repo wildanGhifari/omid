@@ -97,7 +97,8 @@
                                 echo $name[0];
                                 ?>
                             </strong>
-                            <img style="max-height: 46px;" class="rounded-circle border border-success ml-2" src="<?= base_url('images/user/') . $this->session->userdata('image') ?>" alt="">
+                            <?php $image = $this->session->userdata('image'); ?>
+                            <img style="max-height: 46px;" class="rounded-circle border border-success ml-2" src="<?= $image ? base_url("/images/user/$image") : base_url("/images/user/default.jpg") ?>" alt="">
                         </a>
                         <div style="width: 100%;" class="dropdown-menu py-0" aria-labelledby="dropdown-2">
                             <a href="<?= base_url('/profile') ?>" class="dropdown-item py-2"><i class="fas fa-user mr-2"></i>Profile</a>

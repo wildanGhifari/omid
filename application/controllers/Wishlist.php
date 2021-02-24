@@ -70,7 +70,6 @@ class Wishlist extends MY_Controller
             $data = [
                 'id_user'       => $this->id,
                 'id_product'    => $input->id_product,
-                'id_category'    => $input->id_category,
                 'qty'           => $input->qty,
                 'subtotal'      => $subtotal
             ];

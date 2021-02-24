@@ -18,11 +18,11 @@
         </div>
 
         <section>
-            <div id="shoppingProduct" class="container-xl">
-                <div class="flexRow mt-4">
+            <div id="shoppingProduct">
+                <div id="myRow">
                     <?php foreach ($content as $row) : ?>
-                        <div class="flexCol">
-                            <div class="card mb-4">
+                        <div id="myCol">
+                            <div class="card mx-2 mb-4">
                                 <?php if ($row->weight >= 1000) : ?>
                                     <?php $row->weight = $row->weight / 1000 ?>
                                     <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>
@@ -37,7 +37,7 @@
                                     <p class="card-title"><?= $row->product_title; ?></p>
                                     <h5>Rp.<?= number_format($row->price, 0, ',', '.') ?></h5>
                                     <div class="row mt-4">
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 mt-3">
                                             <form action="<?= base_url("/cart/add") ?>" method="POST">
                                                 <input type="hidden" name="id_product" value="<?= $row->id ?>">
                                                 <div class="input-group">
@@ -46,7 +46,7 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mt-3">
                                             <form action="<?= base_url("/wishlist/add") ?>" method="POST">
                                                 <input type="hidden" name="id_product" value="<?= $row->id ?>">
                                                 <div class="input-group">

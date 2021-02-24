@@ -577,6 +577,20 @@ ol li {
 }
 /* END OF MYORDER PAGE */
 
+/* WISHLIST */
+#myRow {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#myCol {
+	flex: 25%;
+	width: 25%;
+}
+/* END OF WISHLIST */
+
 /* FOOTER */
 .privacyTerms {
 	text-align: end;
@@ -684,6 +698,20 @@ ol li {
 		float: right;
 	}
 	/* END OF CART PAGE */
+
+	/* WISHLIST */
+	#myRow {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#myCol {
+		flex: 25%;
+		width: 25%;
+	}
+	/* END OF WISHLIST */
 
 	/* FOOTER */
 	.privacyTerms {
@@ -854,6 +882,20 @@ ol li {
 		float: none;
 	}
 	/* END OF CART PAGE */
+
+	/* WISHLIST */
+	#myRow {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#myCol {
+		flex: 33.3%;
+		width: 33.3%;
+	}
+	/* END OF WISHLIST */
 
 	/* FOOTER */
 	.privacyTerms {
@@ -1080,6 +1122,20 @@ ol li {
 		padding: 16px 24px;
 	}
 	/* END OF PROFILE */
+
+	/* WISHLIST */
+	#myRow {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#myCol {
+		flex: 50%;
+		width: 50%;
+	}
+	/* END OF WISHLIST */
 
 	/* FOOTER */
 	.privacyTerms {

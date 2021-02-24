@@ -22,10 +22,10 @@
                             </div>
                         </div>
                     <?php else : ?>
-                        <div class="row">
+                        <div id="myRow">
                             <?php foreach ($content as $row) : ?>
-                                <div class="col-md-3 mb-4 teaserProduct">
-                                    <div class="card">
+                                <div id="myCol" class="mb-4 teaserProduct">
+                                    <div class="card mx-2">
                                         <?php if ($row->weight >= 1000) : ?>
                                             <?php $row->weight = $row->weight / 1000 ?>
                                             <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>

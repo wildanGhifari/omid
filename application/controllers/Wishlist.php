@@ -24,9 +24,10 @@ class Wishlist extends MY_Controller
     {
         $data['title']      = 'My Wishlist | Omid Health Style';
         $data['content']    = $this->wishlist->select([
-            'wishlist.id', 'wishlist.qty', 'product.id', 'product.title AS product_title',
+            'wishlist.id', 'wishlist.qty', 'wishlist.subtotal', 'product.title AS product_title',
             'product.image', 'product.slug', 'product.id_category',
-            'product.price', 'product.weight', 'category.title AS category_title', 'category.slug AS category_slug'
+            'product.price', 'product.weight', 'category.title AS category_title',
+            'category.slug AS category_slug'
         ])
             ->join('product')->join('category')->where('wishlist.id_user', $this->id)->get();
 

@@ -6,9 +6,11 @@
 
         <a href="<?= base_url('cart') ?>" class="nav-link btn py-3 ml-auto cartMobile">
             <i class="fas fa-shopping-cart fa-lg"></i>
-            <span class="badge badge-success" aria-valuemin="0">
-                <?= getCart(); ?>
-            </span>
+            <?php if ($this->session->userdata('is_login')) : ?>
+                <span class="badge badge-success" aria-valuemin="0">
+                    <?= getCart(); ?>
+                </span>
+            <?php endif ?>
         </a>
 
         <?php if ($this->session->userdata('is_login')) : ?>
@@ -46,11 +48,23 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a href="<?= base_url('wishlist') ?>" class="nav-link btn py-3 cartDesktop">
+                        <i class="fas fa-heart fa-lg"></i>
+                        <?php if ($this->session->userdata('is_login')) : ?>
+                            <span class="badge badge-success rounded-circle mr-2" aria-valuemin="0">
+                                <?= getWishlist(); ?>
+                            </span>
+                        <?php endif ?>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?= base_url('cart') ?>" class="nav-link btn py-3 cartDesktop">
                         <i class="fas fa-shopping-cart fa-lg"></i>
-                        <span class="badge badge-success mr-2" aria-valuemin="0">
-                            <?= getCart(); ?>
-                        </span>
+                        <?php if ($this->session->userdata('is_login')) : ?>
+                            <span class="badge badge-success rounded-circle mr-2" aria-valuemin="0">
+                                <?= getCart(); ?>
+                            </span>
+                        <?php endif ?>
                     </a>
                 </li>
                 <?php if (!$this->session->userdata('is_login')) : ?>
@@ -62,7 +76,15 @@
                     </li>
                 <?php else : ?>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle userDesktop" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><?= $this->session->userdata('name') ?></strong>
+                        <a href="#" class="nav-link dropdown-toggle userDesktop" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>
+                                <?php
+                                $names  = $this->session->userdata('name');
+                                $name   = explode(" ", $names);
+
+                                echo $name[0];
+                                ?>
+                            </strong>
                             <img style="max-height: 46px;" class="rounded-circle border border-success ml-2" src="<?= base_url('images/user/') . $this->session->userdata('image') ?>" alt="">
                         </a>
                         <div style="width: 100%;" class="dropdown-menu py-0" aria-labelledby="dropdown-2">

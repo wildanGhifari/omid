@@ -4,16 +4,28 @@
             <img src="<?= base_url('assets/img/OmidLogo.png') ?>" alt="">
         </a>
 
-        <a href="<?= base_url('cart') ?>" class="nav-link btn py-3 ml-auto cartMobile">
-            <i class="fas fa-shopping-cart fa-lg"></i>
-            <?php if ($this->session->userdata('is_login')) : ?>
-                <span class="badge badge-success" aria-valuemin="0">
-                    <?= getCart(); ?>
-                </span>
-            <?php endif ?>
-        </a>
+        <div class="ml-auto d-flex">
+            <a href="<?= base_url('wishlist') ?>" class="nav-link btn py-3 cartMobile">
+                <i class="text-muted fas fa-heart fa-lg"></i>
+                <?php if ($this->session->userdata('is_login')) : ?>
+                    <span class="badge badge-success rounded-circle mr-2" aria-valuemin="0">
+                        <?= getWishlist(); ?>
+                    </span>
+                <?php endif ?>
+            </a>
 
-        <?php if ($this->session->userdata('is_login')) : ?>
+            <a href="<?= base_url('cart') ?>" class="nav-link btn py-3 cartMobile">
+                <i class="text-muted fas fa-shopping-cart fa-lg"></i>
+                <?php if ($this->session->userdata('is_login')) : ?>
+                    <span class="badge badge-success rounded-circle" aria-valuemin="0">
+                        <?= getCart(); ?>
+                    </span>
+                <?php endif ?>
+            </a>
+        </div>
+
+
+        <!-- <?php if ($this->session->userdata('is_login')) : ?>
             <a href="#" class="nav-link dropdown-toggle text-dark userMobile" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img style="max-height: 46px;" class="rounded-circle border border-success" src="<?= base_url('images/user/') . $this->session->userdata('image') ?>" alt="">
             </a>
@@ -22,13 +34,13 @@
                 <a href="<?= base_url('/myorder') ?>" class="dropdown-item py-3"><i class="fas fa-list-alt mr-2"></i>Orders</a>
                 <a href="<?= base_url('/logout') ?>" class="dropdown-item accent-bg py-3"><i class="fa fa-sign-out mr-2"></i>Log out</a>
             </div>
-        <?php endif ?>
+        <?php endif ?> -->
 
         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-right">
                 <li class="nav-item active">
                     <a class="nav-link" href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -46,7 +58,7 @@
                     </div>
                 </form>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto text-right">
                 <li class="nav-item">
                     <a href="<?= base_url('wishlist') ?>" class="nav-link btn py-3 cartDesktop">
                         <i class="fas fa-heart fa-lg"></i>
@@ -76,7 +88,7 @@
                     </li>
                 <?php else : ?>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle userDesktop" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <strong>
                                 <?php
                                 $names  = $this->session->userdata('name');

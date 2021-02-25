@@ -69,6 +69,11 @@
                             <?= form_input('author_links', $input->author_links, ['class' => 'form-control', 'id' => 'author_links']) ?>
                             <?= form_error('author_links') ?>
                         </div>
+                        <div class="form-group">
+                            <label for="date">Date (YYYY-MM-DD)</label>
+                            <?= form_input('date', $input->date, ['class' => 'form-control', 'id' => 'date']) ?>
+                            <?= form_error('date') ?>
+                        </div>
                         <button type="submit" class="btn btn-success rounded-0" style="width: 100%;">Save</button>
                         <?= form_close() ?>
                     </div>

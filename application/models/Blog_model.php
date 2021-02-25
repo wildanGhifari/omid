@@ -21,7 +21,7 @@ class Blog_model extends MY_Model
             'image'             => '',
             'author'            => '',
             'author_links'      => '',
-            'date'              => date("d F Y")
+            'date'              => ''
         ];
     }
 
@@ -77,6 +77,11 @@ class Blog_model extends MY_Model
                 'field' => 'author_links',
                 'label' => 'Author Links',
                 'rules' => 'trim'
+            ],
+            [
+                'field' => 'date',
+                'label' => 'Date',
+                'rules' => 'date'
             ]
         ];
 

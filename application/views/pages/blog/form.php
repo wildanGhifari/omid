@@ -59,6 +59,16 @@
                             <?= form_input('slug', $input->slug, ['class' => 'form-control', 'id' => 'slug', 'required' => true]) ?>
                             <?= form_error('slug') ?>
                         </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <?= form_input('author', $input->author, ['class' => 'form-control', 'id' => 'author']) ?>
+                            <?= form_error('author') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="author_links">Author Links</label>
+                            <?= form_input('author_links', $input->author_links, ['class' => 'form-control', 'id' => 'author_links']) ?>
+                            <?= form_error('author_links') ?>
+                        </div>
                         <button type="submit" class="btn btn-success rounded-0" style="width: 100%;">Save</button>
                         <?= form_close() ?>
                     </div>

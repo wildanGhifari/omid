@@ -10,7 +10,8 @@ class Blog extends MY_Controller
         $data['title']      = 'Blog | Omid Health Style';
         $data['content']    = $this->blog->select([
             'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content',
-            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
+            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug',
+            'blog.date'
         ])
             ->join('blog_category')
             ->paginate($page)
@@ -36,7 +37,8 @@ class Blog extends MY_Controller
 
         $data['blog']       = $this->blog->select([
             'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content', 'blog.key1', 'blog.key2', 'blog.key3',
-            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
+            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug', 'blog.date',
+            'blog.author', 'blog.author_links'
         ])
             ->join('blog_category')->where('blog.slug', $slug)->get();
         $data['total_rows'] = $this->blog->count();
@@ -87,8 +89,9 @@ class Blog extends MY_Controller
         $keyword            = $this->session->userdata('keyword');
         $data['title']      = 'Blog | Omid Health Style';
         $data['content']    = $this->blog->select([
-            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content',
-            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug'
+            'blog.id', 'blog.slug', 'blog.title AS blog_title', 'blog.description', 'blog.content', 'blog.key1', 'blog.key2', 'blog.key3',
+            'blog.image', 'blog_category.title AS blog_category_title', 'blog_category.slug AS blog_category_slug', 'blog.date',
+            'blog.author', 'blog.author_links'
         ])
             ->join('blog_category')
             ->like('blog.title', $keyword)

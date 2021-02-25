@@ -30,9 +30,10 @@
                                 <img src="<?= $row->image ? base_url("images/blog/$row->image") : base_url("images/blog/default.jpg") ?>" alt="<?= $row->blog_title; ?>" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
+                                <small class="text-muted font-weight-bold"><?= $row->date; ?></small>
                                 <h5 class="card-title"><?= $row->blog_title; ?></h5>
                                 <p class="card-text"><?= $row->description ?></p>
-                                <a class="float-left" href="<?= base_url("blog/detail/$row->slug") ?>">Read More</a>
+                                <a class="float-left text-success" href="<?= base_url("blog/detail/$row->slug") ?>">Read More</a>
                                 <div class="float-right">
                                     <?php if ($this->session->userdata('role') == 'admin') : ?>
                                         <?= form_open(base_url("/blog/delete/$row->id"), ['method' => 'POST']) ?>

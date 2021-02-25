@@ -12,6 +12,7 @@
                 <div class="col-md-12">
                     <span><?= $row->description ?></span>
                     <hr>
+                    <p class="text-success">Written by <a style="text-decoration: underline;" class="text-success" href="<?= $row->author_links ?>"><strong><?= $row->author ?></strong></a>. Published on <?= $row->date ?></p>
                     <p><?= $row->content ?></p>
                 </div>
             </div>

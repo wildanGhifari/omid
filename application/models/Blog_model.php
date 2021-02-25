@@ -18,7 +18,10 @@ class Blog_model extends MY_Model
             'key3'              => '',
             'description'       => '',
             'content'           => '',
-            'image'             => ''
+            'image'             => '',
+            'author'            => '',
+            'author_links'      => '',
+            'date'              => date("d F Y")
         ];
     }
 
@@ -64,6 +67,16 @@ class Blog_model extends MY_Model
                 'field' => 'content',
                 'label' => 'Content',
                 'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'author',
+                'label' => 'Author',
+                'rules' => 'trim'
+            ],
+            [
+                'field' => 'author_links',
+                'label' => 'Author Links',
+                'rules' => 'trim'
             ]
         ];
 

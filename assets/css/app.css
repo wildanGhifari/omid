@@ -242,6 +242,25 @@ nav img {
 	margin-left: 20px;
 }
 
+#addToCartAndWishlist {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+}
+
+#addToCart {
+	flex: 80%;
+	width: 80%;
+	margin-right: 4px;
+}
+
+#addToWishlist {
+	flex: 20%;
+	width: 20%;
+	margin-left: 4px;
+}
+
 /* END OF UTILITY */
 
 /* HOME PAGE CSS */
@@ -612,6 +631,25 @@ ol li {
 }
 
 @media (max-width: 1200px) {
+	#addToCartAndWishlist {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		justify-content: space-evenly;
+	}
+
+	#addToCart {
+		flex: 80%;
+		width: 80%;
+		margin-right: 4px;
+	}
+
+	#addToWishlist {
+		flex: 20%;
+		width: 20%;
+		margin-left: 4px;
+	}
+
 	.marginTop {
 		margin-top: 80px;
 	}
@@ -749,6 +787,25 @@ ol li {
 	small,
 	.text_small {
 		font-size: 0.75rem;
+	}
+
+	#addToCartAndWishlist {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		justify-content: space-evenly;
+	}
+
+	#addToCart {
+		flex: 80%;
+		width: 80%;
+		margin-right: 4px;
+	}
+
+	#addToWishlist {
+		flex: 20%;
+		width: 20%;
+		margin-left: 4px;
 	}
 
 	.marginTop {
@@ -933,6 +990,27 @@ ol li {
 	small,
 	.text_small {
 		font-size: 0.75rem;
+	}
+
+	#addToCartAndWishlist {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	#addToCart {
+		flex: 100%;
+		width: 100%;
+		margin-right: 0;
+	}
+
+	#addToWishlist {
+		flex: 100%;
+		width: 100% !important;
+		margin-top: 8px;
+		margin-left: 0;
 	}
 
 	.marginTop {

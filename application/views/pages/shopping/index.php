@@ -51,7 +51,7 @@
                                                 <input type="hidden" name="id_product" value="<?= $row->id ?>">
                                                 <div class="input-group">
                                                     <input class="form-control" type="hidden" name="qty" value="1" min="1">
-                                                    <button type="button" class="btn btn-outline-danger" style="width: 100%;" data-toggle="tooltip" data-placement="top" title="Add To Wishlist">
+                                                    <button type="submit" class="btn btn-outline-danger" style="width: 100%;" data-toggle="tooltip" data-placement="top" title="Add To Wishlist">
                                                         <i class="far fa-heart fa-lg"></i>
                                                     </button>
                                                 </div>

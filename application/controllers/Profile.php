@@ -44,10 +44,19 @@ class Profile extends MY_Controller
             'user.id', 'user.name', 'user.role', 'user.is_active'
         ])->get();
 
+        $this->profile->table  = 'wishlist';
+        $data['wishlist'] = $this->profile->select([
+            'wishlist.id', 'wishlist.qty', 'wishlist.subtotal', 'product.title AS product_title',
+            'product.image', 'product.slug', 'product.id_category',
+            'product.price', 'product.weight', 'category.title AS category_title',
+            'category.slug AS category_slug'
+        ])
+            ->join('product')->join('category')->where('wishlist.id_user', $this->id)->get();
+
         $this->profile->table  = 'product';
         $data['products'] = $this->profile->select([
             'product.id', 'product.title AS product_title', 'product.image', 'product.price', 'product.is_available',
-            'category.title AS category_title'
+            'product.slug', 'product.weight', 'category.title AS category_title', 'category.slug AS category_slug'
         ])
             ->join('category')
             ->paginate($page)

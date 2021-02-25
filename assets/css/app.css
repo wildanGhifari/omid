@@ -324,16 +324,23 @@ nav img {
 }
 
 .gallery-cell {
-	padding-top: 32px;
+	padding-top: 12px;
 	padding-bottom: 32px !important;
 	width: 25%;
 	margin-right: 20px;
 }
 
 .galCelCol {
-	padding-top: 32px;
+	padding-top: 12px;
 	padding-bottom: 32px !important;
 	width: 16.6% !important;
+	margin-right: 20px;
+}
+
+.galCelProfile {
+	padding-top: 12px;
+	padding-bottom: 32px !important;
+	width: 33.3% !important;
 	margin-right: 20px;
 }
 /* END OF FLICKITY */
@@ -866,6 +873,13 @@ ol li {
 		width: 50% !important;
 		margin-right: 20px;
 	}
+
+	.galCelProfile {
+		padding-top: 12px;
+		padding-bottom: 32px !important;
+		width: 50% !important;
+		margin-right: 20px;
+	}
 	/* END OF FLICKITY */
 
 	/* ABOUT US PAGE */
@@ -1091,6 +1105,13 @@ ol li {
 	.gallery-cell {
 		width: 60%;
 		margin-right: 15px;
+	}
+
+	.galCelProfile {
+		padding-top: 12px;
+		padding-bottom: 32px !important;
+		width: 60% !important;
+		margin-right: 20px;
 	}
 	/* END OF FLICKITY */
 

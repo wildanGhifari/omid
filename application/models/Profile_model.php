@@ -6,7 +6,7 @@ class Profile_model extends MY_Model
 {
 
     public $table = 'user';
-    protected $perPage  = 25;
+    protected $perPage  = 8;
 
     public function getDefaultValues()
     {

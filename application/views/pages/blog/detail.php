@@ -38,13 +38,28 @@
                                                 <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$product->category_slug") ?>"><?= $product->category_title; ?></a></small>
                                                 <p class="card-title"><?= $product->product_title; ?></p>
                                                 <h5>Rp.<?= number_format($product->price, 0, ',', '.') ?></h5>
-                                                <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
-                                                    <input type="hidden" name="id_product" value="<?= $product->id ?>">
-                                                    <div class="input-group">
-                                                        <input class="form-control" type="hidden" name="" value="1">
-                                                        <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                                <div id="addToCartAndWishlist">
+                                                    <div id="addToCart">
+                                                        <form action="<?= base_url("/cart/add") ?>" method="POST">
+                                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="hidden" name="" value="1">
+                                                                <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                </form>
+                                                    <div id="addToWishlist">
+                                                        <form action="<?= base_url("/wishlist/add") ?>" method="POST">
+                                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="hidden" name="qty" value="1" min="1">
+                                                                <button type="button" class="btn btn-outline-danger" style="width: 100%;" data-toggle="tooltip" data-placement="top" title="Add To Wishlist">
+                                                                    <i class="far fa-heart fa-lg"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -77,13 +92,28 @@
                                                 <small><a class="category text-uppercase" href="<?= base_url("/shop/category/$product->category_slug") ?>"><?= $product->category_title; ?></a></small>
                                                 <p class="card-title"><?= $product->product_title; ?></p>
                                                 <h5>Rp.<?= number_format($product->price, 0, ',', '.') ?></h5>
-                                                <form action="<?= base_url("/cart/add") ?>" method="POST" class="mt-4">
-                                                    <input type="hidden" name="id_product" value="<?= $product->id ?>">
-                                                    <div class="input-group">
-                                                        <input class="form-control" type="hidden" name="" value="1">
-                                                        <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                                <div id="addToCartAndWishlist">
+                                                    <div id="addToCart">
+                                                        <form action="<?= base_url("/cart/add") ?>" method="POST">
+                                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="hidden" name="" value="1">
+                                                                <button type="submit" class="btn btn-success" style="width: 100%;">Add To Cart</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                </form>
+                                                    <div id="addToWishlist">
+                                                        <form action="<?= base_url("/wishlist/add") ?>" method="POST">
+                                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="hidden" name="qty" value="1" min="1">
+                                                                <button type="button" class="btn btn-outline-danger" style="width: 100%;" data-toggle="tooltip" data-placement="top" title="Add To Wishlist">
+                                                                    <i class="far fa-heart fa-lg"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

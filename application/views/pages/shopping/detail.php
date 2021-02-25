@@ -43,16 +43,29 @@
                                         <?php endforeach ?>
                                     <?php endif ?>
                                 </div>
-                                <div>
-                                    <form action="<?= base_url("/cart/add") ?>" method="POST">
-                                        <input type="hidden" name="id_product" value="<?= $product->id ?>">
-                                        <div class="input-group">
-                                            <input type="number" name="qty" class="form-control text-center" value="1" min="1">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-success px-5" type="submit">Add To Cart</button>
+                                <div id="addToCartAndWishlist">
+                                    <div id="addToCart">
+                                        <form action="<?= base_url("/cart/add") ?>" method="POST">
+                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                            <div class="input-group">
+                                                <input type="number" name="qty" class="form-control text-center" value="1" min="1">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-success px-5" type="submit">Add To Cart</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
+                                    <div id="addToWishlist">
+                                        <form action="<?= base_url("/wishlist/add") ?>" method="POST">
+                                            <input type="hidden" name="id_product" value="<?= $product->id ?>">
+                                            <div class="input-group">
+                                                <input class="form-control" type="hidden" name="qty" value="1" min="1">
+                                                <button type="button" class="btn btn-outline-danger" style="width: 100%;" data-toggle="tooltip" data-placement="top" title="Add To Wishlist">
+                                                    <i class="far fa-heart fa-lg"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

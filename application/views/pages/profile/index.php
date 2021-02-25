@@ -272,8 +272,8 @@
                             <?php else : ?>
                                 <div class="main-gallery js-flickity" data-flickity-options='{ "freeScroll": true, "contain": true, "prevNextButtons": true, "pageDots": false, "adaptiveHeight": false }'>
                                     <?php foreach ($wishlist as $row) : ?>
-                                        <div class="gallery-cell galCelProfile">
-                                            <div class="card teaserProduct ">
+                                        <div class="gallery-cell galCelProfile teaserProduct">
+                                            <div class="card">
                                                 <?php if ($row->weight >= 1000) : ?>
                                                     <?php $row->weight = $row->weight / 1000 ?>
                                                     <span class="badge badge-warning badge-pill mr-2"><?= $row->weight; ?> Kg</span>

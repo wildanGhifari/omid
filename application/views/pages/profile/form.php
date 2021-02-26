@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-md-4 mt-4">
+                            <div class="col-md-12 mt-4">
                                 <button style="width: 100%;" class="btn btn-success rounded-0" type="submit">Save</button>
                             </div>
                         </div>

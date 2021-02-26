@@ -41,7 +41,7 @@ class Home extends My_Controller
             ]
         )
             ->join('blog_category')
-            ->paginate($page)
+            ->limit(4, 0)
             ->get();
         $data['total_rows'] = $this->home->count();
 

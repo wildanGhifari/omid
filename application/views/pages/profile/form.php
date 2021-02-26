@@ -20,6 +20,16 @@
                             <?= form_error('email') ?>
                         </div>
                         <div class="form-group">
+                            <label for="">Address</label>
+                            <?= form_input(['type' => 'text', 'name' => 'address', 'value' => $input->address, 'class' => 'form-control rounded-0', 'placeholder' => 'Enter your address']) ?>
+                            <?= form_error('address') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Social Media Link</label>
+                            <?= form_input(['type' => 'text', 'name' => 'social_media', 'value' => $input->social_media, 'class' => 'form-control rounded-0', 'placeholder' => 'Facebook, Instagram, Twitter, etc.']) ?>
+                            <?= form_error('email') ?>
+                        </div>
+                        <div class="form-group">
                             <label for="">Password</label>
                             <?= form_password('password', '', ['class' => 'form-control rounded-0', 'placeholder' => 'Minimal 8 Character']) ?>
                             <?= form_error('password') ?>

@@ -10,6 +10,9 @@
                     <div class="card-body">
                         <h5><?= $content->name; ?></h5>
                         <p><?= $content->email; ?></p>
+                        <hr>
+                        <p><?= $content->address ?></p>
+                        <p><a class="text-muted" target="_blank" href="<?= $content->social_media ?>"><?= $content->social_media ?></a></p>
                     </div>
                 </div>
 

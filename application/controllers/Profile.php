@@ -41,7 +41,7 @@ class Profile extends MY_Controller
 
         $this->profile->table   = 'user';
         $data['users']  = $this->profile->select([
-            'user.id', 'user.name', 'user.role', 'user.is_active'
+            'user.id', 'user.name', 'user.role', 'user.is_active', 'user.address', 'user.social_media'
         ])->get();
 
         $this->profile->table  = 'wishlist';

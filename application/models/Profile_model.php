@@ -11,9 +11,11 @@ class Profile_model extends MY_Model
     public function getDefaultValues()
     {
         return [
-            'name'      => '',
-            'email'     => '',
-            'image'     => ''
+            'name'          => '',
+            'email'         => '',
+            'address'       => '',
+            'social_media'  => '',
+            'image'         => ''
         ];
     }
 
@@ -30,6 +32,16 @@ class Profile_model extends MY_Model
                 'field' => 'email',
                 'label' => 'Email',
                 'rules' => 'trim|required|valid_email|callback_unique_email'
+            ],
+            [
+                'field' => 'address',
+                'label' => 'Address',
+                'rules' => 'trim'
+            ],
+            [
+                'field' => 'social_media',
+                'label' => 'Social Media',
+                'rules' => 'trim'
             ]
         ];
 

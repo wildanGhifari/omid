@@ -41,7 +41,7 @@ class Cart extends MY_Controller
     {
         if (!$_POST || $this->input->post('qty') < 1) {
             $this->session->set_flashdata('error', 'Product quantity cannot be empty.');
-            redirect(base_url());
+            redirect(base_url('shopping'));
         } else {
             $input                  = (object) $this->input->post(null, true);
 
@@ -85,7 +85,7 @@ class Cart extends MY_Controller
                 $this->session->set_flashdata('error', 'Oops! Something went wrong.');
             }
 
-            redirect(base_url(''));
+            redirect(base_url('shopping'));
         }
     }
 

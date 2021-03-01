@@ -45,6 +45,8 @@
                             <a style="width: 100%;" href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-lg btn-success">Confirm Payment</a>
                         </div>
                     <?php endif ?>
+
+                    <a href="<?= base_url("/pdfview/index/$order->invoice") ?>">Print Invoice</a>
                 </div>
             </div>
 

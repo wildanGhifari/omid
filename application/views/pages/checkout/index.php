@@ -24,7 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Address</label>
-                                <textarea name="address" id="" cols="30" rows="3" class="form-control rounded-0"><?= $input->address; ?><?php foreach ($user as $usr) : ?><?= ltrim(rtrim($usr->address)); ?><?php endforeach ?></textarea>
+                                <textarea name="address" id="" cols="30" rows="3" class="form-control rounded-0"><?php foreach ($user as $usr) : ?><?= ltrim(rtrim($usr->address)); ?><?php endforeach ?><?= $input->address; ?></textarea>
                                 <?= form_error('address') ?>
                             </div>
                             <div class="row">

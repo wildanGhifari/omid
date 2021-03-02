@@ -14,6 +14,7 @@
                                     <th>Date</th>
                                     <th>Total</th>
                                     <th>Status</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,6 +27,11 @@
                                         <td>Rp.<?= number_format($row->total, 0, ',', '.'); ?>,-</td>
                                         <td>
                                             <?php $this->load->view('layouts/_status', ['status' => $row->status]); ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->status == 'success') :?>
+                                                <a class="badge badge-danger" href="<?= base_url("myorder/pdf/$row->invoice") ?>">Export to PDF</a>
+                                            <?php endif ?>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

@@ -40,13 +40,16 @@
                             </div>
                         </div>
                     </div>
+                    <?php if ($order->status == 'success') : ?>
+                        <div class="card-footer bg-white">
+                            <a style="width: 100%;" class="btn btn-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
+                        </div>
+                    <?php endif ?>
                     <?php if ($order->status == 'waiting') : ?>
                         <div class="card-footer bg-white">
                             <a style="width: 100%;" href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-lg btn-success">Confirm Payment</a>
                         </div>
                     <?php endif ?>
-
-                    <a href="<?= base_url("/pdfview/index/$order->invoice") ?>">Print Invoice</a>
                 </div>
             </div>
 

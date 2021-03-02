@@ -43,6 +43,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php if ($order->status == 'success') : ?>
+                                <div class="card-footer bg-white">
+                                    <a style="width: 100%;" class="btn btn-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
+                                </div>
+                            <?php endif ?>
                             <div class="card-footer">
                                 <form action="<?= base_url("order/update/$order->id") ?>" method="POST">
                                     <input type="hidden" name="id" value="<?= $order->id ?>">

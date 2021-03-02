@@ -126,6 +126,42 @@ class Myorder extends My_Controller
         }
         return true;
     }
+
+    public function pdf($invoice)
+    {
+        $this->load->library('dompdf_gen');
+
+        $data['order']    = $this->myorder->where('invoice', $invoice)->first();
+        if (!$data['order']) {
+            $this->session->set_flashdata('warning', 'Data cannnot be found.');
+            redirect(base_url('/myorder'));
+        }
+        $this->myorder->table = 'orders_confirm';
+        $data['order_confirm'] = $this->myorder->where('id_orders', $data['order']->id)->first();
+
+        $this->myorder->table   = 'orders_detail';
+        $data['order_detail']   = $this->myorder->select([
+            'orders_detail.id_orders', 'orders_detail.id_product', 'orders_detail.qty',
+            'orders_detail.subtotal', 'product.title', 'product.image', 'product.price', 'product.weight'
+        ])
+            ->join('product')->where('orders_detail.id_orders', $data['order']->id)->get();
+
+        $data['title']  = "Detail_invoice_" . $data['order']->invoice . ".pdf";
+
+        $this->load->view('invoice_pdf', $data);
+
+        $paper_size = 'A4';
+        $orientation = 'potrait';
+
+        $html = $this->output->get_output();
+
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        ob_end_clean();
+        $this->dompdf->stream("Detail_invoice_" . $data['order']->invoice . ".pdf", array('Attachment' => 0));
+    }
 }
 
 /* End of file Myorder.php */

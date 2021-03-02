@@ -52,6 +52,12 @@ class Checkout extends MY_Controller
         $data['totalWeight'] = $this->checkout->getSum();
 
         $data['input']  = $input ? $input : (object) $this->checkout->getDefaultValues();
+
+        $this->checkout->table  = 'user';
+        $data['user']   = $this->checkout->select([
+            'user.id', 'address'
+        ])->where('user.id', $this->id)->get();
+        
         $data['title']  = 'Checkout';
         $data['page']   = 'pages/checkout/index';
 

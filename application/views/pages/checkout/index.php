@@ -8,6 +8,9 @@
                         <h6 class="mb-0">Checkout Billing</h6>
                     </div>
                     <div class="card-body">
+                        <?php foreach ($user as $usr) : ?>
+                            <?= $usr->address; ?>
+                        <?php endforeach ?>
                         <form action="<?= base_url("checkout/create") ?>" method="POST">
                             <div class="form-group">
                                 <label for="">Fullname</label>
@@ -21,7 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Address</label>
-                                <textarea name="address" id="" cols="30" rows="3" class="form-control rounded-0"><?= $input->address; ?></textarea>
+                                <textarea name="address" id="" cols="30" rows="3" class="form-control rounded-0"><?= $input->address; ?><?php foreach ($user as $usr) : ?><?= ltrim(rtrim($usr->address)); ?><?php endforeach ?></textarea>
                                 <?= form_error('address') ?>
                             </div>
                             <div class="row">

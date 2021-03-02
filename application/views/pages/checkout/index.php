@@ -8,9 +8,6 @@
                         <h6 class="mb-0">Checkout Billing</h6>
                     </div>
                     <div class="card-body">
-                        <?php foreach ($user as $usr) : ?>
-                            <?= $usr->address; ?>
-                        <?php endforeach ?>
                         <form action="<?= base_url("checkout/create") ?>" method="POST">
                             <div class="form-group">
                                 <label for="">Fullname</label>

@@ -11,7 +11,7 @@
                             Silahkan lakukan pembayaran agar pesanan Anda dapat kami proses, dengan cara :
                         </p>
                         <ol class="ml-4">
-                            <li>Lakukan pembayaran ke Nomer Rekening <strong>BCA 1234567890 a/n PT. Omid Health Style.</strong></li>
+                            <li>Lakukan pembayaran ke Nomer Rekening <strong>BCA 2867770000 a/n PT. Omid Health Style.</strong></li>
                             <li>Sertakan keterangan dengan Nomer Invoice : <strong><?= $content->invoice; ?></strong></li>
                             <li>Total pembayaran : <strong>Rp. <?= number_format($content->total, 0, ',', '.'); ?></strong></li>
                             <li>Lakukan konfirmasi melalui halaman konfirmasi atau bisa <a href="<?= base_url("/myorder/detail/$content->invoice") ?>">Klik disini.</a></li>

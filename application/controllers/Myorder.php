@@ -118,6 +118,23 @@ class Myorder extends My_Controller
     }
 
 
+    public function cancel($id)
+    {
+        if (!$_POST) {
+            $this->session->set_flashdata('error', 'Oops! something wnet wrong');
+            redirect(base_url("myorder/detail/$id"));
+        }
+
+        if ($this->myorder->where('id', $id)->update(['status' => 'cancel'])) {
+            $this->session->set_flashdata('success', 'Your order has been cancelled');
+        } else {
+            $this->session->set_flashdata('error', 'Oops! something wnet wrong');
+        }
+
+        redirect(base_url("myorder/index"));
+    }
+
+
     public function image_required()
     {
         if (empty($_FILES) || $_FILES['image']['name'] === '') {

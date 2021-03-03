@@ -44,17 +44,20 @@
                         <div class="card-footer bg-white">
                             <a style="width: 100%;" class="btn btn-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
                         </div>
-                    <?php endif ?>
-                    <?php if ($order->status == 'waiting') : ?>
+                    <?php elseif ($order->status == 'waiting') : ?>
                         <div class="card-footer bg-white">
                             <a style="width: 100%;" href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-lg btn-success">Confirm Payment</a>
+                            <?= form_open(base_url("/myorder/cancel/$order->id"), ['method' => 'POST']) ?>
+                            <?= form_hidden('id', $order->id) ?>
+                                <button style="width: 100%;" type="submit" class="btn btn-link text-danger mt-3" onclick="return confirm('Are you sure?')">Cancel My Order</button>
+                            <?= form_close() ?>
                         </div>
                     <?php endif ?>
                 </div>
             </div>
 
             <?php if (isset($order_confirm)) : ?>
-                <div class="col-md-4">
+                <div class=" col-md-4">
                     <div class="card confirmOrder">
                         <div class="card-header bg-white">
                             <h6>Bukti Transfer</h6>

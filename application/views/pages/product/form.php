@@ -47,7 +47,7 @@
                                 <label for="" class="form-check-label">Available</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <?= form_radio(['name' => 'is_available', 'value' => 1, 'checked' => $input->is_available == 0 ? true : false, 'class' => 'form-check-input']) ?>
+                                <?= form_radio(['name' => 'is_available', 'value' => 0, 'checked' => $input->is_available == 0 ? true : false, 'class' => 'form-check-input']) ?>
                                 <label for="" class="form-check-label">Empty</label>
                             </div>
                         </div>

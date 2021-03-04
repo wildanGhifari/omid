@@ -116,7 +116,7 @@
                                 </div>
                             </div>
 
-                            <button style="width: 100%; letter-spacing: 0.1em;" class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Continue</button>
+                            <button style="width: 100%; letter-spacing: 0.1em;" name="submit_email" class="btn btn-lg btn-success rounded-0 text-uppercase" type="submit">Continue</button>
                         </form>
                     </div>
                 </div>

@@ -287,6 +287,8 @@ class Checkout extends MY_Controller
                                         <p style="margin: 6px 0; flex: 50%; width: 50%;">Total Belanja</p>
                                         <p style="margin: 6px 0; flex: 50%; width: 50%; text-align: right; font-weight: bold;">Rp. ' . number_format($total, 0, ',', '.') . '</p>
                                     </div>
+                                    <hr style="margin: 24px 0;">
+                                    <p>E-mail ini dibuat otomatis, mohon tidak membalas. Jika butuh bantuan, silakan hubungi <a href="https://api.whatsapp.com/send?phone=62895331759916&text=Hai%2C%20nama%20saya%20*isi%20nama%20Anda*.%0ASaya%20ingin%20bertanya%20mengenai%20produk%20*isi%20nama%20produk*%20yang%20saya%20lihat%20di%20website.">Omid Customer Service</a>.</p>
                                 </div>
                             </div>
                         </div>

@@ -2,8 +2,8 @@
     <div class="container text-center text-white" style="margin-top:auto;" style="background-color: #fff;">
         <h1 class="font-weight-bold">Contact Us</h1>
     </div>
+    <?php $this->load->view('layouts/_alert') ?>
 </div>
-
 <main role="main">
     <div id="contact" class="container-xl">
         <div class="card">
@@ -12,7 +12,7 @@
                     <h3>Get in touch</h3>
                     <p>Please feel free to contact us if you have any question about our products.</p>
                     <hr>
-                    <form action="mailto:wildghifari@gmail.com" method="POST">
+                    <form action="<?= base_url("contact") ?>" method="POST">
                         <div class="form-group">
                             <label for="fullname">Fullname</label>
                             <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter your fullname">
@@ -25,7 +25,7 @@
                             <label for="message">Tell us what you need to know.</label>
                             <textarea class="form-control" name="message" id="message" placeholder="Your message here..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success rounded-pill" style="width: 100%;">Submit</button>
+                        <button type="submit" name="contact_form" class="btn btn-success rounded-pill" style="width: 100%;">Submit</button>
                     </form>
                 </div>
                 <div class="col-md-6">

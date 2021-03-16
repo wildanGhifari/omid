@@ -29,7 +29,7 @@
                                             <?php $this->load->view('layouts/_status', ['status' => $row->status]); ?>
                                         </td>
                                         <td>
-                                            <?php if ($row->status =='paid' || 'delivered' || 'success') :?>
+                                            <?php if ($row->status == 'paid' || $row->status =='delivered' || $row->status == 'success') :?>
                                                 <a class="badge badge-danger" href="<?= base_url("myorder/pdf/$row->invoice") ?>">Export to PDF</a>
                                             <?php endif ?>
                                         </td>

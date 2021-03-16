@@ -48,8 +48,8 @@
                     <?= form_hidden('id_orders', $order->id); ?>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="">Transaction</label>
-                            <input type="text" class="form-control" value="<?= $order->invoice ?>" readonly>
+                            <label for="">Transaksi No. Invoice</label>
+                            <input type="text" name="invoice" class="form-control" value="<?= $order->invoice ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="">Nama Pemilik Rekening</label>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="card-footer bg-white">
-                        <button style="width: 100%;" type="submit" class="btn btn-lg btn-success rounded-0">Confirm</button>
+                        <button style="width: 100%;" type="submit" class="btn btn-lg btn-success rounded-0">Konfirmasi Pembyaran</button>
                     </div>
                 </div>
             </div>

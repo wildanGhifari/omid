@@ -11,6 +11,7 @@ class Myorder_model extends MY_Model
     {
         return [
             'id_orders'         => '',
+            'invoice'           => '',
             'account_name'      => '',
             'account_number'    => '',
             'nominal'           => '',

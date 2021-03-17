@@ -37,7 +37,7 @@ class Contact extends MY_Controller
                 $pesan  = $data['message'];
     
                 $this->email->from('no-reply@omidhealthstyle.com');
-                $this->email->to('pt.omidhealthstyle@gmail.com');
+                $this->email->to('webomidhealth@gmail.com');
                 $this->email->subject('New Message from '. $nama .' - omidhealthstyle.com contact form');
                 $this->email->message('
                         <div style="text-align: center; max-width: 450px; margin: 24px auto; border: solid 1px #dde2e5; border-radius: 10px; padding: 24px">

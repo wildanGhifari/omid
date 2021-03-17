@@ -208,7 +208,7 @@ class Checkout extends MY_Controller
                     }
                     
                     $this->email->from('no-reply@omidhealthstyle.com');
-                    $this->email->to('pt.omidhealthstyle@gmail.com');
+                    $this->email->to('webomidhealth@gmail.com');
                     $this->email->subject('New Order!, Ada pesanan baru dari ' .$nama . ' ' . ' pada ' . $tanggal);
                     $this->email->message('
                     <div style="text-align: center; max-width: 450px; margin: 24px auto; border: solid 1px #dde2e5; border-radius: 10px; padding: 24px">
@@ -221,7 +221,7 @@ class Checkout extends MY_Controller
                                     <h3 style="font-weight: light;">Hai <strong>Omid Health Style,</strong></h3>
                                     <h2 style="color: #06a954;">Ada pesanan baru sebesar Rp. ' . number_format($total, 0, ',', '.') . '</h2>
                                     <hr style="margin: 24px 0;">
-                                    <p>No. Invoice: <strong><a style="color: #06a954;" href="' . base_url("/order/detail/$order") . '">' . $invoice . '</a></strong></p>
+                                    <p>No. Invoice: <strong><a style="color: #06a954;" href="' . base_url("/order/detail/$order") . '">#' . $invoice . '</a></strong></p>
                                     <p>Tanggal Pemesanan: ' . $tanggal . '</p>
                                     <p>Kurir: ' . $kurir . '-' . $paket . '</p>
                                     <p>Tujuan Pengiriman: <br> <strong>' . $nama .' (' . $hp . ')</strong><br>' .$alamat . ' ' . $provinsi .' ' .$distrik . ' ' . $subdistrik .'</p>
@@ -241,7 +241,7 @@ class Checkout extends MY_Controller
 
                     $this->email->from('no-reply@omidhealthstyle.com');
                     $this->email->to($emailUser);
-                    $this->email->subject('Menunggu pembayaran untuk ' . $invoice .' ' . ' pada ' . $tanggal);
+                    $this->email->subject('Menunggu pembayaran untuk #' . $invoice .' ' . ' pada ' . $tanggal);
                     $this->email->message('
                     <div style="text-align: center; max-width: 450px; margin: 24px auto; border: solid 1px #dde2e5; border-radius: 10px; padding: 24px">
                         <div style="width: 100%;">
@@ -250,7 +250,7 @@ class Checkout extends MY_Controller
                                     <img src="https://omidhealthstyle.com/assets/img/OmidLogo.png" alt="Logo Omid Health Style" height="68">
                                 </a>
                                 <div style="color: #212429 !important;">
-                                    <h3 style="font-weight: light;">Halo <strong style="font-bold: light;">' . $nama . ',</strong></h3>
+                                    <h3 style="font-weight: light;">Hi <strong style="font-bold: light;">' . $nama . ',</strong></h3>
                                     <h2 style="color: #06a954;">Segera lakukan pembayaran untuk pesananmu dengan detail sebagai berikut: </h2>
                                     <hr style="margin: 24px 0;">
                                     <div style="background-color: #dde2e5; padding: 24px; border-radius: 8px;">

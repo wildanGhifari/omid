@@ -168,7 +168,7 @@ class Myorder extends My_Controller
                     $namaUser = $data['user'][0]->name;
 
                     $this->email->from('no-reply@omidhealthstyle.com');
-                    $this->email->to('pt.omidhealthstyle@gmail.com');
+                    $this->email->to('webomidhealth@gmail.com');
                     $this->email->subject($ordr->name . ' telah melakukan pembayaran untuk pesanan #' . $ordr->invoice);
                     $this->email->message('
                     <div style="text-align: center; max-width: 450px; margin: 24px auto; border: solid 1px #dde2e5; border-radius: 10px; padding: 24px">
@@ -251,7 +251,7 @@ class Myorder extends My_Controller
                                                 <tr>
                                                     <td style="width: 130px;">Nominal</td>
                                                     <td style="width: 20px;">:</td>
-                                                    <td style="width: 300px;">' . $nominal . '</td>
+                                                    <td style="width: 300px;">Rp. ' . $nominal . '</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 130px;">Catatan</td>
@@ -300,6 +300,23 @@ class Myorder extends My_Controller
         }
 
         redirect(base_url("myorder/index"));
+    }
+
+
+    public function success($id)
+    {
+        if (!$_POST) {
+            $this->session->set_flashdata('error', 'Oops! something wnet wrong');
+            redirect(base_url("myorder/detail/$id"));
+        }
+
+        if ($this->myorder->where('id', $id)->update(['status' => 'success'])) {
+            $this->session->set_flashdata('success', 'Your order is complete. Thank you for shopping at our online shop, please leave us a review if your shopping experience is satisfying.');
+        } else {
+            $this->session->set_flashdata('error', 'Oops! something wnet wrong');
+        }
+
+        redirect(base_url("myorder/detail/$id"));
     }
 
 

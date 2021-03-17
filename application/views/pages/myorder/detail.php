@@ -2,7 +2,7 @@
     <div class="container-xl" style="padding: 5% 0;">
         <?php $this->load->view('layouts/_alert'); ?>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 mb-4">
                 <div class="card detailOrder">
                     <div class="card-header bg-white">
                         <h6>Detail Order <?= $order->invoice ?></h6>
@@ -40,16 +40,32 @@
                             </div>
                         </div>
                     </div>
-                    <?php if ($order->status == 'paid' || $order->status =='delivered' || $order->status == 'success') : ?>
-                        <div class="card-footer bg-white">
-                            <a style="width: 100%;" class="btn btn-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
-                        </div>
+                    <?php if ($order->status == 'paid' || $order->status == 'delivered' || $order->status == 'success') : ?>
+                        <?php if ($order->status == 'delivered' && $this->session->userdata('role') == 'member') : ?>
+                            <div class="card-footer bg-white">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <a style="width: 100%;" class="btn btn-outline-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <?= form_open(base_url("/myorder/success/$order->id"), ['method' => 'POST']) ?>
+                                        <?= form_hidden('id', $order->id) ?>
+                                        <button style="width: 100%;" type="submit" class="btn btn-success">Finish</button>
+                                        <?= form_close() ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <div class="card-footer bg-white">
+                                <a style="width: 100%;" class="btn btn-outline-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
+                            </div>
+                        <?php endif ?>
                     <?php elseif ($order->status == 'waiting') : ?>
                         <div class="card-footer bg-white">
                             <a style="width: 100%;" href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-lg btn-success">Confirm Payment</a>
                             <?= form_open(base_url("/myorder/cancel/$order->id"), ['method' => 'POST']) ?>
                             <?= form_hidden('id', $order->id) ?>
-                                <button style="width: 100%;" type="submit" class="btn btn-link text-danger mt-3" onclick="return confirm('Are you sure?')">Cancel My Order</button>
+                            <button style="width: 100%;" type="submit" class="btn btn-link text-danger mt-3" onclick="return confirm('Are you sure?')">Cancel My Order</button>
                             <?= form_close() ?>
                         </div>
                     <?php endif ?>
@@ -68,11 +84,14 @@
                             <p>Nominal: Rp.<?= number_format($order_confirm->nominal, 0, ',', '.') ?></p>
                             <p>Catatan: <?= $order_confirm->note; ?></p>
                         </div>
-                        <div class="card-footer bg-white px-0 py-0">
+                    </div>
+                    <div class="row mb-3 mt-3">
+                        <div class="col-md-12">
                             <img src="<?= base_url("/images/confirm/$order_confirm->image") ?>" alt="" style="width: 100%;">
                         </div>
                     </div>
                 </div>
+
             <?php endif ?>
         </div>
     </div>

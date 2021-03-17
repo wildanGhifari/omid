@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header bg-white">
                                 <strong class="lead font-weight-bold">Detail Order <?= $order->invoice; ?></strong>
                                 <div class="">
                                     <?php $this->load->view('layouts/_status', ['status' => $order->status]); ?>
@@ -45,7 +45,7 @@
                             </div>
                             <?php if ($order->status == 'paid' || $order->status == 'delivered' || $order->status == 'success') : ?>
                                 <div class="card-footer bg-white">
-                                    <a style="width: 100%;" class="btn btn-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
+                                    <a style="width: 100%;" class="btn btn-outline-danger" href="<?= base_url("myorder/pdf/$order->invoice") ?>">Export to PDF</a>
                                 </div>
                             <?php endif ?>
                             <div class="card-footer">
@@ -69,24 +69,20 @@
                     </div>
 
                     <?php if (isset($order_confirm)) : ?>
-                        <div class="col-md-4">
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Bukti Transfer
-                                        </div>
-                                        <div class="card-body">
-                                            <p>No. Rekening: <?= $order_confirm->account_number; ?></p>
-                                            <p>Atas Nama: <?= $order_confirm->account_name; ?></p>
-                                            <p>Nominal: Rp.<?= number_format($order_confirm->nominal, 0, ',', '.') ?>,-</p>
-                                            <p>Catatan: <?= $order_confirm->note; ?></p>
-                                        </div>
-                                    </div>
+                        <div class=" col-md-4">
+                            <div class="card confirmOrder">
+                                <div class="card-header bg-white">
+                                    <h6>Bukti Transfer</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>No. Rekening: <?= $order_confirm->account_number; ?></p>
+                                    <p>Atas Nama: <?= $order_confirm->account_name; ?></p>
+                                    <p>Nominal: Rp.<?= number_format($order_confirm->nominal, 0, ',', '.') ?></p>
+                                    <p>Catatan: <?= $order_confirm->note; ?></p>
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-3 mt-3">
                                 <div class="col-md-12">
                                     <img src="<?= base_url("/images/confirm/$order_confirm->image") ?>" alt="" style="width: 100%;">
                                 </div>

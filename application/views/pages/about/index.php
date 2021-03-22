@@ -6,7 +6,7 @@
 </div>
 
 <main role="main">
-    <section class="marginTop">
+    <section class="marginTop mb-5">
         <div class="container-xl">
             <div id="aboutOmidRow">
                 <div class="aboutOmidCol">
@@ -25,7 +25,7 @@
         </div>
     </section>
 
-    <section class="marginTop">
+    <section class="marginTop mb-5">
         <div class="container-xl">
             <div id="aboutOmidRow">
                 <div class="aboutOmidCol" id="blogDesc">
@@ -41,8 +41,8 @@
         </div>
     </section>
 
-    <section>
-        <div class="container-xl" style="padding: 5% 10px;">
+    <section class="marginTop mb-5">
+        <div class="container">
             <div id="aboutOmidRow">
                 <div class="aboutOmidCol">
                     <img style="width: 100%; height: 100%;" src="<?= base_url('assets/img/eating_salad_.svg') ?>" alt="eating_salad">
@@ -50,7 +50,7 @@
 
                 <div class="aboutOmidCol" id="signupAbout">
                     <h3>Sign up now! it's Free!</h3>
-                    <p class="mt-3">Sign up now and <strong>Get a 10% Off</strong> on your first purchase. You will also get promos and other interesting insights about healthy food.</p>
+                    <p class="mt-3">Get promos and other interesting insights about healthy food.</p>
                     <a style="letter-spacing: 0.1em;" class="btn btn-success rounded-pill text-uppercase mt-4" href="<?= base_url('/register') ?>">Sign up Now!</a>
                 </div>
             </div>
@@ -58,115 +58,123 @@
     </section>
 
     <section class="marginTop">
-        <div class="container-fluid bg-white" style="padding: 5% 0;">
-            <div class="container-xl">
-                <h3>Our Product</h3>
-                <div class="prodCatFlexRow">
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/nuts") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Nuts.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Nuts</p>
+        <div class="container-fluid py-5">
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-10" style="margin:0 auto;">
+                        <h3>Frequently asked questions</h3>
+
+                        <div id="accordion" class="mt-4">
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingOne">
+                                    <div class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h5>1. Dimana lokasi Omid Health Style?</h5>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Kantor utama kami berada di Jl. Kemang Raya No. 69C (Persis di seberang KOI Kemang dan disamping iColor Kemang).
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/spices") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Spices.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Spices</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingTwo">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <h5>2. Apakah barang dapat dikirimkan keluar kota?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Semua produk dapat kami kirimkan ke luar kota kecuali buah-buahan segar, hummus, yogurt, sayur-sayuran, ice cream, keju (hanya pada kemasan asli bukan repackaging) dan makanan frozen lainnya, but we are working on it! Namun, kami dapat mengirimkan pesanan ke seluruh wilayah Indonesia (ada promo gratis ongkir khusus reseller).
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/dried-fresh-fruits") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Dried & Fresh Fruits.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Dried & Fresh Fruits</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingThree">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <h5>3. Mendukung jasa pengiriman apa?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Kami terutama mengirim melalui secara reguler Sicepat, JNE, J&T, Wahana, TIKI, Anter Aja, and ID Express.
+                                        Untuk waktu pemesanan maksimal pukul 15.00 akan dikirim pada hari yang sama.
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/seeds-kernels") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Kernels.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Seeds / Kernels</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingFour">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <h5>4. Apakah barangnya ready?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Yes! semua barang yang tersedia di etalase pasti ready stock ya, jika barang kosong akan segera kami informasikan ke buyer.
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/rice-grains") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Grains.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Rice / Grains</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingFive">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            <h5>5. Apakah Anda menawarkan harga grosir untuk restoran dan bisnis?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Iya! Kami terutama menawarkan akun grosir untuk bisnis yang ingin menjual kacang, dried fruits, atau produk yang tersedia pada etalase dapat anda pesan, Please submit a wholesale application here.
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/dairy-product") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Dairy Product.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Dairy Product</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingSix">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            <h5>6. Bagaimana untuk expired date?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Expired date kami selalu up to date, jadi sesuai dengan yang dideskripsi ya, jika ada pertanyaan lain silahkan hubungi customer services kami.
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/cooking") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Cooking.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Cooking</p>
+                            <div class="card border-0 border-bottom">
+                                <div class="card-header px-0 bg-white" id="headingSeven">
+                                    <h5 class="mb-0 py-2">
+                                        <button class="btn btn-link text-dark text-left collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                            <h5>7. Bagaimana cara pengembalian barang atau refund?</h5>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                                    <div class="card-body text-muted pl-5">
+                                        Silahkan hubungi admin untuk informasi permasalahan pada produk, jangan lupa sertakan video atau foto terkait dengan kondisi barangnya ya.
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/breakfast") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Breakfast.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Breakfast</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/home-made") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Home Made.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Home Made</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="prodCatFlexCol">
-                        <a href="<?= base_url("/shop/category/others") ?>">
-                            <div class="card mx-2 my-2" style="min-width: 50% !important;">
-                                <div class="card-body text-center">
-                                    <img src="<?= base_url('assets/img/icon/Others.png') ?>" alt="" width="120px" height="120px">
-                                    <p class="card-text mt-4">Others</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row justify-content-center py-4 px-3">
-                    <a style="letter-spacing: 0.1em;" class="btn btn-success btn-lg rounded-pill text-uppercase mt-4" href="<?= base_url('shopping') ?>">See All Products</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid px-0">
+            <iframe style="min-height: 450px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9744262041445!2d106.81382431545259!3d-6.267093663099722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1b2e7cbb88b%3A0xb553104b28ad1c15!2sOmid%20Health%20Style!5e0!3m2!1sid!2sid!4v1606181151643!5m2!1sid!2sid" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </section>
 </main>

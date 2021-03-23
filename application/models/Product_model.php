@@ -76,7 +76,7 @@ class Product_model extends MY_Model
             'upload_path'       => './images/product',
             'file_name'         => $fileName,
             'allowed_types'     => 'jpg|gif|png|jpeg|JPG|PNG',
-            'max_size'          => 1024,
+            'max_size'          => 2064,
             'max_width'         => 0,
             'max_height'        => 0,
             'overwrite'         => true,

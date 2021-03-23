@@ -59,7 +59,7 @@
                             <a class="text-muted" href="<?= base_url('contact') ?>">Contact</a>
                         </li>
                         <li class="list-group-item px-0 py-2 bg-transparent border-0">
-                            <a class="text-muted" href="<?= base_url('faq') ?>">FAQs</a>
+                            <a class="text-muted" href="<?= base_url('faqs') ?>">FAQs</a>
                         </li>
                     </ul>
                 </div>

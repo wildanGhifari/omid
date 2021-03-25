@@ -137,7 +137,7 @@ class Blog extends MY_Controller
         if (!$this->blog->validate()) {
             $data['title']          = 'Add new Blog Post';
             $data['input']          = $input;
-            $data['input']['date']  = $input->date->date('Ymdhis');
+            // $data['input']['date']  = $input->date->date('Ymdhis');
             $data['form_action']    = base_url('blog/create');
             $data['page']           = 'pages/blog/form';
 

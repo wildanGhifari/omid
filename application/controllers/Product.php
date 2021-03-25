@@ -22,7 +22,7 @@ class Product extends MY_Controller
         $data['title']      = 'Admin: Product';
         $data['content']    = $this->product->select(
             [
-                'product.id', 'product.title AS product_title', 'product.image', 'product.price', 'product.is_available',
+                'product.id', 'product.title AS product_title', 'product.sku', 'product.image', 'product.price', 'product.is_available',
                 'category.title AS category_title'
             ]
         )
@@ -53,13 +53,13 @@ class Product extends MY_Controller
         $data['title']      = 'Admin | Product';
         $data['content']    = $this->product->select(
             [
-                'product.id', 'product.title AS product_title', 'product.judul', 'product.image', 'product.price', 'product.is_available',
-                'category.title AS category_title'
+                'product.id', 'product.title AS product_title', 'product.judul', 'product.sku', 'category.title AS category_title'
             ]
         )
             ->join('category')
             ->like('product.title', $keyword)
-            ->like('product.judul', $keyword)
+            ->orlike('product.judul', $keyword)
+            ->orlike('product.sku', $keyword)
             ->orlike('category.title', $keyword)
             ->paginate($page)
             ->get();
@@ -201,6 +201,25 @@ class Product extends MY_Controller
             }
             $this->load->library('form_validation');
             $this->form_validation->set_message('unique_slug', '$s already used.');
+            return false;
+        }
+
+        return true;
+    }
+
+
+    public function unique_sku()
+    {
+        $sku       = $this->input->post('sku');
+        $id         = $this->input->post('id');
+        $product   = $this->product->where('sku', $sku)->first();
+
+        if ($product) {
+            if ($id == $product->id) {
+                return true;
+            }
+            $this->load->library('form_validation');
+            $this->form_validation->set_message('unique_sku', '$s already used.');
             return false;
         }
 

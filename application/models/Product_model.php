@@ -11,6 +11,7 @@ class Product_model extends MY_Model
     {
         return [
             'id_category'   => '',
+            'sku'           => '',
             'slug'          => '',
             'title'         => '',
             'judul'         => '',
@@ -29,6 +30,11 @@ class Product_model extends MY_Model
                 'field' => 'id_category',
                 'label' => 'Category',
                 'rules' => 'required'
+            ],
+            [
+                'field' => 'sku',
+                'label' => 'Sku',
+                'rules' => 'required|trim|callback_unique_sku'
             ],
             [
                 'field' => 'slug',

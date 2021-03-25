@@ -10,14 +10,19 @@
                         <?= form_open_multipart($form_action, ['method' => 'POST']) ?>
                         <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
                         <div class="form-group">
-                            <label for="productName">Product</label>
+                            <label for="productName">Product title</label>
                             <?= form_input('title', $input->title, ['class' => 'form-control', 'id' => 'title', 'onkeyup' => 'createSlug()', 'required' => true, 'autofocus' => true]) ?>
                             <?= form_error('title') ?>
                         </div>
                         <div class="form-group">
-                            <label for="productName">Produk</label>
+                            <label for="productName">Judul Produk</label>
                             <?= form_input('judul', $input->judul, ['class' => 'form-control', 'id' => 'judul', 'required' => true]) ?>
                             <?= form_error('judul') ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="sku">SKU Produk</label>
+                            <?= form_input('sku', $input->sku, ['class' => 'form-control', 'id' => 'sku', 'required' => true]) ?>
+                            <?= form_error('sku') ?>
                         </div>
                         <div class="form-group">
                             <label for="">Description</label>

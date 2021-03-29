@@ -53,7 +53,8 @@ class Product extends MY_Controller
         $data['title']      = 'Admin | Product';
         $data['content']    = $this->product->select(
             [
-                'product.id', 'product.title AS product_title', 'product.judul', 'product.sku', 'category.title AS category_title'
+                'product.id', 'product.title AS product_title', 'product.sku', 'product.image', 'product.price', 'product.is_available',
+                'category.title AS category_title'
             ]
         )
             ->join('category')

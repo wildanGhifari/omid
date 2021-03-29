@@ -12,7 +12,6 @@
                             <div class="card">
                                 <div class="card-header text-center">
                                     <p>Join as a Member</p>
-                                    <!-- <h4>Get 10% Off on your first purchase!</h4> -->
                                 </div>
                                 <div class="card-body px-5 py-5">
                                     <?= form_open('register', ['method' => 'POST']) ?>
